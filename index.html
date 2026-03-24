@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0c;color:#e8e4f0;font-family:'Syne',sans-serif;overflow-x:hidden}
+:root{--purple:#7c5cbf;--purple-glow:#9b7de0;--dark1:#0a0a0c;--dark2:#111118;--dark3:#1a1a24;--gray:#888899;--light:#e8e4f0;--gold:#c9a84c}
+nav{position:sticky;top:0;width:100%;z-index:100;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(124,92,191,0.2);background:rgba(10,10,12,0.93);backdrop-filter:blur(14px)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:5px;color:var(--purple-glow)}
+.nav-links{display:flex;gap:24px}
+.nav-links a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);text-decoration:none;cursor:pointer;transition:color 0.2s}
+.nav-links a:hover{color:var(--light)}
+.nav-cta{font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:8px 20px;border:1px solid var(--purple);color:var(--purple-glow);background:transparent;cursor:pointer;font-family:'Syne',sans-serif;transition:all 0.2s}
+.nav-cta:hover{background:var(--purple);color:white}
+
+.hero{min-height:90vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 40px 70px;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 72% 38%,rgba(74,56,120,0.45) 0%,transparent 68%),linear-gradient(180deg,#0a0a0c 0%,#111118 100%)}
+.hero-texture{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(124,92,191,0.025) 2px,rgba(124,92,191,0.025) 4px)}
+.hero-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--purple);margin-bottom:14px;position:relative}
+.hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(72px,13vw,164px);line-height:0.88;letter-spacing:3px;color:var(--light);position:relative}
+.hero-name span{color:var(--purple-glow)}
+.hero-desc{font-size:13px;color:var(--gray);margin-top:20px;max-width:540px;line-height:1.95;position:relative}
+.hero-actions{display:flex;gap:12px;margin-top:34px;position:relative;flex-wrap:wrap}
+.btn-primary{padding:12px 30px;background:var(--purple);color:white;font-family:'Syne',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.2s}
+.btn-primary:hover{background:var(--purple-glow)}
+.btn-ghost{padding:12px 30px;background:transparent;color:var(--gray);font-family:'Syne',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(124,92,191,0.3);cursor:pointer;transition:all 0.2s}
+.btn-ghost:hover{border-color:var(--purple);color:var(--light)}
+
+.riaa-hero{background:linear-gradient(135deg,rgba(201,168,76,0.07) 0%,rgba(10,10,12,0) 60%);border-top:1px solid rgba(201,168,76,0.2);border-bottom:1px solid rgba(201,168,76,0.12);padding:22px 40px;display:flex;align-items:center;gap:0;overflow-x:auto}
+.riaa-plaque{display:flex;align-items:center;gap:14px;flex-shrink:0;padding:0 28px}
+.riaa-medal{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:0.5px;flex-shrink:0;text-align:center;line-height:1.2}
+.medal-plat{background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.4);color:var(--gold)}
+.medal-gold{background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.22);color:#a88a3a}
+.medal-pitchfork{background:rgba(124,92,191,0.12);border:1px solid rgba(124,92,191,0.4);color:var(--purple-glow);font-size:13px}
+.riaa-plaque-title{font-size:12px;font-weight:700;color:var(--light);line-height:1.3;margin-bottom:2px}
+.riaa-plaque-sub{font-size:10px;color:var(--gray);letter-spacing:0.5px}
+.riaa-div{width:1px;height:36px;background:rgba(201,168,76,0.12);flex-shrink:0}
+
+.stats{padding:22px 40px;border-bottom:1px solid rgba(124,92,191,0.12);background:var(--dark2);display:flex;align-items:center;overflow-x:auto;gap:0}
+.stat{display:flex;flex-direction:column;gap:3px;flex-shrink:0;padding:0 26px}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--purple-glow);line-height:1}
+.stat-label{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray)}
+.stat-div{width:1px;height:30px;background:rgba(124,92,191,0.18);flex-shrink:0}
+
+.section{padding:80px 40px}
+.sec-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--purple);margin-bottom:12px}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5vw,60px);color:var(--light);letter-spacing:2px;margin-bottom:36px}
+
+.bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.bio-text p{font-size:14px;color:var(--gray);line-height:1.9;margin-bottom:16px}
+.bio-text strong{color:var(--light)}
+.bio-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.bio-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(124,92,191,0.3);color:var(--purple)}
+.highlights{display:flex;flex-direction:column;gap:2px}
+.hl{background:var(--dark2);padding:18px 22px;border-left:2px solid rgba(124,92,191,0.25);transition:border-color 0.2s}
+.hl:hover{border-left-color:var(--purple-glow)}
+.hl-title{font-size:13px;font-weight:700;color:var(--light);margin-bottom:3px}
+.hl-sub{font-size:11px;color:var(--gray)}
+.hl-gold{border-left-color:rgba(201,168,76,0.35)}
+.hl-gold:hover{border-left-color:var(--gold)}
+
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px}
+.proj{background:var(--dark2);overflow:hidden;cursor:pointer}
+.proj-cover{width:100%;aspect-ratio:1;background:var(--dark3);display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid rgba(124,92,191,0.1)}
+.proj-cover-text{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;color:rgba(124,92,191,0.18);text-align:center;padding:16px;line-height:1.3}
+.proj-badge{position:absolute;top:10px;right:10px;font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:4px 9px;background:rgba(124,92,191,0.85);color:white}
+.proj-gold{background:rgba(201,168,76,0.85);color:#1a1000}
+.proj-info{padding:18px}
+.proj-title{font-size:14px;font-weight:700;color:var(--light);margin-bottom:3px}
+.proj-meta{font-size:11px;color:var(--gray);margin-bottom:7px}
+.proj-credits{font-size:10px;color:var(--purple);line-height:1.6}
+
+.track-list{display:flex;flex-direction:column;gap:2px}
+.track{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:18px;padding:16px 20px;background:var(--dark2);border-left:2px solid transparent;transition:all 0.2s;cursor:pointer}
+.track:hover{background:var(--dark3);border-left-color:var(--purple)}
+.track-num{font-family:'Space Mono',monospace;font-size:11px;color:var(--gray)}
+.track-title{font-size:14px;font-weight:700;color:var(--light);margin-bottom:2px}
+.track-feat{font-size:11px;color:var(--gray)}
+.track-pill{font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:3px 8px;border:1px solid;flex-shrink:0}
+.pill-breakout{border-color:rgba(201,168,76,0.5);color:var(--gold)}
+.pill-gold{border-color:rgba(201,168,76,0.3);color:#a88a3a}
+.pill-iconic{border-color:rgba(124,92,191,0.4);color:var(--purple)}
+.pill-sig{border-color:rgba(136,136,153,0.3);color:var(--gray)}
+.pill-new{border-color:rgba(124,92,191,0.5);color:var(--purple-glow)}
+
+.press-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px}
+.press{background:var(--dark2);padding:24px;border-top:2px solid transparent;transition:border-color 0.2s;cursor:pointer}
+.press:hover{border-top-color:var(--purple)}
+.press-outlet{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
+.press-headline{font-size:13px;color:var(--light);line-height:1.5;font-weight:700;margin-bottom:8px}
+.press-snippet{font-size:11px;color:var(--gray);line-height:1.65;font-style:italic}
+.press-year{font-size:10px;color:rgba(136,136,153,0.55);margin-top:8px}
+
+.credits-wall{display:flex;flex-wrap:wrap;gap:6px}
+.credit-chip{padding:7px 14px;background:var(--dark2);border:1px solid rgba(124,92,191,0.15);transition:border-color 0.2s;display:flex;align-items:center;gap:6px;cursor:default}
+.credit-chip:hover{border-color:rgba(124,92,191,0.35)}
+.credit-name{font-size:12px;color:var(--light)}
+.credit-note{font-size:10px;color:var(--gray)}
+
+.social-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:2px}
+.soc{background:var(--dark2);padding:18px;border:1px solid rgba(124,92,191,0.1);cursor:pointer;transition:border-color 0.2s}
+.soc:hover{border-color:rgba(124,92,191,0.35)}
+.soc-platform{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:4px}
+.soc-handle{font-size:13px;font-weight:700;color:var(--light)}
+.soc-detail{font-size:11px;color:var(--gray);margin-top:2px}
+
+footer{padding:48px 40px;border-top:1px solid rgba(124,92,191,0.15);background:var(--dark1);display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+.footer-brand{font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:5px;color:var(--purple-glow)}
+.footer-tagline{font-size:11px;color:var(--gray);margin-top:6px;line-height:1.8}
+.footer-col-title{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:12px}
+.footer-links{display:flex;flex-direction:column;gap:9px}
+.footer-links a{font-size:12px;color:var(--gray);text-decoration:none;cursor:pointer;transition:color 0.2s}
+.footer-links a:hover{color:var(--light)}
+.footer-bottom{grid-column:1/-1;padding-top:20px;border-top:1px solid rgba(124,92,191,0.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-copy{font-size:10px;color:var(--gray);letter-spacing:1px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{animation:fadeUp 0.5s ease 0.1s both}
+.hero-name{animation:fadeUp 0.6s ease 0.25s both}
+.hero-desc{animation:fadeUp 0.55s ease 0.4s both}
+.hero-actions{animation:fadeUp 0.55s ease 0.55s both}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">JoogWorld</div>
+  <div class="nav-links">
+    <a>Music</a><a>Credits</a><a>Press</a><a>Label</a><a>Beats</a><a>Contact</a>
+  </div>
+  <button class="nav-cta">Stream Now</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-texture"></div>
+  <div class="hero-eyebrow">Los Angeles, CA · Crenshaw · Producer · Artist · Label Founder · HitMob</div>
+  <div class="hero-name">JOOG<span>SZN</span></div>
+  <div class="hero-desc">Architect of West Coast Traffic Music. RIAA-certified producer. 121K+ Spotify listeners. Breakout hit: "Vintage & Adventurous." Credits include Drakeo The Ruler, Shoreline Mafia, 03 Greedo, E-40, Earl Sweatshirt, Gunna & more. Co-founder of HitMob.</div>
+  <div class="hero-actions">
+    <button class="btn-primary">Where's Joog? — Stream Now</button>
+    <button class="btn-ghost">Buy Beats</button>
+    <button class="btn-ghost">Follow @JoogSzn</button>
+  </div>
+</section>
+
+<!-- RIAA BANNER -->
+<div class="riaa-hero">
+  <div class="riaa-plaque">
+    <div class="riaa-medal medal-gold">RIAA<br>GOLD</div>
+    <div>
+      <div class="riaa-plaque-title">Backend Credit — "Musty"</div>
+      <div class="riaa-plaque-sub">Shoreline Mafia · 2x Platinum · Atlantic Records</div>
+    </div>
+  </div>
+  <div class="riaa-div"></div>
+  <div class="riaa-plaque">
+    <div class="riaa-medal medal-gold">RIAA<br>GOLD</div>
+    <div>
+      <div class="riaa-plaque-title">Co-Producer — "Spaceship"</div>
+      <div class="riaa-plaque-sub">Shoreline Mafia · ShorelineDoThatShit · Atlantic Records</div>
+    </div>
+  </div>
+  <div class="riaa-div"></div>
+  <div class="riaa-plaque">
+    <div class="riaa-medal medal-gold">RIAA<br>GOLD</div>
+    <div>
+      <div class="riaa-plaque-title">Producer — ShorelineDoThatShit</div>
+      <div class="riaa-plaque-sub">Shoreline Mafia · RIAA Gold Album · 1B+ US Streams</div>
+    </div>
+  </div>
+  <div class="riaa-div"></div>
+  <div class="riaa-plaque">
+    <div class="riaa-medal medal-gold">RIAA<br>GOLD</div>
+    <div>
+      <div class="riaa-plaque-title">Producer — Mafia Bidness</div>
+      <div class="riaa-plaque-sub">Shoreline Mafia · RIAA Gold Album · Billboard 200 #27</div>
+    </div>
+  </div>
+  <div class="riaa-div"></div>
+  <div class="riaa-plaque">
+    <div class="riaa-medal medal-pitchfork">8.5</div>
+    <div>
+      <div class="riaa-plaque-title">Pitchfork 8.5 — Thank You For Using GTL</div>
+      <div class="riaa-plaque-sub">Drakeo The Ruler · Produced by JoogSZN · NPR Top 25</div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">121K+</div><div class="stat-label">Monthly Spotify</div></div>
+  <div class="stat-div"></div>
+  <div class="stat"><div class="stat-num">4 RIAA</div><div class="stat-label">Certifications</div></div>
+  <div class="stat-div"></div>
+  <div class="stat"><div class="stat-num">8.5</div><div class="stat-label">Pitchfork GTL</div></div>
+  <div class="stat-div"></div>
+  <div class="stat"><div class="stat-num">1B+</div><div class="stat-label">Shoreline Streams</div></div>
+  <div class="stat-div"></div>
+  <div class="stat"><div class="stat-num">NPR</div><div class="stat-label">Top 25 Albums H1</div></div>
+  <div class="stat-div"></div>
+  <div class="stat"><div class="stat-num">WaPo</div><div class="stat-label">Featured 2020</div></div>
+  <div class="stat-div"></div>
+  <div class="stat"><div class="stat-num">2015</div><div class="stat-label">HitMob Founded</div></div>
+</div>
+
+<!-- BIO -->
+<section class="section" style="background:var(--dark1)">
+  <div class="sec-label">About</div>
+  <div class="sec-title">The Story</div>
+  <div class="bio-grid">
+    <div class="bio-text">
+      <p>Growing up in <strong>Crenshaw District, Los Angeles</strong>, JoogSzn taught himself music production through the internet — starting by selling ringtones and mixed CDs in high school. Inspired by Quincy Jones, Pharrell, DJ Quik, and Pimp C, he built the woozy, paranoid funk that defines <strong>Traffic Music</strong>.</p>
+      <p>In 2015, Joog co-founded <strong>HitMob</strong> alongside AceTheFace and RonRonTheProducer. His breakout production credit came with <strong>"Vintage & Adventurous"</strong> by Conradfrmdaaves — a West Coast underground staple that put JoogSzn on the map. He also holds co-production and backend credits on <strong>Shoreline Mafia's ShorelineDoThatShit</strong> (Atlantic Records), a project that has accumulated over 1 billion US streams.</p>
+      <p>His defining moment came producing Drakeo The Ruler's <strong>Thank You For Using GTL</strong> (2020) — recorded entirely over an LA jail phone line. <strong>Pitchfork scored it 8.5</strong> and called it the greatest rap album ever recorded from jail. Washington Post, NPR All Things Considered, Passion of the Weiss, and Spectrum Culture all covered it as one of 2020's most important records.</p>
+      <p>In 2022, Joog stepped from the boards with debut album <strong>Where's Joog?</strong> on HitMob — 20 tracks featuring E-40, Earl Sweatshirt, Gunna, 03 Greedo, OHGEESY, Mozzy and more.</p>
+      <div class="bio-tags">
+        <div class="bio-tag">Producer</div><div class="bio-tag">Recording Artist</div><div class="bio-tag">Engineer</div><div class="bio-tag">Label Founder</div><div class="bio-tag">HitMob</div><div class="bio-tag">Traffic Music</div><div class="bio-tag">Crenshaw</div>
+      </div>
+    </div>
+    <div class="highlights">
+      <div class="hl hl-gold"><div class="hl-title">Breakout — "Vintage & Adventurous" (Conradfrmdaaves)</div><div class="hl-sub">Produced by JoogSzn · West Coast underground cornerstone · Remixed with Gunna, E-40, Mozzy</div></div>
+      <div class="hl hl-gold"><div class="hl-title">Thank You For Using GTL — Pitchfork 8.5</div><div class="hl-sub">Produced & Recorded · Drakeo The Ruler · 2020 · WaPo · NPR · Spectrum Culture</div></div>
+      <div class="hl hl-gold"><div class="hl-title">RIAA Backend Credit — "Musty" (2x Platinum)</div><div class="hl-sub">Shoreline Mafia · Atlantic Records · ShorelineDoThatShit</div></div>
+      <div class="hl"><div class="hl-title">Co-Producer — "Spaceship" w/ RonRon</div><div class="hl-sub">Shoreline Mafia · ShorelineDoThatShit · RIAA Gold Album</div></div>
+      <div class="hl"><div class="hl-title">Producer — Mafia Bidness (RIAA Gold)</div><div class="hl-sub">Shoreline Mafia · Billboard 200 #27 · Atlantic Records</div></div>
+      <div class="hl"><div class="hl-title">Where's Joog? — Debut Album via HitMob</div><div class="hl-sub">June 2022 · 20 Tracks · E-40, Earl Sweatshirt, Gunna, 03 Greedo</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" style="background:var(--dark2)">
+  <div class="sec-label">Discography</div>
+  <div class="sec-title">Projects</div>
+  <div class="proj-grid">
+    <div class="proj">
+      <div class="proj-cover"><div class="proj-cover-text">VINTAGE &<br>ADVENTUROUS</div><div class="proj-badge proj-gold">Breakout</div></div>
+      <div class="proj-info">
+        <div class="proj-title">Vintage & Adventurous</div>
+        <div class="proj-meta">Conradfrmdaaves · Produced by JoogSzn</div>
+        <div class="proj-credits">Original · Gunna Remix · Bay2LA Remix (E-40 · Mozzy) · West Coast staple · JoogSzn's defining production</div>
+      </div>
+    </div>
+    <div class="proj">
+      <div class="proj-cover"><div class="proj-cover-text">WHERE'S JOOG?</div><div class="proj-badge">Debut LP</div></div>
+      <div class="proj-info">
+        <div class="proj-title">Where's Joog?</div>
+        <div class="proj-meta">June 3, 2022 · HitMob · 20 Tracks</div>
+        <div class="proj-credits">E-40 · Mozzy · Earl Sweatshirt · 03 Greedo · Gunna · OHGEESY · Ralfy The Plug · Baby Smoove · Fenix Flexin</div>
+      </div>
+    </div>
+    <div class="proj">
+      <div class="proj-cover"><div class="proj-cover-text">THANK YOU FOR USING GTL</div><div class="proj-badge proj-gold">Pitchfork 8.5</div></div>
+      <div class="proj-info">
+        <div class="proj-title">Thank You For Using GTL</div>
+        <div class="proj-meta">2020 · Drakeo The Ruler · Produced + Recorded by JoogSzn</div>
+        <div class="proj-credits">NPR Top 25 · Washington Post · Pitchfork 8.5 · Passion of the Weiss · Spectrum Culture · Music Connection</div>
+      </div>
+    </div>
+    <div class="proj">
+      <div class="proj-cover"><div class="proj-cover-text">SHORELINEDOTHATSHIT</div><div class="proj-badge proj-gold">RIAA Gold</div></div>
+      <div class="proj-info">
+        <div class="proj-title">ShorelineDoThatShit</div>
+        <div class="proj-meta">Shoreline Mafia · Atlantic Records · JoogSZN Credits</div>
+        <div class="proj-credits">"Musty" (2x Plat, backend) · "Spaceship" (co-prod w/ RonRon) · 1B+ US Streams</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY TRACKS -->
+<section class="section" style="background:var(--dark1)">
+  <div class="sec-label">Catalog</div>
+  <div class="sec-title">Key Records</div>
+  <div class="track-list">
+    <div class="track">
+      <div class="track-num">01</div>
+      <div><div class="track-title">Vintage & Adventurous</div><div class="track-feat">Conradfrmdaaves · Produced by JoogSzn · Breakout production credit</div></div>
+      <div class="track-pill pill-breakout">Breakout</div>
+    </div>
+    <div class="track">
+      <div class="track-num">02</div>
+      <div><div class="track-title">Vintage & Adventurous (Bay2LA Remix)</div><div class="track-feat">Conradfrmdaaves · E-40 · Mozzy · Produced by JoogSzn</div></div>
+      <div class="track-pill pill-breakout">Remix</div>
+    </div>
+    <div class="track">
+      <div class="track-num">03</div>
+      <div><div class="track-title">Musty</div><div class="track-feat">Shoreline Mafia · Backend Credit · ShorelineDoThatShit · Atlantic Records</div></div>
+      <div class="track-pill pill-gold">2x Platinum</div>
+    </div>
+    <div class="track">
+      <div class="track-num">04</div>
+      <div><div class="track-title">Spaceship</div><div class="track-feat">Shoreline Mafia · Co-produced w/ RonRon · ShorelineDoThatShit · Atlantic Records</div></div>
+      <div class="track-pill pill-gold">RIAA Gold</div>
+    </div>
+    <div class="track">
+      <div class="track-num">05</div>
+      <div><div class="track-title">Backflip or Sumn</div><div class="track-feat">Drakeo The Ruler · Produced by JoogSzn · Traffic Music signature</div></div>
+      <div class="track-pill pill-iconic">Iconic</div>
+    </div>
+    <div class="track">
+      <div class="track-num">06</div>
+      <div><div class="track-title">Ion Rap Beef (Remix)</div><div class="track-feat">Drakeo The Ruler · 03 Greedo · Earl Sweatshirt · Produced by JoogSzn</div></div>
+      <div class="track-pill pill-iconic">Classic</div>
+    </div>
+    <div class="track">
+      <div class="track-num">07</div>
+      <div><div class="track-title">Champagne in My Wok</div><div class="track-feat">03 Greedo · OHGEESY · Z Money · LDthaMonsta · Produced by JoogSzn</div></div>
+      <div class="track-pill pill-sig">Hit</div>
+    </div>
+    <div class="track">
+      <div class="track-num">08</div>
+      <div><div class="track-title">GTA VI</div><div class="track-feat">Drakeo The Ruler · Thank You For Using GTL · Produced by JoogSzn</div></div>
+      <div class="track-pill pill-sig">Classic</div>
+    </div>
+    <div class="track">
+      <div class="track-num">09</div>
+      <div><div class="track-title">Tell You the Truth</div><div class="track-feat">JoogSzn · Solo Single</div></div>
+      <div class="track-pill pill-new">Single</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="section" style="background:var(--dark2)">
+  <div class="sec-label">Recognition</div>
+  <div class="sec-title">Press & Features</div>
+  <div class="press-grid">
+    <div class="press">
+      <div class="press-outlet">Washington Post · June 2020</div>
+      <div class="press-headline">"The Most Urgent Rap Album of the Year"</div>
+      <div class="press-snippet">Washington Post called GTL the most urgent rap album of 2020 — covering JoogSzn's unprecedented jail-phone recording method.</div>
+      <div class="press-year">washingtonpost.com</div>
+    </div>
+    <div class="press">
+      <div class="press-outlet">NPR / All Things Considered · Aug 2020</div>
+      <div class="press-headline">Prison Telecom Indicted By a Rap Album Recorded in Jail</div>
+      <div class="press-snippet">NPR featured Joog extensively, placing GTL on NPR Music's Top 25 Albums of H1 2020. Aired nationally to millions.</div>
+      <div class="press-year">npr.org</div>
+    </div>
+    <div class="press">
+      <div class="press-outlet">Pitchfork · 2020</div>
+      <div class="press-headline">8.5/10 — "Likely the Greatest Rap Album Ever Recorded from Jail"</div>
+      <div class="press-snippet">Pitchfork's Matthew Ismael Ruiz called GTL an unparalleled achievement, ranking it #32 on the 50 Best Albums of 2020.</div>
+      <div class="press-year">pitchfork.com</div>
+    </div>
+    <div class="press">
+      <div class="press-outlet">Okayplayer · 2022 & 2024</div>
+      <div class="press-headline">Behind the Beat: JoogSZN on Why Drakeo The Ruler Is One of the LA Greats</div>
+      <div class="press-snippet">Okayplayer profiled Joog as a fellow architect of Traffic Music who has altered the sonic template of West Coast rap.</div>
+      <div class="press-year">okayplayer.com</div>
+    </div>
+    <div class="press">
+      <div class="press-outlet">The FADER · June 2022</div>
+      <div class="press-headline">JoogSzn Drops Debut Album, Where's Joog?</div>
+      <div class="press-snippet">FADER covered Joog's debut, profiling his powerful LA hip-hop resume and transition from producer to solo artist.</div>
+      <div class="press-year">thefader.com</div>
+    </div>
+    <div class="press">
+      <div class="press-outlet">Knock LA · April 2024</div>
+      <div class="press-headline">One of LA's Most Influential Music Producers</div>
+      <div class="press-snippet">Deep profile covering Joog's Crenshaw roots, HitMob founding, GTL recording sessions, and influence on LA rap.</div>
+      <div class="press-year">knock-la.com</div>
+    </div>
+    <div class="press">
+      <div class="press-outlet">Passion of the Weiss · June 2020</div>
+      <div class="press-headline">"The Best Jail Rap Album Ever"</div>
+      <div class="press-snippet">POW called GTL miraculous — praising Joog's icy, minimal productions as the perfect backdrop for Drakeo's locked-in verses.</div>
+      <div class="press-year">passionweiss.com</div>
+    </div>
+    <div class="press">
+      <div class="press-outlet">Spectrum Culture · June 2020</div>
+      <div class="press-headline">A Testament to the Irrepressible Power of Art</div>
+      <div class="press-snippet">Spectrum Culture praised JoogSZN's stripped-down beats as the perfect pedestal for Drakeo — calling GTL unimpeachable.</div>
+      <div class="press-year">spectrumculture.com</div>
+    </div>
+    <div class="press">
+      <div class="press-outlet">Flypaper / Soundfly · 2020</div>
+      <div class="press-headline">Recording Drakeo The Ruler Over the Phone from Jail</div>
+      <div class="press-snippet">Deep dive into the jail-phone recording process — 36 hours of sessions, weeks of mixing, Joog's vision as protest tape.</div>
+      <div class="press-year">flypaper.soundfly.com</div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDITS -->
+<section class="section" style="background:var(--dark1)">
+  <div class="sec-label">Production Credits</div>
+  <div class="sec-title">Who Joog Has Worked With</div>
+  <div class="credits-wall">
+    <div class="credit-chip"><div class="credit-name">Drakeo The Ruler</div><div class="credit-note">Prod / Eng</div></div>
+    <div class="credit-chip"><div class="credit-name">Shoreline Mafia</div><div class="credit-note">Co-Prod / Backend</div></div>
+    <div class="credit-chip"><div class="credit-name">03 Greedo</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Conradfrmdaaves</div><div class="credit-note">Prod (Breakout)</div></div>
+    <div class="credit-chip"><div class="credit-name">E-40</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Mozzy</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Earl Sweatshirt</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Gunna</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">OHGEESY</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Ralfy The Plug</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Baby Smoove</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Fenix Flexin</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Problem</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">KYLE</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">G Perico</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Big Sad 1900</div><div class="credit-note">Co-Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">1TakeJay</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">MoneySign $uede</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Larry June</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">Rucci</div><div class="credit-note">Prod</div></div>
+    <div class="credit-chip"><div class="credit-name">AceTheFace</div><div class="credit-note">HitMob</div></div>
+    <div class="credit-chip"><div class="credit-name">RonRonTheProducer</div><div class="credit-note">HitMob</div></div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="section" style="background:var(--dark2)">
+  <div class="sec-label">Find Joog</div>
+  <div class="sec-title">Stream, Follow & Buy Beats</div>
+  <div class="social-row">
+    <div class="soc"><div class="soc-platform">Instagram</div><div class="soc-handle">@JoogSzn</div><div class="soc-detail">All links in bio</div></div>
+    <div class="soc"><div class="soc-platform">Spotify</div><div class="soc-handle">JoogSzn</div><div class="soc-detail">121K Monthly Listeners</div></div>
+    <div class="soc"><div class="soc-platform">Apple Music</div><div class="soc-handle">JoogSzn: The Producers</div><div class="soc-detail">48 Song Official Playlist</div></div>
+    <div class="soc"><div class="soc-platform">BeatStars</div><div class="soc-handle">Buy Beats</div><div class="soc-detail">Leases · Stems · Exclusives</div></div>
+    <div class="soc"><div class="soc-platform">Genius</div><div class="soc-handle">genius.com/artists/Joogszn</div><div class="soc-detail">Full producer credits</div></div>
+    <div class="soc"><div class="soc-platform">Booking / Business</div><div class="soc-handle">biz4joog@gmail.com</div><div class="soc-detail">Beats · Features · Press</div></div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-brand">JoogWorld</div>
+    <div class="footer-tagline">Producer · Artist · Label · HitMob<br>Los Angeles, California<br>© 2025 JoogSzn. All Rights Reserved.</div>
+  </div>
+  <div>
+    <div class="footer-col-title">Navigate</div>
+    <div class="footer-links"><a>Music</a><a>Credits</a><a>Press</a><a>Label / HitMob</a><a>Buy Beats</a></div>
+  </div>
+  <div>
+    <div class="footer-col-title">Contact</div>
+    <div class="footer-links"><a>Bookings</a><a>Press Inquiries</a><a>Beat Licensing</a><a>biz4joog@gmail.com</a></div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">Joogworld.com · @JoogSzn on all platforms</div>
+    <div class="footer-copy">Traffic Music forever.</div>
+  </div>
+</footer>
+</body>
+</html>
