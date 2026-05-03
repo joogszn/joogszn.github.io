@@ -128,9 +128,72 @@ footer{background:#07070d;border-top:1px solid rgba(139,92,246,0.1);padding:48px
 .hero-name{animation:fadeUp 0.5s ease 0.2s both}
 .hero-sub{animation:fadeUp 0.5s ease 0.35s both}
 .hero-btns{animation:fadeUp 0.45s ease 0.5s both}
+
+/* ================= 3D + RAZZLE DAZZLE ================= */
+#three-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0.55}
+#particles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+#cursor-glow{position:fixed;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.18) 0%,rgba(139,92,246,0.06) 30%,transparent 60%);pointer-events:none;z-index:3;transform:translate(-50%,-50%);transition:opacity 0.3s;mix-blend-mode:screen;filter:blur(20px)}
+.bg-noise{position:fixed;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.36 0 0 0 0 0.96 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");pointer-events:none;z-index:2;opacity:0.5}
+nav{z-index:1000 !important}
+.hero, section, footer, .plaques, .hero-stats{position:relative;z-index:10}
+
+/* 3D tilt on plaques + projects + press cards + chips */
+.plq, .proj, .press-card, .soc{transform-style:preserve-3d;transition:transform 0.18s ease-out,border-color 0.15s,background 0.15s,box-shadow 0.3s;will-change:transform}
+.plaques{perspective:1400px}
+.proj-grid, .press-grid, .connect-grid{perspective:1400px}
+.plq:hover, .proj:hover, .press-card:hover, .soc:hover{box-shadow:0 30px 60px rgba(139,92,246,0.18)}
+
+/* Title chromatic split — 3D PAPE-style for the hero */
+.hero-name{position:relative}
+.hero-name::before, .hero-name::after{content:attr(data-text);position:absolute;inset:0;pointer-events:none;font-family:inherit;font-size:inherit;letter-spacing:inherit;line-height:inherit;mix-blend-mode:screen;opacity:0;transition:opacity 0.3s, transform 0.15s ease-out}
+.hero-name:hover::before, .hero-name:hover::after{opacity:0.55}
+.hero-name::before{color:#00d4ff;transform:translate(-3px,1px)}
+.hero-name::after{color:#e8362a;transform:translate(3px,-1px)}
+
+/* Animated shimmer on .szn span */
+@keyframes shimmerSzn{0%{background-position:-200% center}100%{background-position:200% center}}
+.hero-name .szn{background:linear-gradient(110deg,#a78bfa 0%,#a78bfa 30%,#c9a84c 50%,#a78bfa 70%,#a78bfa 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerSzn 8s ease-in-out infinite;color:transparent}
+
+/* Plaque icon — pulse glow */
+.plq:hover .plq-icon{box-shadow:0 0 24px rgba(201,168,76,0.55);border-color:rgba(201,168,76,0.85)}
+
+/* Track row — motion line on hover */
+.track::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(139,92,246,0.06),transparent);transform:translateX(-100%);transition:transform 0.6s ease;pointer-events:none}
+.track{position:relative;overflow:hidden}
+.track:hover::before{transform:translateX(100%)}
+
+/* Reveal on scroll */
+.reveal-up{opacity:0;transform:translateY(40px);transition:opacity 0.9s cubic-bezier(0.2,0.8,0.2,1),transform 0.9s cubic-bezier(0.2,0.8,0.2,1)}
+.reveal-up.visible{opacity:1;transform:translateY(0)}
+
+/* CTA buttons — neon shimmer pass */
+.btn-main{position:relative;overflow:hidden}
+.btn-main::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,0.35) 50%,transparent 70%);transform:translateX(-100%);transition:transform 0.6s ease;pointer-events:none}
+.btn-main:hover::before{transform:translateX(100%)}
+
+/* Hide cursor-glow on touch devices */
+@media (hover: none){#cursor-glow{display:none}}
+
+@media(max-width:760px){
+  .bg-noise{opacity:0.3}
+  #three-canvas{opacity:0.4}
+  #particles{opacity:0.6}
+  #cursor-glow{display:none}
+  nav{padding:14px 18px}
+  .hero{padding:0 20px}
+  .section{padding:50px 20px}
+  .plaques{padding:14px 20px}
+  footer{padding:36px 20px;grid-template-columns:1fr;gap:28px}
+  .bio-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
+<canvas id="three-canvas"></canvas>
+<canvas id="particles"></canvas>
+<div class="bg-noise"></div>
+<div id="cursor-glow"></div>
+
 <nav>
   <div class="nav-logo">JoogWorld</div>
   <div class="nav-links">
@@ -148,7 +211,7 @@ footer{background:#07070d;border-top:1px solid rgba(139,92,246,0.1);padding:48px
   <div class="hero-glow"></div>
   <div class="hero-body">
     <div class="hero-eyebrow">Producer &middot; Engineer &middot; Artist</div>
-    <div class="hero-name">JOOG<span class="szn">SZN</span></div>
+    <div class="hero-name" data-text="JOOGSZN">JOOG<span class="szn">SZN</span></div>
     <div class="hero-sub">Platinum Certified. The Sound You&rsquo;ve Been Hearing.</div>
     <div class="hero-btns">
       <button class="btn-main" onclick="window.open('https://open.spotify.com/artist/3sQcHDk4dv5aUVBtmXOMVo','_blank')">Stream Where's Joog?</button>
@@ -420,5 +483,337 @@ footer{background:#07070d;border-top:1px solid rgba(139,92,246,0.1);padding:48px
     <div class="ft-copy">Traffic Music forever.</div>
   </div>
 </footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "three":             "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+    "three/addons/":     "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/",
+    "troika-three-text": "https://cdn.jsdelivr.net/npm/troika-three-text@0.49.0/+esm"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { Text } from 'troika-three-text';
+
+const canvas = document.getElementById('three-canvas');
+const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 100);
+camera.position.set(0, 0, 14);
+
+scene.add(new THREE.AmbientLight(0xffffff, 0.35));
+const key = new THREE.DirectionalLight(0xfff5dd, 1.4); key.position.set(5, 8, 6); scene.add(key);
+const purpleFill = new THREE.PointLight(0x8b5cf6, 1.8, 36); purpleFill.position.set(-5, -2, 5); scene.add(purpleFill);
+const goldRim = new THREE.PointLight(0xc9a84c, 0.9, 28); goldRim.position.set(6, -3, -3); scene.add(goldRim);
+const purpleRim = new THREE.PointLight(0xa78bfa, 0.6, 28); purpleRim.position.set(-3, 6, -2); scene.add(purpleRim);
+
+const composition = new THREE.Group();
+composition.position.set(4.5, 1.0, -1);
+scene.add(composition);
+
+// Platinum plaque — recessed gold rect with darker plate
+{
+  const grp = new THREE.Group();
+  const plate = new THREE.Mesh(
+    new THREE.BoxGeometry(2.4, 3.0, 0.12),
+    new THREE.MeshStandardMaterial({color:0x1a1530, roughness:0.5, metalness:0.85})
+  );
+  grp.add(plate);
+  const goldFace = new THREE.Mesh(
+    new THREE.BoxGeometry(2.0, 2.6, 0.04),
+    new THREE.MeshStandardMaterial({color:0xc9a84c, roughness:0.18, metalness:0.95, emissive:0x3a2a00, emissiveIntensity:0.22})
+  );
+  goldFace.position.z = 0.08;
+  grp.add(goldFace);
+  // Center disc on plaque (record)
+  const disc = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.7, 0.7, 0.02, 48),
+    new THREE.MeshStandardMaterial({color:0x0a0a0f, roughness:0.4, metalness:0.7})
+  );
+  disc.rotation.x = Math.PI/2;
+  disc.position.z = 0.11;
+  grp.add(disc);
+  const hole = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.04, 0.04, 0.04, 16),
+    new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.95})
+  );
+  hole.rotation.x = Math.PI/2;
+  hole.position.z = 0.12;
+  grp.add(hole);
+  grp.position.set(0, 0.4, 0);
+  grp.rotation.set(-0.1, -0.18, 0.06);
+  composition.add(grp);
+}
+
+// Floating vinyl record beside the plaque
+{
+  const grp = new THREE.Group();
+  const vinyl = new THREE.Mesh(
+    new THREE.CylinderGeometry(1.4, 1.4, 0.06, 64),
+    new THREE.MeshStandardMaterial({color:0x06060a, roughness:0.3, metalness:0.65})
+  );
+  vinyl.rotation.x = Math.PI/2;
+  grp.add(vinyl);
+  const vlabel = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.5, 0.5, 0.07, 32),
+    new THREE.MeshStandardMaterial({color:0x8b5cf6, roughness:0.3, metalness:0.6, emissive:0x4c1d95, emissiveIntensity:0.4})
+  );
+  vlabel.rotation.x = Math.PI/2;
+  grp.add(vlabel);
+  grp.position.set(-2.4, -1.6, 0.4);
+  grp.rotation.set(0.18, 0, 0.12);
+  composition.add(grp);
+}
+
+// Cassette tape silhouette (boxy, retro feel)
+{
+  const grp = new THREE.Group();
+  const body = new THREE.Mesh(
+    new THREE.BoxGeometry(1.4, 0.9, 0.18),
+    new THREE.MeshStandardMaterial({color:0x4c1d95, roughness:0.4, metalness:0.6})
+  );
+  grp.add(body);
+  const window2 = new THREE.Mesh(
+    new THREE.BoxGeometry(1.1, 0.4, 0.04),
+    new THREE.MeshStandardMaterial({color:0x0a0a0f, roughness:0.2, metalness:0.85})
+  );
+  window2.position.z = 0.1;
+  grp.add(window2);
+  // Two reels
+  for (let i = 0; i < 2; i++) {
+    const reel = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.12, 0.12, 0.06, 16),
+      new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.9, roughness:0.3})
+    );
+    reel.rotation.x = Math.PI/2;
+    reel.position.set(i === 0 ? -0.32 : 0.32, 0, 0.12);
+    grp.add(reel);
+  }
+  grp.position.set(1.6, 1.7, 0.6);
+  grp.rotation.set(-0.2, 0.4, 0.08);
+  composition.add(grp);
+}
+
+// 3D "TRAFFIC MUSIC" tagline — Bebas Neue, off to lower left
+const titleGroup = new THREE.Group();
+scene.add(titleGroup);
+const BEBAS = 'https://cdn.jsdelivr.net/npm/@fontsource/bebas-neue@5.0.18/files/bebas-neue-latin-400-normal.woff';
+
+function makeText(opts){
+  const t = new Text();
+  t.text = opts.text;
+  t.font = BEBAS;
+  t.fontSize = opts.size;
+  t.letterSpacing = opts.spacing || 0.04;
+  t.anchorX = 'center';
+  t.anchorY = 'middle';
+  t.position.copy(opts.pos);
+  t.material = opts.material;
+  if (opts.outline) {
+    t.outlineWidth = opts.outlineWidth || 0.04;
+    t.outlineColor = opts.outline;
+    t.outlineBlur = 0.04;
+    t.outlineOpacity = 0.9;
+  }
+  return t;
+}
+
+const tagMain = makeText({
+  text: 'TRAFFIC\nMUSIC',
+  size: 1.6, spacing: 0.04,
+  pos: new THREE.Vector3(-4.2, -1.6, 1.5),
+  material: new THREE.MeshStandardMaterial({color:0xf0ecfa, emissive:0xa78bfa, emissiveIntensity:0.4, metalness:0.6, roughness:0.25}),
+  outline: 0xc9a84c, outlineWidth: 0.03,
+});
+titleGroup.add(tagMain);
+
+const tagGhostP = makeText({
+  text: 'TRAFFIC\nMUSIC',
+  size: 1.6, spacing: 0.04,
+  pos: new THREE.Vector3(-4.16, -1.6, 1.4),
+  material: new THREE.MeshBasicMaterial({color:0x8b5cf6, transparent:true, opacity:0.13}),
+});
+titleGroup.add(tagGhostP);
+
+const tagGhostG = makeText({
+  text: 'TRAFFIC\nMUSIC',
+  size: 1.6, spacing: 0.04,
+  pos: new THREE.Vector3(-4.24, -1.6, 1.4),
+  material: new THREE.MeshBasicMaterial({color:0xc9a84c, transparent:true, opacity:0.10}),
+});
+titleGroup.add(tagGhostG);
+
+[tagMain, tagGhostP, tagGhostG].forEach(t => t.sync());
+
+// Cinematic Cyberpunk shader pass — purple/gold tuned
+const composer = new EffectComposer(renderer);
+composer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+composer.setSize(window.innerWidth, window.innerHeight);
+composer.addPass(new RenderPass(scene, camera));
+
+const CinematicShader = {
+  uniforms: {
+    tDiffuse: { value: null },
+    uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+    uTime: { value: 0 },
+    uPixelSize: { value: 2.5 },
+    uChromaStrength: { value: 0.5 },
+    uDitherStrength: { value: 0.16 },
+    uPosterize: { value: 24.0 },
+    uVignette: { value: 0.32 },
+  },
+  vertexShader: `varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
+  fragmentShader: `
+    uniform sampler2D tDiffuse;uniform vec2 uResolution;uniform float uTime,uPixelSize,uChromaStrength,uDitherStrength,uPosterize,uVignette;varying vec2 vUv;
+    float bayer4(vec2 p){const float m[16]=float[16](0.0,8.0,2.0,10.0,12.0,4.0,14.0,6.0,3.0,11.0,1.0,9.0,15.0,7.0,13.0,5.0);int x=int(mod(p.x,4.0));int y=int(mod(p.y,4.0));return m[y*4+x]/16.0;}
+    void main(){
+      vec2 px=uPixelSize/uResolution;
+      vec2 puv=floor(vUv/px)*px+px*0.5;
+      vec2 dir=puv-0.5;float dist=length(dir);
+      float chroma=uChromaStrength*(0.0008+0.0024*dist);
+      vec3 col;
+      // Purple-tinted chromatic offset (R is purple-shift, B is gold-shift)
+      col.r=texture2D(tDiffuse,puv+dir*chroma*1.6).r;
+      col.g=texture2D(tDiffuse,puv).g;
+      col.b=texture2D(tDiffuse,puv-dir*chroma*1.6).b;
+      col=floor(col*uPosterize)/uPosterize;
+      vec2 pc=floor(vUv*uResolution/uPixelSize);
+      float d=bayer4(pc)-0.5;
+      col+=d*uDitherStrength*0.07;
+      float vig=smoothstep(0.95,0.25,dist);
+      col*=mix(1.0,vig,uVignette);
+      gl_FragColor=vec4(col,1.0);
+    }`
+};
+const cinematicPass = new ShaderPass(CinematicShader);
+composer.addPass(cinematicPass);
+composer.addPass(new OutputPass());
+
+// Mouse-tracking + scroll
+let mouseX=0,mouseY=0,targetX=0,targetY=0,scrollY=0;
+const cursorGlow = document.getElementById('cursor-glow');
+window.addEventListener('mousemove', e => {
+  targetX=(e.clientX/window.innerWidth-0.5)*2;
+  targetY=(e.clientY/window.innerHeight-0.5)*2;
+  if (cursorGlow){ cursorGlow.style.left=e.clientX+'px'; cursorGlow.style.top=e.clientY+'px'; }
+});
+window.addEventListener('touchmove', e => {
+  if (!e.touches[0]) return;
+  targetX=(e.touches[0].clientX/window.innerWidth-0.5)*2;
+  targetY=(e.touches[0].clientY/window.innerHeight-0.5)*2;
+}, {passive:true});
+window.addEventListener('scroll', ()=>{ scrollY=window.scrollY; }, {passive:true});
+window.addEventListener('resize', ()=>{
+  camera.aspect=window.innerWidth/window.innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  composer.setSize(window.innerWidth, window.innerHeight);
+  cinematicPass.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
+});
+
+const clock = new THREE.Clock();
+function animate(){
+  const t = clock.getElapsedTime();
+  mouseX += (targetX-mouseX)*0.04; mouseY += (targetY-mouseY)*0.04;
+  composition.rotation.y = mouseX*0.12 + Math.sin(t*0.3)*0.04;
+  composition.rotation.x = -mouseY*0.08 + Math.sin(t*0.4)*0.03;
+  composition.position.y = 1.0 - scrollY*0.0010 + Math.sin(t*0.5)*0.08;
+  if (composition.children[0]) composition.children[0].rotation.y = -0.18 + Math.sin(t*0.5)*0.06;
+  if (composition.children[1]) composition.children[1].rotation.y = t*0.5;
+  if (composition.children[2]) composition.children[2].rotation.y = 0.4 + Math.sin(t*0.7)*0.08;
+  titleGroup.rotation.y = mouseX*0.06; titleGroup.rotation.x = -mouseY*0.04;
+  titleGroup.position.y = -scrollY*0.0006;
+  const c = 0.04+Math.abs(mouseX)*0.05;
+  tagGhostP.position.x = -4.2+c; tagGhostG.position.x = -4.2-c;
+  camera.position.x = mouseX*0.3; camera.position.y = -mouseY*0.2;
+  camera.lookAt(0,0,0);
+  cinematicPass.uniforms.uTime.value = t;
+  if (window.innerWidth < 760) renderer.render(scene, camera); else composer.render();
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Particle field — purple + gold
+const pcanvas = document.getElementById('particles');
+const pctx = pcanvas.getContext('2d');
+function sz(){ pcanvas.width=window.innerWidth; pcanvas.height=window.innerHeight; }
+sz(); window.addEventListener('resize', sz);
+const isMobile = window.matchMedia('(max-width: 760px)').matches;
+const ps = Array.from({length: isMobile ? 14 : 28}, () => ({
+  x: Math.random()*window.innerWidth,
+  y: Math.random()*window.innerHeight,
+  vy: -0.12 - Math.random()*0.35,
+  vx: (Math.random()-0.5)*0.12,
+  r: 0.6 + Math.random()*1.5,
+  a: 0.15 + Math.random()*0.45,
+  hue: Math.random()<0.6 ? 'purple' : 'gold'
+}));
+function tick(){
+  pctx.clearRect(0,0,pcanvas.width,pcanvas.height);
+  for (const p of ps){
+    p.x+=p.vx; p.y+=p.vy;
+    if (p.y<-10){ p.y=pcanvas.height+10; p.x=Math.random()*pcanvas.width; }
+    if (p.x<-10) p.x=pcanvas.width+10;
+    if (p.x>pcanvas.width+10) p.x=-10;
+    pctx.beginPath();
+    pctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+    if (p.hue === 'purple'){
+      pctx.fillStyle = `rgba(167,139,250,${p.a})`;
+      pctx.shadowColor = 'rgba(139,92,246,0.7)';
+    } else {
+      pctx.fillStyle = `rgba(201,168,76,${p.a*0.8})`;
+      pctx.shadowColor = 'rgba(201,168,76,0.7)';
+    }
+    pctx.shadowBlur = 8;
+    pctx.fill();
+  }
+  requestAnimationFrame(tick);
+}
+tick();
+
+// 3D tilt on plaques + projects + press cards + socials
+function bindTilt(sel, rxAmp, ryAmp){
+  document.querySelectorAll(sel).forEach(el => {
+    el.addEventListener('mousemove', e => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+      const rx = (y - 0.5) * -rxAmp;
+      const ry = (x - 0.5) * ryAmp;
+      el.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+    });
+    el.addEventListener('mouseleave', ()=>{ el.style.transform = ''; });
+  });
+}
+bindTilt('.plq', 8, 10);
+bindTilt('.proj', 6, 8);
+bindTilt('.press-card', 6, 8);
+bindTilt('.soc', 5, 7);
+
+// Reveal-on-scroll for major sections
+document.querySelectorAll('.section, .plaques, .hero-stats, footer').forEach(el => el.classList.add('reveal-up'));
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal-up').forEach(el => io.observe(el));
+
+// Honor reduced motion — disable all 3D + particles
+if (matchMedia('(prefers-reduced-motion: reduce)').matches){
+  canvas.style.display='none';
+  pcanvas.style.display='none';
+  if (cursorGlow) cursorGlow.style.display='none';
+  document.querySelectorAll('.reveal-up').forEach(el => el.classList.add('visible'));
+}
+</script>
+
 </body>
 </html>
