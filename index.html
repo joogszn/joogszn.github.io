@@ -503,7 +503,7 @@ import { Text } from 'troika-three-text';
 
 const canvas = document.getElementById('three-canvas');
 const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 760 ? 1.5 : 2));
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
@@ -657,7 +657,7 @@ titleGroup.add(tagGhostG);
 
 // Cinematic Cyberpunk shader pass — purple/gold tuned
 const composer = new EffectComposer(renderer);
-composer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+composer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 760 ? 1.5 : 2));
 composer.setSize(window.innerWidth, window.innerHeight);
 composer.addPass(new RenderPass(scene, camera));
 
@@ -712,6 +712,31 @@ window.addEventListener('touchmove', e => {
   targetX=(e.touches[0].clientX/window.innerWidth-0.5)*2;
   targetY=(e.touches[0].clientY/window.innerHeight-0.5)*2;
 }, {passive:true});
+// Device orientation (phone tilt) — drives parallax on mobile
+function attachGyro(){
+  window.addEventListener('deviceorientation', e => {
+    if (e.gamma == null || e.beta == null) return;
+    // gamma = left-right tilt (-90..90), beta = front-back tilt (-180..180)
+    targetX = Math.max(-1, Math.min(1, e.gamma / 30));
+    targetY = Math.max(-1, Math.min(1, (e.beta - 45) / 45));
+  }, true);
+}
+// iOS 13+ requires explicit user gesture to enable motion sensors
+if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
+  // Will attach on first tap anywhere on page
+  const handler = () => {
+    DeviceOrientationEvent.requestPermission().then(s => {
+      if (s === 'granted') attachGyro();
+    }).catch(()=>{});
+    document.removeEventListener('touchstart', handler);
+    document.removeEventListener('click', handler);
+  };
+  document.addEventListener('touchstart', handler, {once: true});
+  document.addEventListener('click', handler, {once: true});
+} else if (window.DeviceOrientationEvent) {
+  attachGyro();
+}
+
 window.addEventListener('scroll', ()=>{ scrollY=window.scrollY; }, {passive:true});
 window.addEventListener('resize', ()=>{
   camera.aspect=window.innerWidth/window.innerHeight; camera.updateProjectionMatrix();
@@ -737,7 +762,7 @@ function animate(){
   camera.position.x = mouseX*0.3; camera.position.y = -mouseY*0.2;
   camera.lookAt(0,0,0);
   cinematicPass.uniforms.uTime.value = t;
-  if (window.innerWidth < 760) renderer.render(scene, camera); else composer.render();
+  composer.render();
   requestAnimationFrame(animate);
 }
 animate();
@@ -748,7 +773,7 @@ const pctx = pcanvas.getContext('2d');
 function sz(){ pcanvas.width=window.innerWidth; pcanvas.height=window.innerHeight; }
 sz(); window.addEventListener('resize', sz);
 const isMobile = window.matchMedia('(max-width: 760px)').matches;
-const ps = Array.from({length: isMobile ? 14 : 28}, () => ({
+const ps = Array.from({length: isMobile ? 22 : 28}, () => ({
   x: Math.random()*window.innerWidth,
   y: Math.random()*window.innerHeight,
   vy: -0.12 - Math.random()*0.35,
