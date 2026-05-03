@@ -811,6 +811,106 @@ titleGroup.add(tagGhostG);
 
 [tagMain, tagGhostP, tagGhostG].forEach(t => t.sync());
 
+
+// =====================================================================
+// LIQUID DISTORTION PLANE behind hero — cursor warps it via vertex shader
+// =====================================================================
+const liquidGeo = new THREE.PlaneGeometry(28, 16, 64, 36);
+const liquidMat = new THREE.ShaderMaterial({
+  transparent: true,
+  side: THREE.DoubleSide,
+  uniforms: {
+    uTime: { value: 0 },
+    uMouse: { value: new THREE.Vector2(0, 0) },
+    uColorA: { value: new THREE.Color(0x4c1d95) },
+    uColorB: { value: new THREE.Color(0xc9a84c) },
+  },
+  vertexShader: `
+    uniform float uTime;
+    uniform vec2 uMouse;
+    varying vec2 vUv;
+    varying float vDist;
+    void main(){
+      vUv = uv;
+      vec3 pos = position;
+      float d = distance(uv * 2.0 - 1.0, uMouse);
+      vDist = d;
+      // Cursor pushes a wave in z
+      pos.z += (1.0 - smoothstep(0.0, 0.85, d)) * 1.4;
+      // Ambient gentle wave
+      pos.z += sin(pos.x * 0.5 + uTime * 0.6) * 0.18;
+      pos.z += cos(pos.y * 0.6 + uTime * 0.5) * 0.12;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+    }
+  `,
+  fragmentShader: `
+    uniform float uTime;
+    uniform vec3 uColorA;
+    uniform vec3 uColorB;
+    varying vec2 vUv;
+    varying float vDist;
+    void main(){
+      // Subtle color blend driven by uv + cursor proximity
+      float bandX = sin(vUv.x * 10.0 - uTime * 0.4) * 0.5 + 0.5;
+      vec3 col = mix(uColorA, uColorB, bandX * 0.6 + (1.0 - vDist) * 0.4);
+      float alpha = (1.0 - vDist) * 0.18;
+      alpha *= smoothstep(1.0, 0.4, vDist);
+      gl_FragColor = vec4(col, alpha);
+    }
+  `,
+});
+const liquidPlane = new THREE.Mesh(liquidGeo, liquidMat);
+liquidPlane.position.set(0, 0, -6);
+scene.add(liquidPlane);
+
+// =====================================================================
+// AUDIO-REACTIVE STYLE BARS — fake-driven for now (sine waves), will
+// hook to <audio> getByteFrequencyData when iTunes previews ship
+// =====================================================================
+const barCount = 64;
+const bars = new THREE.Group();
+const barGeo = new THREE.BoxGeometry(0.18, 1, 0.18);
+const barColors = [0x8b5cf6, 0xa78bfa, 0xc9a84c];
+for (let i = 0; i < barCount; i++){
+  const m = new THREE.Mesh(
+    barGeo,
+    new THREE.MeshStandardMaterial({
+      color: barColors[i % 3],
+      emissive: barColors[i % 3],
+      emissiveIntensity: 0.7,
+      metalness: 0.6,
+      roughness: 0.3,
+      transparent: true,
+      opacity: 0.65,
+    })
+  );
+  const x = (i - barCount / 2) * 0.32;
+  m.position.set(x, -3.4, -2);
+  m.userData = { phase: i * 0.18, base: -3.4 };
+  bars.add(m);
+}
+scene.add(bars);
+
+// =====================================================================
+// SCROLL-DRIVEN CAMERA FLY-THROUGH — Catmull-Rom path
+// =====================================================================
+const camPath = new THREE.CatmullRomCurve3([
+  new THREE.Vector3(0, 0, 14),       // hero straight-on
+  new THREE.Vector3(2.5, -0.5, 12),  // tilt right as user enters plaques
+  new THREE.Vector3(4, 1, 8),        // close in on plaque cluster
+  new THREE.Vector3(-1, 2, 9),       // swing left for projects
+  new THREE.Vector3(-3, -1, 11),     // dip for press
+  new THREE.Vector3(0, 0, 13),       // recenter for credits
+  new THREE.Vector3(2, -2, 16),      // pull back for beats
+  new THREE.Vector3(0, 0, 14),       // resolve to start framing
+], false, 'catmullrom', 0.5);
+
+let scrollProgress = 0;
+window.addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  scrollProgress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+}, { passive: true });
+
 // Cinematic Cyberpunk shader pass — purple/gold tuned
 const composer = new EffectComposer(renderer);
 composer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 760 ? 1.5 : 2));
@@ -905,6 +1005,24 @@ const clock = new THREE.Clock();
 function animate(){
   const t = clock.getElapsedTime();
   mouseX += (targetX-mouseX)*0.04; mouseY += (targetY-mouseY)*0.04;
+
+  // Liquid plane — mouse drives ripple center
+  liquidMat.uniforms.uTime.value = t;
+  liquidMat.uniforms.uMouse.value.set(mouseX * 0.7, -mouseY * 0.5);
+
+  // Audio-reactive bars — sine wave fake until real audio is wired
+  for (let i = 0; i < bars.children.length; i++){
+    const b = bars.children[i];
+    const h = 0.5 + Math.abs(Math.sin(t * 1.6 + b.userData.phase) + Math.sin(t * 2.4 + b.userData.phase * 0.7)) * 1.6;
+    b.scale.y = h;
+    b.position.y = b.userData.base + h * 0.5;
+  }
+
+  // Scroll-driven camera fly-through — only when not at top
+  if (scrollProgress > 0.001){
+    const target = camPath.getPoint(scrollProgress);
+    camera.position.lerp(target, 0.08);
+  } else {
   // Scroll-driven camera dolly — pulls forward as user scrolls
   camera.position.z = 14 - scrollY * 0.003;
 
@@ -936,8 +1054,11 @@ function animate(){
   titleGroup.position.y = -scrollY*0.0006;
   const c = 0.04+Math.abs(mouseX)*0.05;
   tagGhostP.position.x = -4.2+c; tagGhostG.position.x = -4.2-c;
-  camera.position.x = mouseX*0.3; camera.position.y = -mouseY*0.2;
-  camera.lookAt(0,0,0);
+    camera.position.x = mouseX * 0.3;
+    camera.position.y = -mouseY * 0.2;
+    camera.position.z = 14 - window.scrollY * 0.003;
+  }
+  camera.lookAt(0, 0, 0);
   cinematicPass.uniforms.uTime.value = t;
   composer.render();
   requestAnimationFrame(animate);
