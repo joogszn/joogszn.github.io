@@ -604,7 +604,89 @@ scene.add(composition);
   composition.add(grp);
 }
 
-// 3D "TRAFFIC MUSIC" tagline — Bebas Neue, off to lower left
+// Volumetric fog — gives Z-depth, distant objects fade into purple haze
+scene.fog = new THREE.FogExp2(0x0a0a0f, 0.045);
+
+// FAR BACKDROP — slow-spinning gold record, large, blurred by fog
+const farRecord = new THREE.Group();
+{
+  const r = new THREE.Mesh(
+    new THREE.CylinderGeometry(4.0, 4.0, 0.05, 96),
+    new THREE.MeshStandardMaterial({color:0x1a0e2e, roughness:0.7, metalness:0.4, emissive:0x4c1d95, emissiveIntensity:0.18})
+  );
+  r.rotation.x = Math.PI/2;
+  farRecord.add(r);
+  const lbl = new THREE.Mesh(
+    new THREE.CylinderGeometry(1.2, 1.2, 0.06, 48),
+    new THREE.MeshStandardMaterial({color:0xc9a84c, roughness:0.3, metalness:0.85, emissive:0x3a2a00, emissiveIntensity:0.3})
+  );
+  lbl.rotation.x = Math.PI/2;
+  farRecord.add(lbl);
+  // Concentric grooves
+  for (let i = 0; i < 8; i++) {
+    const groove = new THREE.Mesh(
+      new THREE.RingGeometry(1.4 + i*0.28, 1.42 + i*0.28, 64),
+      new THREE.MeshBasicMaterial({color:0x2a1f3e, transparent:true, opacity:0.6, side:THREE.DoubleSide})
+    );
+    groove.rotation.x = -Math.PI/2;
+    groove.position.y = 0.026;
+    farRecord.add(groove);
+  }
+}
+farRecord.position.set(2, 0.5, -8);  // FAR back
+farRecord.rotation.set(0.3, 0, 0.15);
+scene.add(farRecord);
+
+// MID — floating microphone, left side
+const mic = new THREE.Group();
+{
+  const stand = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.04, 0.04, 1.6, 16),
+    new THREE.MeshStandardMaterial({color:0x6b6875, metalness:0.85, roughness:0.3})
+  );
+  mic.add(stand);
+  const head = new THREE.Mesh(
+    new THREE.SphereGeometry(0.28, 24, 16),
+    new THREE.MeshStandardMaterial({color:0x2a2438, metalness:0.7, roughness:0.4, emissive:0x4c1d95, emissiveIntensity:0.2})
+  );
+  head.position.y = 1.0;
+  mic.add(head);
+  const grille = new THREE.Mesh(
+    new THREE.SphereGeometry(0.30, 12, 8),
+    new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.9, roughness:0.5, wireframe:true, transparent:true, opacity:0.55})
+  );
+  grille.position.y = 1.0;
+  mic.add(grille);
+}
+mic.position.set(-5.5, -1.2, 1.5);
+mic.rotation.set(0, 0.3, -0.18);
+scene.add(mic);
+
+// FOREGROUND — close-up gold ring drifting near camera (intentional "out-of-focus" feel from fog)
+const foreRing = new THREE.Mesh(
+  new THREE.TorusGeometry(0.6, 0.06, 16, 64),
+  new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.95, roughness:0.2, emissive:0x3a2a00, emissiveIntensity:0.4})
+);
+foreRing.position.set(-3, 2.4, 5);
+scene.add(foreRing);
+
+// SUBTLE LIGHT BEAMS — purple volumetric rays
+const beam = new THREE.Mesh(
+  new THREE.PlaneGeometry(1.2, 12),
+  new THREE.MeshBasicMaterial({color:0x8b5cf6, transparent:true, opacity:0.07, side:THREE.DoubleSide, blending:THREE.AdditiveBlending})
+);
+beam.position.set(3, 0, -4);
+beam.rotation.z = 0.3;
+scene.add(beam);
+const beam2 = new THREE.Mesh(
+  new THREE.PlaneGeometry(0.8, 10),
+  new THREE.MeshBasicMaterial({color:0xc9a84c, transparent:true, opacity:0.05, side:THREE.DoubleSide, blending:THREE.AdditiveBlending})
+);
+beam2.position.set(-2, 0, -3);
+beam2.rotation.z = -0.4;
+scene.add(beam2);
+
+// // 3D "TRAFFIC MUSIC" tagline — Bebas Neue, off to lower left
 const titleGroup = new THREE.Group();
 scene.add(titleGroup);
 const BEBAS = 'https://cdn.jsdelivr.net/npm/@fontsource/bebas-neue@5.0.18/files/bebas-neue-latin-400-normal.woff';
@@ -749,6 +831,27 @@ const clock = new THREE.Clock();
 function animate(){
   const t = clock.getElapsedTime();
   mouseX += (targetX-mouseX)*0.04; mouseY += (targetY-mouseY)*0.04;
+  // Scroll-driven camera dolly — pulls forward as user scrolls
+  camera.position.z = 14 - scrollY * 0.003;
+
+  // Far record — slow majestic spin
+  farRecord.rotation.y = t * 0.12 + mouseX * 0.05;
+  farRecord.position.y = 0.5 + Math.sin(t*0.35) * 0.2;
+
+  // Mic — gentle sway
+  mic.rotation.z = -0.18 + Math.sin(t*0.5) * 0.06;
+  mic.position.y = -1.2 + Math.sin(t*0.4) * 0.1;
+
+  // Foreground ring — drift + spin
+  foreRing.rotation.x = t * 0.4;
+  foreRing.rotation.y = t * 0.6;
+  foreRing.position.y = 2.4 + Math.sin(t*0.7) * 0.25;
+  foreRing.position.x = -3 + mouseX * 1.2;
+
+  // Beams — pulse opacity
+  beam.material.opacity = 0.05 + 0.04 * (Math.sin(t*0.6) * 0.5 + 0.5);
+  beam2.material.opacity = 0.04 + 0.03 * (Math.sin(t*0.8 + 1) * 0.5 + 0.5);
+
   composition.rotation.y = mouseX*0.12 + Math.sin(t*0.3)*0.04;
   composition.rotation.x = -mouseY*0.08 + Math.sin(t*0.4)*0.03;
   composition.position.y = 1.0 - scrollY*0.0010 + Math.sin(t*0.5)*0.08;
