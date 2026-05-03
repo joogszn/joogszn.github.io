@@ -295,7 +295,7 @@ nav{z-index:1000 !important}
 .audio-modal iframe{display:block;border:0;width:100%}
 
 #playlists{background:var(--ink);padding:80px 40px}
-.pl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:36px;max-width:980px;margin-left:auto;margin-right:auto}
+.pl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
 .pl-card{background:var(--ink2);border:1px solid rgba(139,92,246,0.12);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.18s ease-out,border-color 0.3s,box-shadow 0.3s;will-change:transform;transform-style:preserve-3d}
 .pl-card:hover{border-color:rgba(139,92,246,0.4);box-shadow:0 30px 60px rgba(139,92,246,0.18)}
 .pl-head{padding:20px 22px;border-bottom:1px solid rgba(139,92,246,0.1);display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -303,6 +303,7 @@ nav{z-index:1000 !important}
 .pl-platform{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 9px;border-radius:3px;flex-shrink:0}
 .pl-spotify{background:rgba(30,215,96,0.12);color:#1ED760;border:1px solid rgba(30,215,96,0.4)}
 .pl-apple{background:rgba(252,69,108,0.12);color:#FC456C;border:1px solid rgba(252,69,108,0.4)}
+.pl-yt{background:rgba(255,0,0,0.12);color:#FF4444;border:1px solid rgba(255,0,0,0.4)}
 .pl-frame{position:relative;width:100%;background:var(--ink3)}
 .pl-frame iframe{display:block;width:100%;border:0;border-radius:0}
 
@@ -687,6 +688,15 @@ body.player-shown{padding-bottom:84px}
       </div>
       <div class="pl-frame">
         <iframe src="https://open.spotify.com/embed/playlist/3yYlr7B9bTxWy54KmYQMBA?utm_source=generator&theme=0" width="100%" height="450" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+    <div class="pl-card" data-tilt>
+      <div class="pl-head">
+        <div class="pl-title">YouTube<br>Channel</div>
+        <span class="pl-platform pl-yt">YouTube</span>
+      </div>
+      <div class="pl-frame">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=UUixhp51rrPS1ulNfZ6oXviQ" width="100%" height="450" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="JoogSzn YouTube channel uploads"></iframe>
       </div>
     </div>
 </div>
