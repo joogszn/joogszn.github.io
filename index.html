@@ -22,6 +22,10 @@
   --concrete:#6b6875;
   --paper:#f0ecfa;
   --red:#e8362a;
+  --chrome:#a8b0bd;
+  --silver:#d8dde3;
+  --chrome-dim:rgba(168,176,189,0.22);
+  --chrome-soft:rgba(168,176,189,0.12);
 }
 body{background:var(--ink);color:var(--paper);font-family:'Barlow',sans-serif;overflow-x:hidden}
 nav{padding:18px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(139,92,246,0.15);background:rgba(10,10,15,0.96);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
@@ -29,7 +33,14 @@ nav{padding:18px 40px;display:flex;align-items:center;justify-content:space-betw
 .nav-links{display:flex;gap:24px}
 .nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--concrete);text-decoration:none;cursor:pointer;transition:color 0.15s}
 .nav-links a:hover{color:var(--paper)}
-.nav-tag{font-family:'DM Mono',monospace;font-size:11px;color:var(--purple);letter-spacing:1px}
+.nav-handle{display:inline-flex;align-items:center;gap:6px}
+.nh-handle{font-family:'DM Mono',monospace;font-size:11px;color:var(--silver);letter-spacing:1px;text-decoration:none;padding:5px 11px;border:1px solid var(--chrome-dim);border-radius:100px;background:var(--chrome-soft);transition:all 0.18s}
+.nh-handle:hover{color:var(--paper);border-color:var(--chrome);background:rgba(168,176,189,0.18)}
+.nh-pl{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:1.5px;color:var(--silver);text-decoration:none;width:24px;height:24px;border-radius:50%;border:1px solid var(--chrome-dim);display:inline-flex;align-items:center;justify-content:center;background:var(--chrome-soft);transition:all 0.18s}
+.nh-pl:hover{color:var(--paper);background:rgba(168,176,189,0.2)}
+.nh-ig:hover{border-color:#E1306C;color:#fff;background:linear-gradient(45deg,rgba(225,48,108,0.4),rgba(241,205,80,0.25))}
+.nh-sp:hover{border-color:#1ED760;color:#fff;background:rgba(30,215,96,0.25)}
+.nh-am:hover{border-color:#FC456C;color:#fff;background:rgba(252,69,108,0.25)}
 .hero{min-height:92vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 40px 0;position:relative;overflow:hidden;background:var(--ink)}
 .hero-grid{position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(139,92,246,0.025) 0px,rgba(139,92,246,0.025) 1px,transparent 1px,transparent 72px),repeating-linear-gradient(0deg,rgba(139,92,246,0.025) 0px,rgba(139,92,246,0.025) 1px,transparent 1px,transparent 72px)}
 .hero-glow{position:absolute;top:-20%;right:-10%;width:60%;height:80%;background:radial-gradient(ellipse,rgba(76,29,149,0.25) 0%,transparent 70%);pointer-events:none}
@@ -41,15 +52,15 @@ nav{padding:18px 40px;display:flex;align-items:center;justify-content:space-betw
 .hero-btns{display:flex;gap:0;margin-top:32px;flex-wrap:wrap}
 .btn-main{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:14px 32px;background:var(--purple);color:white;border:none;cursor:pointer;font-weight:700;transition:background 0.15s}
 .btn-main:hover{background:var(--purple-bright)}
-.btn-sec{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:14px 32px;background:transparent;color:var(--warm);border:1px solid rgba(139,92,246,0.3);cursor:pointer;transition:all 0.15s}
-.btn-sec:hover{border-color:var(--purple);color:var(--paper)}
+.btn-sec{font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:3px;text-transform:uppercase;padding:14px 32px;background:transparent;color:var(--silver);border:1px solid var(--chrome-dim);cursor:pointer;transition:all 0.15s}
+.btn-sec:hover{border-color:var(--chrome);color:var(--paper);box-shadow:0 0 18px rgba(168,176,189,0.18)}
 .hero-stats{position:relative;z-index:5;margin-top:44px;padding:22px 0;border-top:1px solid rgba(139,92,246,0.12);display:flex;gap:0;overflow-x:auto}
 .hs{flex-shrink:0;padding:0 28px}
 .hs:first-child{padding-left:0}
 .hs-num{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--purple-bright);line-height:1}
 .hs-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--concrete);margin-top:3px}
 .hs-div{width:1px;background:rgba(139,92,246,0.12);flex-shrink:0;align-self:stretch}
-.plaques{background:var(--ink2);border-top:1px solid var(--gold-dim);border-bottom:1px solid var(--gold-dim);padding:18px 40px;display:flex;align-items:center;gap:0;overflow-x:auto}
+.plaques{background:var(--ink2);border-top:1px solid var(--chrome-dim);border-bottom:1px solid var(--chrome-dim);padding:18px 40px;display:flex;align-items:center;gap:0;overflow-x:auto}
 .plq{display:flex;align-items:center;gap:12px;flex-shrink:0;padding:0 28px}
 .plq:first-child{padding-left:0}
 .plq-icon{width:34px;height:34px;border-radius:50%;border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:9px;color:var(--gold);text-align:center;line-height:1.1;flex-shrink:0}
@@ -65,7 +76,8 @@ nav{padding:18px 40px;display:flex;align-items:center;justify-content:space-betw
 .bio-p{font-size:15px;color:var(--warm);line-height:1.85;margin-bottom:16px}
 .bio-p strong{color:var(--paper)}
 .bio-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-.bio-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border:1px solid rgba(139,92,246,0.2);color:var(--purple)}
+.bio-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border:1px solid var(--chrome-dim);color:var(--silver);transition:all 0.15s}
+.bio-tag:hover{border-color:rgba(139,92,246,0.45);color:var(--purple-bright)}
 .hl{background:var(--ink2);padding:22px 26px;border-left:3px solid rgba(139,92,246,0.2);flex:1;transition:border-color 0.15s;cursor:default}
 .hl:hover{border-left-color:var(--purple-bright)}
 .hl-gold{border-left-color:rgba(201,168,76,0.35)}
@@ -106,7 +118,7 @@ nav{padding:18px 40px;display:flex;align-items:center;justify-content:space-betw
 .press-url{font-family:'DM Mono',monospace;font-size:10px;color:rgba(107,104,117,0.45);margin-top:10px}
 .credits-wall{display:flex;flex-wrap:wrap;gap:4px}
 .chip{font-family:'Barlow Condensed',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:1px;padding:7px 14px;background:var(--ink2);border:1px solid rgba(139,92,246,0.12);color:var(--warm);cursor:default;transition:all 0.15s}
-.chip:hover{border-color:rgba(139,92,246,0.4);color:var(--paper)}
+.chip:hover{border-color:var(--chrome-dim);color:var(--silver);background:var(--chrome-soft)}
 .chip-note{font-family:'DM Mono',monospace;font-size:9px;color:var(--concrete);margin-left:4px;letter-spacing:0;text-transform:none}
 .connect-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2px}
 .soc{background:var(--ink2);padding:18px;border:1px solid rgba(139,92,246,0.08);cursor:pointer;transition:border-color 0.15s}
@@ -188,7 +200,8 @@ nav{z-index:1000 !important}
   nav{padding:14px 18px}
   .nav-links{gap:14px}
   .nav-links a{font-size:11px;letter-spacing:2px}
-  .nav-tag{display:none}
+  .nh-pl{display:none}
+  .nh-handle{font-size:10px;padding:4px 9px}
   .hero{padding:0 22px;min-height:88vh}
   .hero-body{padding:64px 0 0}
   .hero-name{font-size:clamp(72px,16vw,120px);letter-spacing:2px}
@@ -349,7 +362,12 @@ body.player-shown{padding-bottom:84px}
     <a href="#beats">Beats</a>
     <a href="#contact">Contact</a>
   </div>
-  <span class="nav-tag">@joogszn &check;</span>
+  <div class="nav-handle">
+    <a class="nh-handle" href="https://www.instagram.com/joogszn/" target="_blank" rel="noopener">@joogszn</a>
+    <a class="nh-pl nh-ig"  href="https://www.instagram.com/joogszn/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+    <a class="nh-pl nh-sp"  href="https://open.spotify.com/artist/3sQcHDk4dv5aUVBtmXOMVo" target="_blank" rel="noopener" aria-label="Spotify">SP</a>
+    <a class="nh-pl nh-am"  href="https://music.apple.com/us/artist/joogszn/1515587525" target="_blank" rel="noopener" aria-label="Apple Music">AM</a>
+  </div>
 </nav>
 <section class="hero">
   <div class="hero-grid"></div>
@@ -701,7 +719,7 @@ camera.position.set(0, 0, 14);
 scene.add(new THREE.AmbientLight(0xffffff, 0.35));
 const key = new THREE.DirectionalLight(0xfff5dd, 1.4); key.position.set(5, 8, 6); scene.add(key);
 const purpleFill = new THREE.PointLight(0x8b5cf6, 1.8, 36); purpleFill.position.set(-5, -2, 5); scene.add(purpleFill);
-const goldRim = new THREE.PointLight(0xc9a84c, 0.9, 28); goldRim.position.set(6, -3, -3); scene.add(goldRim);
+const chromeRim = new THREE.PointLight(0xa8b0bd, 0.9, 28); chromeRim.position.set(6, -3, -3); scene.add(chromeRim);
 const purpleRim = new THREE.PointLight(0xa78bfa, 0.6, 28); purpleRim.position.set(-3, 6, -2); scene.add(purpleRim);
 
 const composition = new THREE.Group();
@@ -716,12 +734,12 @@ scene.add(composition);
     new THREE.MeshStandardMaterial({color:0x1a1530, roughness:0.5, metalness:0.85})
   );
   grp.add(plate);
-  const goldFace = new THREE.Mesh(
+  const plateFace = new THREE.Mesh(
     new THREE.BoxGeometry(2.0, 2.6, 0.04),
-    new THREE.MeshStandardMaterial({color:0xc9a84c, roughness:0.18, metalness:0.95, emissive:0x3a2a00, emissiveIntensity:0.22})
+    new THREE.MeshStandardMaterial({color:0xc8cdd4, roughness:0.22, metalness:0.95, emissive:0x222a3a, emissiveIntensity:0.18})
   );
-  goldFace.position.z = 0.08;
-  grp.add(goldFace);
+  plateFace.position.z = 0.08;
+  grp.add(plateFace);
   // Center disc on plaque (record)
   const disc = new THREE.Mesh(
     new THREE.CylinderGeometry(0.7, 0.7, 0.02, 48),
@@ -780,7 +798,7 @@ scene.add(composition);
   for (let i = 0; i < 2; i++) {
     const reel = new THREE.Mesh(
       new THREE.CylinderGeometry(0.12, 0.12, 0.06, 16),
-      new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.9, roughness:0.3})
+      new THREE.MeshStandardMaterial({color:0xa8b0bd, metalness:0.95, roughness:0.18})
     );
     reel.rotation.x = Math.PI/2;
     reel.position.set(i === 0 ? -0.32 : 0.32, 0, 0.12);
@@ -852,7 +870,7 @@ scene.add(mic);
 // FOREGROUND — close-up gold ring drifting near camera (intentional "out-of-focus" feel from fog)
 const foreRing = new THREE.Mesh(
   new THREE.TorusGeometry(0.6, 0.06, 16, 64),
-  new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.95, roughness:0.2, emissive:0x3a2a00, emissiveIntensity:0.4})
+  new THREE.MeshStandardMaterial({color:0xd8dde3, metalness:0.98, roughness:0.12, emissive:0x222a3a, emissiveIntensity:0.35})
 );
 foreRing.position.set(-3, 2.4, 5);
 scene.add(foreRing);
@@ -867,7 +885,7 @@ beam.rotation.z = 0.3;
 scene.add(beam);
 const beam2 = new THREE.Mesh(
   new THREE.PlaneGeometry(0.8, 10),
-  new THREE.MeshBasicMaterial({color:0xc9a84c, transparent:true, opacity:0.05, side:THREE.DoubleSide, blending:THREE.AdditiveBlending})
+  new THREE.MeshBasicMaterial({color:0xa8b0bd, transparent:true, opacity:0.05, side:THREE.DoubleSide, blending:THREE.AdditiveBlending})
 );
 beam2.position.set(-2, 0, -3);
 beam2.rotation.z = -0.4;
@@ -936,7 +954,7 @@ const liquidMat = new THREE.ShaderMaterial({
     uTime: { value: 0 },
     uMouse: { value: new THREE.Vector2(0, 0) },
     uColorA: { value: new THREE.Color(0x4c1d95) },
-    uColorB: { value: new THREE.Color(0xc9a84c) },
+    uColorB: { value: new THREE.Color(0xa8b0bd) },
   },
   vertexShader: `
     uniform float uTime;
@@ -983,7 +1001,7 @@ scene.add(liquidPlane);
 const barCount = 64;
 const bars = new THREE.Group();
 const barGeo = new THREE.BoxGeometry(0.18, 1, 0.18);
-const barColors = [0x8b5cf6, 0xa78bfa, 0xc9a84c];
+const barColors = [0x8b5cf6, 0xa78bfa, 0xa8b0bd];
 for (let i = 0; i < barCount; i++){
   const m = new THREE.Mesh(
     barGeo,
