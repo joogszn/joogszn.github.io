@@ -291,6 +291,46 @@ nav{z-index:1000 !important}
   #playlists{padding:48px 18px}
 }
 
+
+/* ============= iTUNES MINI PLAYER ============= */
+#itunesPlayer{position:fixed;left:0;right:0;bottom:0;z-index:9998;background:rgba(8,8,15,0.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-top:1px solid rgba(201,168,76,0.3);padding:12px 22px;display:none;align-items:center;gap:14px;transform:translateY(100%);transition:transform 0.35s cubic-bezier(0.2,0.8,0.2,1)}
+#itunesPlayer.shown{display:flex;transform:translateY(0)}
+#itunesArt{width:52px;height:52px;border-radius:6px;flex-shrink:0;background:var(--ink3);object-fit:cover;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+.itp-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.itp-title{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--paper);text-transform:uppercase;letter-spacing:0.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.itp-artist{font-family:'DM Mono',monospace;font-size:10px;color:var(--purple-bright);letter-spacing:0.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.itp-progress{flex:2;height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;cursor:pointer;min-width:80px;position:relative}
+.itp-bar{height:100%;background:linear-gradient(90deg,var(--purple-bright) 0%,var(--gold) 100%);width:0%;transition:width 0.1s linear}
+.itp-time{font-family:'DM Mono',monospace;font-size:10px;color:var(--concrete);letter-spacing:0.5px;flex-shrink:0;min-width:62px;text-align:center}
+.itp-btn{width:38px;height:38px;border-radius:50%;background:var(--purple);color:white;border:none;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background 0.15s}
+.itp-btn:hover{background:var(--purple-bright)}
+.itp-close{background:transparent;color:var(--concrete);font-size:20px;width:32px;height:32px;border:1px solid rgba(139,92,246,0.2)}
+.itp-close:hover{color:var(--paper);border-color:rgba(139,92,246,0.5);background:transparent}
+.itp-preview-tag{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1.5px;color:var(--gold);text-transform:uppercase;padding:3px 7px;border:1px solid rgba(201,168,76,0.4);border-radius:3px;flex-shrink:0}
+
+.track[data-itunes]{cursor:pointer;position:relative}
+.track[data-itunes]::after{content:"▶";position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--purple-bright);font-size:11px;opacity:0;transition:opacity 0.15s}
+.track[data-itunes]:hover::after{opacity:0.6}
+.track.playing{background:var(--ink3) !important;border-left-color:var(--gold) !important}
+.track.playing .t-title{color:var(--gold)}
+
+/* Add bottom padding so player doesn't cover footer when shown */
+body.player-shown{padding-bottom:84px}
+
+@media(max-width:760px){
+  #itunesPlayer{padding:10px 16px;gap:10px;flex-wrap:wrap}
+  #itunesArt{width:42px;height:42px}
+  .itp-title{font-size:13px}
+  .itp-artist{font-size:9px}
+  .itp-time{display:none}
+  .itp-progress{order:5;flex-basis:100%;height:3px;margin-top:2px}
+  .itp-preview-tag{display:none}
+}
+@media(max-width:480px){
+  #itunesPlayer{padding:8px 12px}
+  #itunesArt{width:38px;height:38px}
+}
+
 </style>
 </head>
 <body>
@@ -428,16 +468,16 @@ nav{z-index:1000 !important}
   <div class="eyebrow">Catalog</div>
   <div class="sec-title">Key Records</div>
   <div class="track-list">
-    <div class="track"><div class="t-num">01</div><div><div class="t-title">Vintage &amp; Adventurous</div><div class="t-feat">Conradfrmdaaves &middot; Produced by JoogSzn &middot; Underground Classic</div></div><div class="t-pill pill-gold">Breakout</div></div>
-    <div class="track"><div class="t-num">02</div><div><div class="t-title">Musty</div><div class="t-feat">Shoreline Mafia &middot; RIAA 2x Platinum &middot; ShorelineDoThatShit &middot; Atlantic Records</div></div><div class="t-pill pill-gold">2x Platinum</div></div>
-    <div class="track"><div class="t-num">03</div><div><div class="t-title">Spaceship</div><div class="t-feat">Shoreline Mafia &middot; Co-prod w/ RonRon &middot; ShorelineDoThatShit &middot; Atlantic</div></div><div class="t-pill pill-gold">RIAA Gold</div></div>
-    <div class="track"><div class="t-num">04</div><div><div class="t-title">Tricc on Just Anybody</div><div class="t-feat">03 Greedo &middot; Co-produced by JoogSzn &amp; BeatBoy &middot; First Night Out</div></div><div class="t-pill pill-purple">Classic</div></div>
-    <div class="track"><div class="t-num">05</div><div><div class="t-title">Ion Rap Beef (Remix)</div><div class="t-feat">Drakeo The Ruler &middot; 03 Greedo &middot; Earl Sweatshirt &middot; Produced by JoogSzn</div></div><div class="t-pill pill-purple">Classic</div></div>
-    <div class="track"><div class="t-num">06</div><div><div class="t-title">Tell You the Truth</div><div class="t-feat">Drakeo The Ruler &middot; JoogSzn &middot; Thank You For Using GTL</div></div><div class="t-pill pill-dim">GTL</div></div>
-    <div class="track"><div class="t-num">07</div><div><div class="t-title">Shopping For Dior</div><div class="t-feat">Baby Smoove &middot; Fenix Flexin &middot; Talibando &middot; Produced by JoogSzn &middot; Where's Joog?</div></div><div class="t-pill pill-dim">Hit</div></div>
-    <div class="track"><div class="t-num">08</div><div><div class="t-title">She's From Stockton</div><div class="t-feat">Big Sad 1900 &middot; 03 Greedo &middot; Co-produced by JoogSzn</div></div><div class="t-pill pill-dim">Collab</div></div>
-    <div class="track"><div class="t-num">09</div><div><div class="t-title">The Homie</div><div class="t-feat">Wiz Khalifa &middot; Quadwoofer &amp; JoogSZN &middot; See Ya &middot; 2023</div></div><div class="t-pill pill-purple">Collab</div></div>
-    <div class="track"><div class="t-num">10</div><div><div class="t-title">Fuck It</div><div class="t-feat">MoneySign $uede &middot; Rucci &middot; Produced by JoogSzn &middot; Where's Joog?</div></div><div class="t-pill pill-purple">Single</div></div>
+    <div class="track" data-itunes="Vintage Adventurous Conradfrmdaaves"><div class="t-num">01</div><div><div class="t-title">Vintage &amp; Adventurous</div><div class="t-feat">Conradfrmdaaves &middot; Produced by JoogSzn &middot; Underground Classic</div></div><div class="t-pill pill-gold">Breakout</div></div>
+    <div class="track" data-itunes="Musty Shoreline Mafia"><div class="t-num">02</div><div><div class="t-title">Musty</div><div class="t-feat">Shoreline Mafia &middot; RIAA 2x Platinum &middot; ShorelineDoThatShit &middot; Atlantic Records</div></div><div class="t-pill pill-gold">2x Platinum</div></div>
+    <div class="track" data-itunes="Spaceship Shoreline Mafia"><div class="t-num">03</div><div><div class="t-title">Spaceship</div><div class="t-feat">Shoreline Mafia &middot; Co-prod w/ RonRon &middot; ShorelineDoThatShit &middot; Atlantic</div></div><div class="t-pill pill-gold">RIAA Gold</div></div>
+    <div class="track" data-itunes="Tricc on Just Anybody 03 Greedo"><div class="t-num">04</div><div><div class="t-title">Tricc on Just Anybody</div><div class="t-feat">03 Greedo &middot; Co-produced by JoogSzn &amp; BeatBoy &middot; First Night Out</div></div><div class="t-pill pill-purple">Classic</div></div>
+    <div class="track" data-itunes="Ion Rap Beef Remix Drakeo Ruler"><div class="t-num">05</div><div><div class="t-title">Ion Rap Beef (Remix)</div><div class="t-feat">Drakeo The Ruler &middot; 03 Greedo &middot; Earl Sweatshirt &middot; Produced by JoogSzn</div></div><div class="t-pill pill-purple">Classic</div></div>
+    <div class="track" data-itunes="Tell You the Truth Drakeo Ruler"><div class="t-num">06</div><div><div class="t-title">Tell You the Truth</div><div class="t-feat">Drakeo The Ruler &middot; JoogSzn &middot; Thank You For Using GTL</div></div><div class="t-pill pill-dim">GTL</div></div>
+    <div class="track" data-itunes="Shopping For Dior Baby Smoove"><div class="t-num">07</div><div><div class="t-title">Shopping For Dior</div><div class="t-feat">Baby Smoove &middot; Fenix Flexin &middot; Talibando &middot; Produced by JoogSzn &middot; Where's Joog?</div></div><div class="t-pill pill-dim">Hit</div></div>
+    <div class="track" data-itunes="Shes From Stockton Big Sad 1900"><div class="t-num">08</div><div><div class="t-title">She's From Stockton</div><div class="t-feat">Big Sad 1900 &middot; 03 Greedo &middot; Co-produced by JoogSzn</div></div><div class="t-pill pill-dim">Collab</div></div>
+    <div class="track" data-itunes="The Homie Wiz Khalifa Quadwoofer"><div class="t-num">09</div><div><div class="t-title">The Homie</div><div class="t-feat">Wiz Khalifa &middot; Quadwoofer &amp; JoogSZN &middot; See Ya &middot; 2023</div></div><div class="t-pill pill-purple">Collab</div></div>
+    <div class="track" data-itunes="Fuck It MoneySign $uede"><div class="t-num">10</div><div><div class="t-title">Fuck It</div><div class="t-feat">MoneySign $uede &middot; Rucci &middot; Produced by JoogSzn &middot; Where's Joog?</div></div><div class="t-pill pill-purple">Single</div></div>
   </div>
 </section>
 <section id="press" class="section" style="background:var(--ink2)">
@@ -1234,6 +1274,125 @@ document.addEventListener('DOMContentLoaded', () => {
   if (modal) modal.addEventListener('click', e => { if (e.target === modal) closeAudioModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAudioModal(); });
 });
+</script>
+
+
+<div id="itunesPlayer" role="region" aria-label="Audio preview player">
+  <img id="itunesArt" alt="" src=""/>
+  <div class="itp-info">
+    <div class="itp-title" id="itpTitle">Loading…</div>
+    <div class="itp-artist" id="itpArtist">—</div>
+  </div>
+  <span class="itp-preview-tag">30s preview</span>
+  <button class="itp-btn" id="itpToggle" aria-label="Play/Pause">⏸</button>
+  <div class="itp-progress" id="itpProgress"><div class="itp-bar" id="itpBar"></div></div>
+  <div class="itp-time" id="itpTime">0:00 / 0:00</div>
+  <button class="itp-btn itp-close" id="itpClose" aria-label="Close player">×</button>
+</div>
+<audio id="itunesAudio" preload="none"></audio>
+
+
+<script>
+(function(){
+  const audio = document.getElementById('itunesAudio');
+  const player = document.getElementById('itunesPlayer');
+  const art = document.getElementById('itunesArt');
+  const titleEl = document.getElementById('itpTitle');
+  const artistEl = document.getElementById('itpArtist');
+  const toggle = document.getElementById('itpToggle');
+  const close = document.getElementById('itpClose');
+  const progress = document.getElementById('itpProgress');
+  const bar = document.getElementById('itpBar');
+  const time = document.getElementById('itpTime');
+  let nowPlayingRow = null;
+
+  function fmtTime(s){
+    if (!isFinite(s)) return '0:00';
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
+  }
+  function showPlayer(){
+    if (!player.classList.contains('shown')){
+      player.classList.add('shown');
+      document.body.classList.add('player-shown');
+    }
+  }
+  function hidePlayer(){
+    audio.pause();
+    audio.currentTime = 0;
+    player.classList.remove('shown');
+    document.body.classList.remove('player-shown');
+    if (nowPlayingRow){ nowPlayingRow.classList.remove('playing'); nowPlayingRow = null; }
+  }
+  async function playTrackByQuery(query, row){
+    titleEl.textContent = 'Loading…';
+    artistEl.textContent = '—';
+    art.src = '';
+    showPlayer();
+    try {
+      const url = 'https://itunes.apple.com/search?term=' + encodeURIComponent(query) + '&entity=song&limit=1';
+      const r = await fetch(url);
+      const data = await r.json();
+      if (!data.results || !data.results.length){
+        titleEl.textContent = 'Preview unavailable';
+        artistEl.textContent = query;
+        return;
+      }
+      const t = data.results[0];
+      titleEl.textContent = t.trackName;
+      artistEl.textContent = t.artistName;
+      art.src = (t.artworkUrl100 || '').replace('100x100', '200x200');
+      audio.src = t.previewUrl;
+      try { await audio.play(); toggle.textContent = '⏸'; } catch(e){ toggle.textContent = '▶'; }
+      if (nowPlayingRow) nowPlayingRow.classList.remove('playing');
+      if (row){ row.classList.add('playing'); nowPlayingRow = row; }
+    } catch(err){
+      console.error('iTunes lookup failed', err);
+      titleEl.textContent = 'Preview unavailable';
+      artistEl.textContent = query;
+    }
+  }
+
+  // Wire all .track[data-itunes]
+  document.querySelectorAll('.track[data-itunes]').forEach(row => {
+    row.addEventListener('click', () => {
+      const q = row.getAttribute('data-itunes');
+      if (q) playTrackByQuery(q, row);
+    });
+  });
+
+  // Audio events
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration){
+      bar.style.width = ((audio.currentTime / audio.duration) * 100) + '%';
+      time.textContent = fmtTime(audio.currentTime) + ' / ' + fmtTime(audio.duration);
+    }
+  });
+  audio.addEventListener('ended', () => {
+    bar.style.width = '0%';
+    toggle.textContent = '▶';
+    if (nowPlayingRow){ nowPlayingRow.classList.remove('playing'); nowPlayingRow = null; }
+  });
+  audio.addEventListener('play', () => { toggle.textContent = '⏸'; });
+  audio.addEventListener('pause', () => { toggle.textContent = '▶'; });
+
+  toggle.addEventListener('click', () => {
+    if (audio.paused) audio.play(); else audio.pause();
+  });
+  close.addEventListener('click', hidePlayer);
+  progress.addEventListener('click', (e) => {
+    const rect = progress.getBoundingClientRect();
+    const ratio = (e.clientX - rect.left) / rect.width;
+    if (audio.duration) audio.currentTime = audio.duration * ratio;
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === ' ' && player.classList.contains('shown') && document.activeElement === document.body){
+      e.preventDefault();
+      if (audio.paused) audio.play(); else audio.pause();
+    }
+  });
+})();
 </script>
 
 </body>
