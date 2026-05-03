@@ -260,6 +260,37 @@ nav{z-index:1000 !important}
   .bio-p{font-size:13px;line-height:1.7}
   .chip{font-size:9px;padding:4px 8px}
 }
+
+/* ============= AUDIO MODAL + PLAYLISTS ============= */
+.audio-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.audio-modal.open{display:flex;animation:modalFade 0.3s ease}
+@keyframes modalFade{from{opacity:0}to{opacity:1}}
+.audio-modal-card{position:relative;width:100%;max-width:520px;background:var(--ink2);border:1px solid rgba(139,92,246,0.25);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(76,29,149,0.4),0 0 0 1px rgba(167,139,250,0.1)}
+.audio-modal-close{position:absolute;top:10px;right:10px;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,0.7);border:1px solid rgba(139,92,246,0.3);color:var(--paper);font-family:'Bebas Neue',sans-serif;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;transition:all 0.2s}
+.audio-modal-close:hover{background:rgba(139,92,246,0.2);border-color:var(--purple-bright)}
+.audio-modal iframe{display:block;border:0;width:100%}
+
+#playlists{background:var(--ink);padding:80px 40px}
+.pl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.pl-card{background:var(--ink2);border:1px solid rgba(139,92,246,0.12);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform 0.18s ease-out,border-color 0.3s,box-shadow 0.3s;will-change:transform;transform-style:preserve-3d}
+.pl-card:hover{border-color:rgba(139,92,246,0.4);box-shadow:0 30px 60px rgba(139,92,246,0.18)}
+.pl-head{padding:20px 22px;border-bottom:1px solid rgba(139,92,246,0.1);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.pl-title{font-family:'Barlow Condensed',sans-serif;font-size:16px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--paper);line-height:1.2}
+.pl-platform{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 9px;border-radius:3px;flex-shrink:0}
+.pl-spotify{background:rgba(30,215,96,0.12);color:#1ED760;border:1px solid rgba(30,215,96,0.4)}
+.pl-apple{background:rgba(252,69,108,0.12);color:#FC456C;border:1px solid rgba(252,69,108,0.4)}
+.pl-frame{position:relative;width:100%;background:var(--ink3)}
+.pl-frame iframe{display:block;width:100%;border:0;border-radius:0}
+
+@media(max-width:760px){
+  .pl-grid{grid-template-columns:1fr;gap:16px}
+  #playlists{padding:56px 22px}
+  .audio-modal{padding:16px}
+}
+@media(max-width:480px){
+  #playlists{padding:48px 18px}
+}
+
 </style>
 </head>
 <body>
@@ -375,15 +406,15 @@ nav{z-index:1000 !important}
   <div class="eyebrow">Discography</div>
   <div class="sec-title">Projects</div>
   <div class="proj-grid">
-    <div class="proj">
+    <div class="proj" onclick="window.open('https://open.spotify.com/search/Vintage%20Adventurous%20Conradfrmdaaves','_blank')" style="cursor:pointer">
       <div class="proj-cover"><img src="https://images.genius.com/400e1b8b90a932a69868aaea62f933bd.640x640x1.jpg" alt="Vintage and Adventurous - ConradFrmDaAves" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="proj-badge badge-gold">Breakout</div><div class="proj-overlay"><div class="proj-play"><div class="proj-tri"></div></div></div></div>
       <div class="proj-info"><div class="proj-title">Vintage &amp; Adventurous</div><div class="proj-meta">Conradfrmdaaves &middot; Produced by JoogSzn</div><div class="proj-credits">Original &middot; Gunna Remix &middot; Bay2LA (E-40 + Mozzy)</div></div>
     </div>
-    <div class="proj">
+    <div class="proj" onclick="openSpotifyModal('album/4o4Pz57lkRniiXryYbbVw9')" style="cursor:pointer">
       <div class="proj-cover"><img src="https://images.genius.com/265521ddd7ad354097da7dd39b9bb440.1000x1000x1.png" alt="Where's Joog? - JoogSZN" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="proj-badge badge-purple">Debut LP</div><div class="proj-overlay"><div class="proj-play"><div class="proj-tri"></div></div></div></div>
       <div class="proj-info"><div class="proj-title">Where's Joog?</div><div class="proj-meta">June 3, 2022 &middot; HitMob &middot; 20 Tracks</div><div class="proj-credits">E-40 &middot; Mozzy &middot; Earl Sweatshirt &middot; 03 Greedo &middot; Gunna &middot; OHGEESY</div></div>
     </div>
-    <div class="proj">
+    <div class="proj" onclick="openSpotifyModal('album/6lF4KtV8umj69N06QxdlUc')" style="cursor:pointer">
       <div class="proj-cover"><img src="https://images.genius.com/d5d811b9a144fbdf5c94c2810205acf4.1000x1000x1.png" alt="Thank You For Using GTL - Drakeo The Ruler &amp; JoogSZN" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="proj-badge badge-gold">Pitchfork 8.5</div><div class="proj-overlay"><div class="proj-play"><div class="proj-tri"></div></div></div></div>
       <div class="proj-info"><div class="proj-title">Thank You For Using GTL</div><div class="proj-meta">Drakeo The Ruler &middot; 2020 &middot; Prod + Recorded by JoogSZN</div><div class="proj-credits">NPR Top 25 &middot; Washington Post &middot; Pitchfork 8.5</div><a href="https://store.empi.re/products/drakeo-the-ruler-thank-you-for-using-gtl-5-year-anniversary-vinyl" target="_blank" style="display:inline-block;margin-top:10px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:5px 12px;text-decoration:none;transition:border-color 0.15s">Buy Vinyl on Empire &#8599;</a></div>
     </div>
@@ -424,6 +455,48 @@ nav{z-index:1000 !important}
     <div class="press-card" onclick="window.open('https://flypaper.soundfly.com/discover/joogszn-on-recording-drakeo-the-ruler-over-the-phone-from-jail/','_blank')"><div class="press-outlet">Flypaper / Soundfly &middot; 2020</div><div class="press-head">Recording Drakeo The Ruler Over the Phone from Jail</div><div class="press-snippet">The full story &mdash; 36 hours of jail phone sessions, weeks of mixing, Joog's vision to turn injustice into rap history.</div><div class="press-url">flypaper.soundfly.com &#8599;</div></div>
   </div>
 </section>
+
+<section id="playlists" class="reveal-up">
+  <div class="eyebrow">Listen Now</div>
+  <div class="sec-title">Streaming Playlists</div>
+  <div style="font-family:'Barlow Condensed',sans-serif;font-size:15px;color:var(--warm);max-width:640px;line-height:1.7;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Tap in. Full streams across Spotify and Apple Music &mdash; the producers playlist, his discography, the algorithm pick.</div>
+  <div class="pl-grid">
+    <div class="pl-card" data-tilt>
+      <div class="pl-head">
+        <div class="pl-title">JoogSzn:<br>The Producers</div>
+        <span class="pl-platform pl-apple">Apple Music</span>
+      </div>
+      <div class="pl-frame">
+        <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="450" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/joogszn-the-producers/pl.db9e3c2c3e81443c908c992608b012ff" loading="lazy"></iframe>
+      </div>
+    </div>
+    <div class="pl-card" data-tilt>
+      <div class="pl-head">
+        <div class="pl-title">JoogSzn<br>Discography</div>
+        <span class="pl-platform pl-spotify">Spotify</span>
+      </div>
+      <div class="pl-frame">
+        <iframe src="https://open.spotify.com/embed/playlist/3yYlr7B9bTxWy54KmYQMBA?utm_source=generator&theme=0" width="100%" height="450" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+    <div class="pl-card" data-tilt>
+      <div class="pl-head">
+        <div class="pl-title">This Is<br>JoogSzn</div>
+        <span class="pl-platform pl-spotify">Spotify</span>
+      </div>
+      <div class="pl-frame">
+        <iframe src="https://open.spotify.com/embed/playlist/37i9dQZF1DZ06evO20NdPW?utm_source=generator&theme=0" width="100%" height="450" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="audio-modal" id="audioModal">
+  <div class="audio-modal-card">
+    <button class="audio-modal-close" id="audioModalClose" aria-label="Close player">&times;</button>
+    <div id="audioModalBody"></div>
+  </div>
+</div>
 <section id="credits" class="section" style="background:var(--ink)">
   <div class="eyebrow">Production Credits</div>
   <div class="sec-title">Artists &amp; Projects</div>
@@ -1136,6 +1209,31 @@ if (matchMedia('(prefers-reduced-motion: reduce)').matches){
   if (cursorGlow) cursorGlow.style.display='none';
   document.querySelectorAll('.reveal-up').forEach(el => el.classList.add('visible'));
 }
+</script>
+
+
+<script>
+window.openSpotifyModal = function(path){
+  const modal = document.getElementById('audioModal');
+  const body = document.getElementById('audioModalBody');
+  const url = `https://open.spotify.com/embed/${path}?utm_source=generator&theme=0`;
+  body.innerHTML = `<iframe src="${url}" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+function closeAudioModal(){
+  const modal = document.getElementById('audioModal');
+  document.getElementById('audioModalBody').innerHTML = '';
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('audioModal');
+  const close = document.getElementById('audioModalClose');
+  if (close) close.addEventListener('click', closeAudioModal);
+  if (modal) modal.addEventListener('click', e => { if (e.target === modal) closeAudioModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAudioModal(); });
+});
 </script>
 
 </body>
