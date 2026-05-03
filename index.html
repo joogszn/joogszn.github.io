@@ -174,17 +174,91 @@ nav{z-index:1000 !important}
 /* Hide cursor-glow on touch devices */
 @media (hover: none){#cursor-glow{display:none}}
 
+/* Tablets / small laptops */
+@media(max-width:1024px){
+  footer{grid-template-columns:1.5fr 1fr 1fr;gap:32px;padding:40px 28px}
+  .section{padding:64px 28px}
+  .plaques{padding:16px 28px}
+}
+/* Large phones / small tablets */
 @media(max-width:760px){
-  .bg-noise{opacity:0.3}
-  #three-canvas{opacity:0.4}
-  #particles{opacity:0.6}
+  #three-canvas{opacity:0.5}
+  #particles{opacity:0.7}
   #cursor-glow{display:none}
   nav{padding:14px 18px}
-  .hero{padding:0 20px}
-  .section{padding:50px 20px}
-  .plaques{padding:14px 20px}
+  .nav-links{gap:14px}
+  .nav-links a{font-size:11px;letter-spacing:2px}
+  .nav-tag{display:none}
+  .hero{padding:0 22px;min-height:88vh}
+  .hero-body{padding:64px 0 0}
+  .hero-name{font-size:clamp(72px,16vw,120px);letter-spacing:2px}
+  .hero-sub{font-size:15px;letter-spacing:1.4px;max-width:100%}
+  .hero-btns{flex-direction:column;gap:10px}
+  .btn-main, .btn-sec{width:100%;padding:14px 20px;font-size:12px;text-align:center}
+  .hero-stats{padding:18px 0}
+  .hs{padding:0 18px}
+  .hs-num{font-size:22px}
+  .section{padding:56px 22px}
+  .sec-title{font-size:clamp(32px,8vw,48px);margin-bottom:28px}
+  .plaques{padding:16px 22px;gap:0}
+  .plq{padding:0 20px}
+  .plq-title{font-size:12px}
+  .plq-sub{font-size:9px}
+  .bio-grid{grid-template-columns:1fr;gap:1px}
+  .bio-left{padding:32px 24px}
+  .bio-p{font-size:14px}
+  .proj-grid, .press-grid, .connect-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px}
+  .credits-wall{gap:5px}
+  .chip{font-size:11px;padding:6px 10px}
   footer{padding:36px 20px;grid-template-columns:1fr;gap:28px}
-  .bio-grid{grid-template-columns:1fr}
+  .ft-brand{font-size:30px;letter-spacing:5px}
+  .ft-bottom{flex-direction:column;align-items:flex-start;gap:6px}
+}
+/* Standard phones */
+@media(max-width:480px){
+  nav{padding:12px 14px}
+  .nav-logo{font-size:18px;letter-spacing:4px}
+  .nav-links{gap:10px;flex-wrap:wrap;justify-content:flex-end}
+  .nav-links a{font-size:10px;letter-spacing:1.5px;padding:0}
+  .hero{padding:0 18px}
+  .hero-body{padding:56px 0 0}
+  .hero-eyebrow{font-size:10px;letter-spacing:3px}
+  .hero-name{font-size:clamp(56px,18vw,96px);letter-spacing:1.5px}
+  .hero-sub{font-size:14px;margin-top:14px}
+  .hero-btns{margin-top:24px}
+  .hs{padding:0 14px}
+  .hs-num{font-size:19px}
+  .hs-label{font-size:8px}
+  .section{padding:48px 18px}
+  .sec-title{font-size:clamp(28px,9vw,42px);margin-bottom:24px}
+  .plaques{padding:14px 18px}
+  .plq{padding:0 14px}
+  .plq-icon{width:30px;height:30px;font-size:8px}
+  .plq-title{font-size:11px}
+  .plq-sub{font-size:9px}
+  .bio-left{padding:26px 20px}
+  .proj-info, .press-card{padding:16px 18px}
+  .press-card{padding:20px 18px}
+  .press-head{font-size:13px}
+  .press-snippet{font-size:11px}
+  .chip{font-size:10px;padding:5px 9px;letter-spacing:0.6px}
+  .track{padding:12px 14px;gap:12px}
+  .t-title{font-size:14px}
+  .t-feat{font-size:9px}
+  footer{padding:32px 18px;gap:24px}
+  .ft-brand{font-size:26px}
+}
+/* Tight phones (iPhone SE, mini) */
+@media(max-width:380px){
+  .hero-name{font-size:clamp(48px,20vw,80px)}
+  .hero-sub{font-size:13px}
+  .hs{padding:0 10px}
+  .hs-num{font-size:17px}
+  .section{padding:40px 14px}
+  .plaques{padding:12px 14px}
+  .plq{padding:0 12px}
+  .bio-p{font-size:13px;line-height:1.7}
+  .chip{font-size:9px;padding:4px 8px}
 }
 </style>
 </head>
