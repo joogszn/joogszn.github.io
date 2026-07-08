@@ -4,7 +4,49 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="JoogSZN &mdash; Platinum Certified Producer, Engineer & Recording Artist. HitMob. Beats, credits, press and more.">
-<title>JoogSZN | Official Site</title>
+<title>JoogSZN | Platinum Certified Producer, Engineer & Artist</title>
+<link rel="canonical" href="https://joogworld.com/">
+<meta name="theme-color" content="#0a0a0f">
+<meta name="author" content="JoogSZN">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0a0f'/%3E%3Ctext x='32' y='46' font-family='Arial Black,Arial,sans-serif' font-size='42' font-weight='900' fill='%23a78bfa' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="JoogWorld">
+<meta property="og:url" content="https://joogworld.com/">
+<meta property="og:title" content="JoogSZN | Platinum Certified Producer, Engineer & Artist">
+<meta property="og:description" content="The sound you've been hearing. Pitchfork 8.5 &middot; RIAA 2x Platinum &middot; Atlantic Records. Beats, credits &amp; press. HitMob.">
+<meta property="og:image" content="https://joogworld.com/img/joog-portrait.jpg">
+<meta property="og:image:alt" content="JoogSZN portrait">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="JoogSZN | Platinum Certified Producer, Engineer & Artist">
+<meta name="twitter:description" content="The sound you've been hearing. Pitchfork 8.5 &middot; RIAA 2x Platinum &middot; Atlantic Records.">
+<meta name="twitter:image" content="https://joogworld.com/img/joog-portrait.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "JoogSZN",
+  "alternateName": "Joog",
+  "url": "https://joogworld.com/",
+  "image": "https://joogworld.com/img/joog-portrait.jpg",
+  "description": "Platinum Certified Producer, Engineer & Recording Artist. Founder of HitMob. Architect of Traffic Music.",
+  "genre": ["Hip Hop", "West Coast", "Rap"],
+  "foundingLocation": "Leimert Park, Los Angeles, CA",
+  "sameAs": [
+    "https://www.instagram.com/joogszn/",
+    "https://open.spotify.com/artist/3sQcHDk4dv5aUVBtmXOMVo",
+    "https://music.apple.com/us/artist/joogszn/1515587525",
+    "https://genius.com/artists/Joogszn",
+    "https://www.beatstars.com/joogszn"
+  ]
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -19,7 +61,7 @@
   --gold:#c9a84c;
   --gold-dim:rgba(201,168,76,0.2);
   --warm:#b8b0c8;
-  --concrete:#6b6875;
+  --concrete:#928da3;
   --paper:#f0ecfa;
   --red:#e8362a;
   --chrome:#a8b0bd;
@@ -52,10 +94,10 @@ nav{padding:18px 40px;display:flex;align-items:center;justify-content:space-betw
 .nh-row.nh-sp:hover .nh-glyph{color:#1ED760}
 .nh-row.nh-am:hover{background:rgba(252,69,108,0.12);color:#fff;border-color:rgba(252,69,108,0.4)}
 .nh-row.nh-am:hover .nh-glyph{color:#FC456C}
-.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 40px 0;position:relative;overflow:hidden;background:var(--ink)}
+.hero{display:flex;flex-direction:column;justify-content:flex-start;padding:16vh 40px 18px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(8,8,14,0.40) 0%,rgba(8,8,14,0.64) 44%,rgba(8,8,14,0.9) 80%,var(--ink) 100%)}
 .hero-grid{position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(139,92,246,0.025) 0px,rgba(139,92,246,0.025) 1px,transparent 1px,transparent 72px),repeating-linear-gradient(0deg,rgba(139,92,246,0.025) 0px,rgba(139,92,246,0.025) 1px,transparent 1px,transparent 72px)}
 .hero-glow{position:absolute;top:-20%;right:-10%;width:60%;height:80%;background:radial-gradient(ellipse,rgba(76,29,149,0.25) 0%,transparent 70%);pointer-events:none}
-.hero-body{position:relative;z-index:5;padding:80px 0 0}
+.hero-body{position:relative;z-index:5;padding:0}
 .hero-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:4px;color:var(--purple);text-transform:uppercase;margin-bottom:14px}
 .hero-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(96px,15vw,200px);line-height:0.86;letter-spacing:3px;color:var(--paper)}
 .hero-name .szn{color:var(--purple-bright)}
@@ -71,17 +113,17 @@ nav{padding:18px 40px;display:flex;align-items:center;justify-content:space-betw
 .hs-num{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--purple-bright);line-height:1}
 .hs-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--concrete);margin-top:3px}
 .hs-div{width:1px;background:rgba(139,92,246,0.12);flex-shrink:0;align-self:stretch}
-.plaques{background:var(--ink2);border-top:1px solid var(--chrome-dim);border-bottom:1px solid var(--chrome-dim);padding:18px 40px;display:flex;align-items:center;gap:0;overflow-x:auto}
+.plaques{background:var(--ink2);border-top:1px solid var(--chrome-dim);border-bottom:1px solid var(--chrome-dim);padding:26px 40px;display:flex;align-items:center;gap:0;overflow-x:auto}
 .plq{display:flex;align-items:center;gap:12px;flex-shrink:0;padding:0 28px}
 .plq:first-child{padding-left:0}
 .plq-icon{width:34px;height:34px;border-radius:50%;border:1px solid rgba(201,168,76,0.4);display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:9px;color:var(--gold);text-align:center;line-height:1.1;flex-shrink:0}
 .plq-title{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--paper);letter-spacing:0.3px;text-transform:uppercase}
 .plq-sub{font-family:'DM Mono',monospace;font-size:10px;color:var(--gold);margin-top:1px;letter-spacing:0.3px}
 .plq-div{width:1px;height:30px;background:var(--gold-dim);flex-shrink:0}
-.section{padding:80px 40px}
+.section{padding:52px 40px}
 .eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
 .sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,6vw,68px);color:var(--paper);letter-spacing:1px;margin-bottom:36px;line-height:1}
-.bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.bio-grid{display:grid;grid-template-columns:1fr;gap:2px;max-width:820px}
 .bio-left{background:var(--ink2);padding:40px}
 .bio-right{display:flex;flex-direction:column;gap:2px}
 .bio-p{font-size:15px;color:var(--warm);line-height:1.85;margin-bottom:16px}
@@ -126,7 +168,7 @@ nav{padding:18px 40px;display:flex;align-items:center;justify-content:space-betw
 .press-outlet{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--purple);margin-bottom:8px}
 .press-head{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;color:var(--paper);line-height:1.4;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.3px}
 .press-snippet{font-size:12px;color:var(--concrete);line-height:1.7;font-style:italic}
-.press-url{font-family:'DM Mono',monospace;font-size:10px;color:rgba(107,104,117,0.45);margin-top:10px}
+.press-url{font-family:'DM Mono',monospace;font-size:10px;color:#8b8698;margin-top:10px}
 .credits-wall{display:flex;flex-wrap:wrap;gap:4px}
 .chip{font-family:'Barlow Condensed',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:1px;padding:7px 14px;background:var(--ink2);border:1px solid rgba(139,92,246,0.12);color:var(--warm);cursor:default;transition:all 0.15s}
 .chip:hover{border-color:var(--chrome-dim);color:var(--silver);background:var(--chrome-soft)}
@@ -153,7 +195,7 @@ footer{background:#07070d;border-top:1px solid rgba(139,92,246,0.1);padding:48px
 .hero-btns{animation:fadeUp 0.45s ease 0.5s both}
 
 /* ================= 3D + RAZZLE DAZZLE ================= */
-#three-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0.55}
+#three-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0.82;transition:opacity 0.6s ease}
 #particles{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
 #cursor-glow{position:fixed;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,0.18) 0%,rgba(139,92,246,0.06) 30%,transparent 60%);pointer-events:none;z-index:3;transform:translate(-50%,-50%);transition:opacity 0.3s;mix-blend-mode:screen;filter:blur(20px)}
 .bg-noise{position:fixed;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.36 0 0 0 0 0.96 0 0 0 0.04 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");pointer-events:none;z-index:2;opacity:0.5}
@@ -361,7 +403,7 @@ body.player-shown{padding-bottom:84px}
 .hero{position:relative}
 .hero-portrait{
   position:absolute;
-  top:104px;
+  top:calc(24vh + 78px);
   right:48px;
   width:clamp(220px,28vw,340px);
   aspect-ratio:1;
@@ -447,7 +489,7 @@ body.player-shown{padding-bottom:84px}
 
 
 /* ============= TRAFFIC MUSIC KICKER ============= */
-.tm-block{padding:48px 40px;background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 100%);border-top:1px solid var(--chrome-dim);border-bottom:1px solid var(--chrome-dim);position:relative;overflow:hidden}
+.tm-block{margin-top:40px;padding:48px 40px;background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 100%);border-top:1px solid var(--chrome-dim);border-bottom:1px solid var(--chrome-dim);position:relative;overflow:hidden}
 .tm-block::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(139,92,246,0.10) 0%,transparent 60%);pointer-events:none}
 .tm-inner{max-width:880px;margin:0 auto;position:relative;z-index:2}
 .tm-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--chrome);margin-bottom:18px}
@@ -457,6 +499,7 @@ body.player-shown{padding-bottom:84px}
 @keyframes tmShimmer{0%{background-position:-200% center}100%{background-position:200% center}}
 .tm-body{font-family:'Barlow',sans-serif;font-size:17px;line-height:1.75;color:var(--warm);max-width:680px}
 .tm-body strong{color:var(--paper);font-weight:500}
+.tm-fold{margin-top:40px;padding-top:34px;max-width:720px;border-top:1px solid var(--chrome-dim)}
 @media(max-width:760px){
   .tm-block{padding:40px 22px}
   .tm-line{font-size:clamp(30px,9vw,48px)}
@@ -468,10 +511,94 @@ body.player-shown{padding-bottom:84px}
 }
 
 </style>
+<style id="tuning-overrides">
+/* --- Hero: keep the name clear of the portrait on desktop --- */
+@media(min-width:1000px){ .hero-body{padding-right:380px} }
+@media(max-width:760px){ .hero-body{padding-right:0} }
+.hero-name{font-size:clamp(84px,13vw,168px)}
+.hero{background:linear-gradient(180deg,rgba(8,8,14,0.58) 0%,rgba(8,8,14,0.74) 44%,rgba(8,8,14,0.92) 80%,var(--ink) 100%)}
+/* --- Cover wall: a touch darker + calmer so foreground text reads --- */
+#cover-wall .cw-cell{filter:saturate(0.8) brightness(0.78)}
+#cover-wall .cw-overlay{background:linear-gradient(180deg,rgba(8,8,14,0.88),rgba(8,8,14,0.70) 32%,rgba(8,8,14,0.93)),radial-gradient(ellipse 88% 66% at 50% 42%,rgba(8,8,14,0.42),rgba(8,8,14,0.95))}
+/* --- Section vertical rhythm: normalize --- */
+.section{padding:64px 40px}
+#playlists{padding:64px 40px}
+.hl-section{padding:64px 40px 48px}
+@media(max-width:760px){ .section,#playlists,.hl-section{padding:48px 22px} }
+/* --- Credits marquee: shrink the banner, tighten spacing --- */
+.reel-name{font-size:clamp(22px,3vw,40px);padding:0 16px;letter-spacing:1px;opacity:0.9}
+.reel-sep{width:9px;height:9px}
+.reel-row{margin-top:2px !important}
+/* --- Top-bar social icons --- */
+.nav-social{display:flex;align-items:center;gap:16px}
+.ns-link{display:inline-flex;align-items:center;gap:6px;color:var(--silver);text-decoration:none;transition:color .15s}
+.ns-link:hover{color:var(--paper)}
+.ns-sp:hover{color:#1ED760}
+.ns-ig:hover{color:#E1306C}
+.ns-am:hover{color:#FC456C}
+.ns-count{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;color:var(--concrete)}
+.ns-sp:hover .ns-count{color:#1ED760}
+@media(max-width:600px){ .ns-count{display:none} .nav-social{gap:12px} }
+</style>
+<style id="destack">
+/* Un-carousel "The Track Record": stack Story / Credits / Press as normal scrolling sections */
+.hl-head{display:none !important}
+.hl-controls{display:none !important}
+.hl-section{padding:0 !important}
+.hl-viewport{height:auto !important;max-height:none !important;overflow:visible !important;max-width:none !important;margin:0 !important}
+.hl-track{display:block !important;overflow:visible !important;scroll-snap-type:none !important;gap:0 !important;padding:0 !important}
+.hl-card{flex:none !important;width:auto !important;height:auto !important;scroll-snap-align:none !important;background:transparent !important;border:none !important;border-bottom:1px solid rgba(139,92,246,0.12) !important;border-radius:0 !important;box-shadow:none !important;padding:64px 40px !important}
+#press .press-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr)) !important;gap:2px !important}
+.bio-grid{max-width:900px}
+@media(max-width:760px){ .hl-card{padding:48px 22px !important} }
+/* Credits marquee: shrink to body-copy scale (matches hero sub) */
+.reel-name{font-size:17px !important;letter-spacing:2px !important;padding:0 14px !important;opacity:.85 !important}
+.reel-row.r2 .reel-name{-webkit-text-stroke:0.6px rgba(168,176,189,0.5) !important}
+.reel-sep{width:6px !important;height:6px !important}
+.reel-row{margin-top:2px !important}
+.kr-sub{margin:28px 0 12px !important}
+/* Key Records: compact scroll window ~one entry tall — user scrolls through */
+.kr-pin{max-height:120px;overflow-y:auto;scroll-snap-type:y mandatory;-webkit-overflow-scrolling:touch;border:1px solid rgba(139,92,246,0.16);border-radius:8px}
+.kr-pin::-webkit-scrollbar{width:6px}
+.kr-pin::-webkit-scrollbar-thumb{background:rgba(139,92,246,0.45);border-radius:3px}
+.kr-card{scroll-snap-align:start;padding:20px 16px !important}
+.kr-card:first-child{border-top:none !important}
+</style>
 </head>
 <body>
-<canvas id="three-canvas"></canvas>
-<canvas id="particles"></canvas>
+<style>:focus-visible{outline:2px solid var(--purple-bright);outline-offset:3px}.skip-link{position:absolute;left:-999px;top:0;z-index:2000;background:var(--purple);color:#fff;padding:10px 16px;font-family:'Barlow Condensed',sans-serif;letter-spacing:2px;text-transform:uppercase}.skip-link:focus{left:0;top:0}</style>
+<a class="skip-link" href="#music">Skip to content</a>
+<!-- ===== ALBUM-COVER WALL BACKGROUND (real covers from the discography) ===== -->
+<style>
+#cover-wall{position:fixed;inset:0;z-index:0;display:flex;gap:14px;padding:14px;overflow:hidden;pointer-events:none;background:#08080e}
+#cover-wall .cw-col{flex:1;min-width:0;overflow:hidden}
+#cover-wall .cw-track{display:flex;flex-direction:column;gap:14px;animation:cwScroll linear infinite;will-change:transform}
+@keyframes cwScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+#cover-wall .cw-cell{width:100%;aspect-ratio:1;border-radius:10px;background-size:cover;background-position:center;filter:saturate(0.9)}
+#cover-wall .cw-overlay{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(8,8,14,0.80),rgba(8,8,14,0.60) 32%,rgba(8,8,14,0.88)),radial-gradient(ellipse 88% 66% at 50% 42%,rgba(8,8,14,0.30),rgba(8,8,14,0.92))}
+body > *:not(#cover-wall):not(#cursor-glow){position:relative;z-index:2}
+@media (prefers-reduced-motion: reduce){#cover-wall .cw-track{animation:none}}
+/* Apple-style pinned horizontal galleries — JS wraps each row in .gallery-vp (the
+   fixed window) and scrubs the track sideways as you scroll down. */
+/* Discography = Apple "Performance" layout: album cover pinned left + crossfade,
+   title/credits/badge scroll through on the right, one album at a time. */
+.disc-scrolly{display:grid;grid-template-columns:0.95fr 1.05fr;gap:64px;max-width:1180px;margin:0 auto}
+.disc-stage{position:sticky;top:13vh;height:74vh}
+.disc-cov{position:absolute;top:50%;left:50%;width:100%;max-width:500px;aspect-ratio:1;object-fit:cover;border-radius:18px;box-shadow:0 40px 90px rgba(0,0,0,0.6);transform:translate(-50%,-50%) scale(0.96);opacity:0;transition:opacity .55s ease,transform .55s ease;pointer-events:none}
+.disc-cov.active{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.disc-copy{min-height:56vh;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.disc-copy .disc-copy-cover{display:none}
+.disc-badge{align-self:flex-start;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:6px 12px;border:1px solid rgba(201,168,76,0.5);color:var(--gold)}
+.disc-badge.pp{border-color:rgba(139,92,246,0.5);color:var(--purple-bright)}
+.disc-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,74px);line-height:0.96;letter-spacing:0.5px;color:var(--paper)}
+.disc-meta{font-family:'DM Mono',monospace;font-size:13px;letter-spacing:1px;color:var(--warm)}
+.disc-credits{font-family:'Barlow Condensed',sans-serif;font-size:20px;line-height:1.5;text-transform:uppercase;letter-spacing:1px;color:var(--concrete)}
+.disc-link{align-self:flex-start;margin-top:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:9px 16px;text-decoration:none;transition:border-color .15s}
+.disc-link:hover{border-color:var(--gold)}
+@media(max-width:820px){.disc-scrolly{grid-template-columns:1fr;gap:0}.disc-stage{display:none}.disc-copy{min-height:auto;padding:36px 0}.disc-copy .disc-copy-cover{display:block;width:100%;max-width:420px;aspect-ratio:1;object-fit:cover;border-radius:14px;margin-bottom:18px}}
+</style>
+<div id="cover-wall" aria-hidden="true"></div>
 <div class="bg-noise"></div>
 <div id="cursor-glow"></div>
 
@@ -481,32 +608,14 @@ body.player-shown{padding-bottom:84px}
     <a href="#music">Music</a>
     <a href="#credits">Credits</a>
     <a href="#press">Press</a>
-    
+    <a href="#playlists">Listen</a>
     <a href="#beats">Beats</a>
     <a href="#contact">Contact</a>
   </div>
-  <div class="nav-handle" id="navHandle">
-    <button class="nh-pill" id="nhToggle" aria-expanded="false" aria-haspopup="true" aria-label="Open profile links">
-      <span class="nh-handle-text">@joogszn</span>
-      <svg class="nh-chev" viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-    </button>
-    <div class="nh-menu" role="menu" aria-label="Profile links">
-      <a class="nh-row nh-ig" href="https://www.instagram.com/joogszn/" target="_blank" rel="noopener" role="menuitem">
-        <svg class="nh-glyph" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zm0 2.2c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.5-1.3.9-.4.4-.6.8-.9 1.3-.1.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.5.9.9 1.3.4.4.8.6 1.3.9.4.1 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.5 1.3-.9.4-.4.6-.8.9-1.3.1-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.5-.9-.9-1.3-.4-.4-.8-.6-1.3-.9-.4-.1-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.7a4.1 4.1 0 1 0 0 8.2 4.1 4.1 0 0 0 0-8.2zm0 6.7a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2zm5.2-6.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
-        <span class="nh-row-label">Instagram</span>
-        <span class="nh-row-handle">@joogszn</span>
-      </a>
-      <a class="nh-row nh-sp" href="https://open.spotify.com/artist/3sQcHDk4dv5aUVBtmXOMVo" target="_blank" rel="noopener" role="menuitem">
-        <svg class="nh-glyph" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.5 17.3a.7.7 0 0 1-1 .2c-2.7-1.7-6.2-2-10.2-1.1a.7.7 0 0 1-.3-1.4c4.4-1 8.2-.6 11.3 1.3.3.2.4.6.2 1zm1.5-3.3a.9.9 0 0 1-1.3.3c-3.1-1.9-7.8-2.5-11.5-1.4a.9.9 0 0 1-.5-1.7c4.2-1.3 9.4-.6 13 1.5.5.3.6.8.3 1.3zm.1-3.4c-3.7-2.2-9.9-2.4-13.5-1.3a1.1 1.1 0 0 1-.6-2.1c4.1-1.2 11-1 15.3 1.5a1.1 1.1 0 0 1-1.2 1.9z"/></svg>
-        <span class="nh-row-label">Spotify</span>
-        <span class="nh-row-handle">JoogSzn</span>
-      </a>
-      <a class="nh-row nh-am" href="https://music.apple.com/us/artist/joogszn/1515587525" target="_blank" rel="noopener" role="menuitem">
-        <svg class="nh-glyph" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M22.4 7.6c0-2.4 0-3.6-.5-4.4a3.4 3.4 0 0 0-1.2-1.2c-.8-.5-2-.5-4.4-.5H7.6c-2.4 0-3.6 0-4.4.5-.5.2-1 .7-1.2 1.2-.5.8-.5 2-.5 4.4v8.8c0 2.4 0 3.6.5 4.4.2.5.7 1 1.2 1.2.8.5 2 .5 4.4.5h8.8c2.4 0 3.6 0 4.4-.5.5-.2 1-.7 1.2-1.2.5-.8.5-2 .5-4.4V7.6zM10 17.6c-.1.5-.4 1-.9 1.4a3 3 0 0 1-1.5.5 2.4 2.4 0 0 1-1.5-4.3c.4-.3.9-.5 1.5-.5.3 0 .7 0 1 .2v-7l7.4-1.6v8.6a3 3 0 0 1-2.4 2.7 2.4 2.4 0 0 1-2.5-2.6c0-.6.3-1.2.7-1.6.4-.3 1-.5 1.5-.5.4 0 .7 0 1 .2V8.4l-4.4 1V17v.6z"/></svg>
-        <span class="nh-row-label">Apple Music</span>
-        <span class="nh-row-handle">JoogSzn</span>
-      </a>
-    </div>
+    <div class="nav-social" aria-label="Social links">
+    <a class="ns-link ns-sp" href="https://open.spotify.com/artist/3sQcHDk4dv5aUVBtmXOMVo" target="_blank" rel="noopener" aria-label="Spotify — 121K monthly listeners"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm5.5 17.3a.7.7 0 0 1-1 .2c-2.7-1.7-6.2-2-10.2-1.1a.7.7 0 0 1-.3-1.4c4.4-1 8.2-.6 11.3 1.3.3.2.4.6.2 1zm1.5-3.3a.9.9 0 0 1-1.3.3c-3.1-1.9-7.8-2.5-11.5-1.4a.9.9 0 0 1-.5-1.7c4.2-1.3 9.4-.6 13 1.5.5.3.6.8.3 1.3zm.1-3.4c-3.7-2.2-9.9-2.4-13.5-1.3a1.1 1.1 0 0 1-.6-2.1c4.1-1.2 11-1 15.3 1.5a1.1 1.1 0 0 1-1.2 1.9z"/></svg><span class="ns-count">121K</span></a>
+    <a class="ns-link ns-am" href="https://music.apple.com/us/artist/joogszn/1515587525" target="_blank" rel="noopener" aria-label="Apple Music"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M22.4 7.6c0-2.4 0-3.6-.5-4.4a3.4 3.4 0 0 0-1.2-1.2c-.8-.5-2-.5-4.4-.5H7.6c-2.4 0-3.6 0-4.4.5-.5.2-1 .7-1.2 1.2-.5.8-.5 2-.5 4.4v8.8c0 2.4 0 3.6.5 4.4.2.5.7 1 1.2 1.2.8.5 2 .5 4.4.5h8.8c2.4 0 3.6 0 4.4-.5.5-.2 1-.7 1.2-1.2.5-.8.5-2 .5-4.4V7.6zM10 17.6c-.1.5-.4 1-.9 1.4a3 3 0 0 1-1.5.5 2.4 2.4 0 0 1-1.5-4.3c.4-.3.9-.5 1.5-.5.3 0 .7 0 1 .2v-7l7.4-1.6v8.6a3 3 0 0 1-2.4 2.7 2.4 2.4 0 0 1-2.5-2.6c0-.6.3-1.2.7-1.6.4-.3 1-.5 1.5-.5.4 0 .7 0 1 .2V8.4l-4.4 1V17v.6z"/></svg></a>
+    <a class="ns-link ns-ig" href="https://www.instagram.com/joogszn/" target="_blank" rel="noopener" aria-label="Instagram @joogszn"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1zm0 2.2c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.5-1.3.9-.4.4-.6.8-.9 1.3-.1.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.5.9.9 1.3.4.4.8.6 1.3.9.4.1 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.5 1.3-.9.4-.4.6-.8.9-1.3.1-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.5-.9-.9-1.3-.4-.4-.8-.6-1.3-.9-.4-.1-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.7a4.1 4.1 0 1 0 0 8.2 4.1 4.1 0 0 0 0-8.2zm0 6.7a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2zm5.2-6.9a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg></a>
   </div>
 </nav>
 <section class="hero">
@@ -514,12 +623,11 @@ body.player-shown{padding-bottom:84px}
   <div class="hero-glow"></div>
   <div class="hero-portrait" data-tilt-portrait>
     <img src="img/joog-portrait.jpg" alt="JoogSzn portrait" loading="eager" decoding="async"/>
-    <span class="hero-portrait-tag">PRODUCER &middot; ENGINEER &middot; ARTIST</span>
   </div>
 
   <div class="hero-body">
     <div class="hero-eyebrow">Producer &middot; Engineer &middot; Artist</div>
-    <div class="hero-name" data-text="JOOGSZN">JOOG<span class="szn">SZN</span></div>
+    <h1 class="hero-name" data-text="JOOGSZN">JOOG<span class="szn">SZN</span></h1>
     <div class="hero-sub">Platinum Certified. The Sound You&rsquo;ve Been Hearing.</div>
     <div class="hero-btns">
       <button class="btn-main" onclick="window.open('https://open.spotify.com/artist/3sQcHDk4dv5aUVBtmXOMVo','_blank')">Stream Where's Joog?</button>
@@ -542,13 +650,6 @@ body.player-shown{padding-bottom:84px}
   </div>
 </section>
 
-<section class="tm-block reveal-up">
-  <div class="tm-inner">
-    <div class="tm-eyebrow"><span class="tm-dot"></span>What Is Traffic Music</div>
-    <div class="tm-line">Music for the car ride.</div>
-    <p class="tm-body">California spends hours going somewhere. <strong>Traffic Music</strong> is what makes the subs shake and the ride feel right &mdash; woozy, paranoid, cinematic. Built in HitMob, exported worldwide.</p>
-  </div>
-</section>
 <div class="plaques">
   <div class="plq">
     <div class="plq-icon">2x<br>PLAT</div>
@@ -576,17 +677,87 @@ body.player-shown{padding-bottom:84px}
   </div>
 </div>
 
-<div style="background:var(--purple-dim);padding:32px 40px;display:flex;align-items:center;gap:24px;border-top:1px solid rgba(139,92,246,0.3);border-bottom:1px solid rgba(139,92,246,0.3)">
-  <div style="font-family:'Bebas Neue',sans-serif;font-size:60px;color:rgba(167,139,250,0.3);line-height:1;flex-shrink:0">"</div>
-  <div>
-    <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--paper);line-height:1.4;text-transform:uppercase;letter-spacing:0.5px">Got an 8.5 on Pitchfork. Outdid Future, Bad Bunny &mdash; it was up there with Run the Jewels.</div>
-    <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--purple-bright);margin-top:10px;letter-spacing:1px">&mdash; JoogSZN, on Thank You For Using GTL &middot; NPR All Things Considered</div>
-  </div>
-</div>
 
-<section id="about" class="section" style="background:var(--ink)">
+
+<section id="music" class="section" style="background:var(--ink2)">
+  <div class="eyebrow">Discography</div>
+  <h2 class="sec-title">Projects</h2>
+  <div class="disc-scrolly">
+    <div class="disc-stage" aria-hidden="true">
+      <img class="disc-cov active" data-i="0" src="https://images.genius.com/400e1b8b90a932a69868aaea62f933bd.640x640x1.jpg" alt="Vintage and Adventurous">
+      <img class="disc-cov" data-i="1" src="https://images.genius.com/265521ddd7ad354097da7dd39b9bb440.1000x1000x1.png" alt="Where's Joog?">
+      <img class="disc-cov" data-i="2" src="https://images.genius.com/d5d811b9a144fbdf5c94c2810205acf4.1000x1000x1.png" alt="Thank You For Using GTL">
+      <img class="disc-cov" data-i="3" src="https://images.genius.com/55bbea461d0508f55afc300fa9378b3c.1000x1000x1.jpg" alt="ShorelineDoThatShit">
+    </div>
+    <div class="disc-copy-col">
+      <article class="disc-copy" data-i="0">
+        <img class="disc-copy-cover" src="https://images.genius.com/400e1b8b90a932a69868aaea62f933bd.640x640x1.jpg" alt="">
+        <div class="disc-badge">Breakout</div>
+        <h3 class="disc-title">Vintage &amp; Adventurous</h3>
+        <div class="disc-meta">Conradfrmdaaves &middot; Produced by JoogSzn</div>
+        <div class="disc-credits">Original &middot; Gunna Remix &middot; Bay2LA (E-40 + Mozzy)</div>
+        <a class="disc-link" href="https://open.spotify.com/search/Vintage%20Adventurous%20Conradfrmdaaves" target="_blank" rel="noopener">Listen &#8599;</a>
+      </article>
+      <article class="disc-copy" data-i="1">
+        <img class="disc-copy-cover" src="https://images.genius.com/265521ddd7ad354097da7dd39b9bb440.1000x1000x1.png" alt="">
+        <div class="disc-badge pp">Debut LP</div>
+        <h3 class="disc-title">Where's Joog?</h3>
+        <div class="disc-meta">June 3, 2022 &middot; HitMob &middot; 20 Tracks</div>
+        <div class="disc-credits">E-40 &middot; Mozzy &middot; Earl Sweatshirt &middot; 03 Greedo &middot; Gunna &middot; OHGEESY</div>
+        <a class="disc-link" href="https://open.spotify.com/album/4o4Pz57lkRniiXryYbbVw9" target="_blank" rel="noopener">Listen &#8599;</a>
+      </article>
+      <article class="disc-copy" data-i="2">
+        <img class="disc-copy-cover" src="https://images.genius.com/d5d811b9a144fbdf5c94c2810205acf4.1000x1000x1.png" alt="">
+        <div class="disc-badge">Pitchfork 8.5</div>
+        <h3 class="disc-title">Thank You For Using GTL</h3>
+        <div class="disc-meta">Drakeo The Ruler &middot; 2020 &middot; Prod + Recorded by JoogSZN</div>
+        <div class="disc-credits">NPR Top 25 &middot; Washington Post &middot; Pitchfork 8.5</div>
+        <a class="disc-link" href="https://store.empi.re/products/drakeo-the-ruler-thank-you-for-using-gtl-5-year-anniversary-vinyl" target="_blank" rel="noopener">Buy Vinyl on Empire &#8599;</a>
+      </article>
+      <article class="disc-copy" data-i="3">
+        <img class="disc-copy-cover" src="https://images.genius.com/55bbea461d0508f55afc300fa9378b3c.1000x1000x1.jpg" alt="">
+        <div class="disc-badge">RIAA Gold</div>
+        <h3 class="disc-title">ShorelineDoThatShit</h3>
+        <div class="disc-meta">Shoreline Mafia &middot; Atlantic Records &middot; JoogSZN Credits</div>
+        <div class="disc-credits">"Musty" 2x Plat (editor) &middot; "Spaceship" (co-prod w/ RonRon)</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+.hl-section{padding:54px 40px 40px;background:var(--ink);position:relative;z-index:10}
+.hl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;max-width:1180px;margin:0 auto 30px}
+.hl-eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--chrome);margin-bottom:12px}
+.hl-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,6vw,68px);color:var(--paper);line-height:0.98;letter-spacing:1px}
+.hl-watch{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;color:var(--gold);text-decoration:none;white-space:nowrap;padding-bottom:10px;transition:color .15s}
+.hl-watch:hover{color:var(--paper)}
+.hl-viewport{max-width:1180px;margin:0 auto;overflow:hidden;height:560px;transition:height .5s cubic-bezier(.4,0,.2,1)}
+.hl-track{display:flex;align-items:flex-start;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;position:relative;scrollbar-width:none;padding:2px}
+.hl-track::-webkit-scrollbar{display:none}
+.hl-card{flex:0 0 100%;scroll-snap-align:center;align-self:flex-start;background:#121218;border:1px solid rgba(255,255,255,0.07);border-radius:24px;padding:40px 44px;box-shadow:0 30px 80px rgba(0,0,0,0.55)}
+.hl-card::-webkit-scrollbar{display:none}
+.hl-card .eyebrow{margin-top:0}
+#press .press-grid{grid-template-columns:1fr;gap:12px}
+.hl-card .sec-title{margin-bottom:22px}
+.hl-controls{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:26px}
+.hl-dots{display:flex;gap:9px}
+.hl-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.22);border:none;cursor:pointer;padding:0;transition:background .3s,width .3s}
+.hl-dot.active{background:var(--paper);width:24px;border-radius:4px}
+.hl-play{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.12);color:var(--paper);cursor:pointer;font-size:11px;line-height:1;display:flex;align-items:center;justify-content:center}
+@media(max-width:820px){.hl-card{padding:28px 22px;height:clamp(430px,72vh,580px)}.hl-head{flex-direction:column;align-items:flex-start;gap:10px}}
+</style>
+<section id="highlights" class="hl-section">
+  <div class="hl-head">
+    <div><div class="hl-eyebrow">Story &middot; Credits &middot; Press</div><h2 class="hl-title">The Track Record.</h2></div>
+    <a class="hl-watch" href="#music">See the discography &#9656;</a>
+  </div>
+  <div class="hl-viewport"><div class="hl-track" id="hlTrackOff">
+    <article class="hl-card">
   <div class="eyebrow">About</div>
-  <div class="sec-title">The Story</div>
+  <h2 class="sec-title">The Story</h2>
   <div class="bio-grid">
     <div class="bio-left">
       <p class="bio-p">Leimert Park-raised. Self-taught &mdash; selling ringtones and mixed CDs in high school before most kids knew what a producer was.</p>
@@ -603,61 +774,36 @@ body.player-shown{padding-bottom:84px}
         <span class="bio-tag">Worldwide</span>
       </div>
     </div>
-    <div class="bio-right">
-      <div class="hl hl-gold"><div class="hl-title">Vintage &amp; Adventurous &mdash; Breakout Production</div><div class="hl-sub">Conradfrmdaaves &middot; JoogSzn &middot; Gunna Remix &middot; Bay2LA w/ E-40 + Mozzy</div></div>
-      <div class="hl hl-gold"><div class="hl-title">Thank You For Using GTL &mdash; Pitchfork 8.5</div><div class="hl-sub">Drakeo The Ruler &middot; Produced + Recorded entirely by JoogSZN &middot; 2020 &middot; 5th Anniversary Vinyl on Empire</div></div>
-      <div class="hl hl-gold"><div class="hl-title">RIAA 2x Platinum &mdash; &ldquo;Musty&rdquo;</div><div class="hl-sub">Shoreline Mafia &middot; Atlantic Records &middot; ShorelineDoThatShit</div></div>
-      <div class="hl"><div class="hl-title">Co-Producer &mdash; "Spaceship" w/ RonRon</div><div class="hl-sub">Shoreline Mafia &middot; ShorelineDoThatShit &middot; RIAA Gold Album</div></div>
-      <div class="hl"><div class="hl-title">RIAA Gold &mdash; Mafia Bidness &middot; Billboard 200 #27</div><div class="hl-sub">Shoreline Mafia &middot; Atlantic Records &middot; July 2020</div></div>
-      <div class="hl"><div class="hl-title">Where's Joog? &mdash; Debut LP via HitMob</div><div class="hl-sub">June 2022 &middot; 20 Tracks &middot; E-40 &middot; Earl Sweatshirt &middot; Gunna &middot; 03 Greedo</div></div>
     </div>
+  <div class="tm-fold">
+    <div class="tm-eyebrow"><span class="tm-dot"></span>What Is Traffic Music</div>
+    <div class="tm-line">Music for the car ride.</div>
+    <p class="tm-body">California spends hours going somewhere. <strong>Traffic Music</strong> is what makes the subs shake and the ride feel right &mdash; woozy, paranoid, cinematic. Built in HitMob, exported worldwide.</p>
   </div>
-</section>
-<section id="music" class="section" style="background:var(--ink2)">
-  <div class="eyebrow">Discography</div>
-  <div class="sec-title">Projects</div>
-  <div class="proj-grid">
-    <div class="proj" onclick="window.open('https://open.spotify.com/search/Vintage%20Adventurous%20Conradfrmdaaves','_blank')" style="cursor:pointer">
-      <div class="proj-cover"><img src="https://images.genius.com/400e1b8b90a932a69868aaea62f933bd.640x640x1.jpg" alt="Vintage and Adventurous - ConradFrmDaAves" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="proj-badge badge-gold">Breakout</div><div class="proj-overlay"><div class="proj-play"><div class="proj-tri"></div></div></div></div>
-      <div class="proj-info"><div class="proj-title">Vintage &amp; Adventurous</div><div class="proj-meta">Conradfrmdaaves &middot; Produced by JoogSzn</div><div class="proj-credits">Original &middot; Gunna Remix &middot; Bay2LA (E-40 + Mozzy)</div></div>
-    </div>
-    <div class="proj" onclick="openSpotifyModal('album/4o4Pz57lkRniiXryYbbVw9')" style="cursor:pointer">
-      <div class="proj-cover"><img src="https://images.genius.com/265521ddd7ad354097da7dd39b9bb440.1000x1000x1.png" alt="Where's Joog? - JoogSZN" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="proj-badge badge-purple">Debut LP</div><div class="proj-overlay"><div class="proj-play"><div class="proj-tri"></div></div></div></div>
-      <div class="proj-info"><div class="proj-title">Where's Joog?</div><div class="proj-meta">June 3, 2022 &middot; HitMob &middot; 20 Tracks</div><div class="proj-credits">E-40 &middot; Mozzy &middot; Earl Sweatshirt &middot; 03 Greedo &middot; Gunna &middot; OHGEESY</div></div>
-    </div>
-    <div class="proj" onclick="openSpotifyModal('album/6lF4KtV8umj69N06QxdlUc')" style="cursor:pointer">
-      <div class="proj-cover"><img src="https://images.genius.com/d5d811b9a144fbdf5c94c2810205acf4.1000x1000x1.png" alt="Thank You For Using GTL - Drakeo The Ruler &amp; JoogSZN" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="proj-badge badge-gold">Pitchfork 8.5</div><div class="proj-overlay"><div class="proj-play"><div class="proj-tri"></div></div></div></div>
-      <div class="proj-info"><div class="proj-title">Thank You For Using GTL</div><div class="proj-meta">Drakeo The Ruler &middot; 2020 &middot; Prod + Recorded by JoogSZN</div><div class="proj-credits">NPR Top 25 &middot; Washington Post &middot; Pitchfork 8.5</div><a href="https://store.empi.re/products/drakeo-the-ruler-thank-you-for-using-gtl-5-year-anniversary-vinyl" target="_blank" style="display:inline-block;margin-top:10px;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:5px 12px;text-decoration:none;transition:border-color 0.15s">Buy Vinyl on Empire &#8599;</a></div>
-    </div>
-    <div class="proj">
-      <div class="proj-cover"><img src="https://images.genius.com/55bbea461d0508f55afc300fa9378b3c.1000x1000x1.jpg" alt="ShorelineDoThatShit - Shoreline Mafia" style="width:100%;height:100%;object-fit:cover;display:block;"><div class="proj-badge badge-gold">RIAA Gold</div><div class="proj-overlay"><div class="proj-play"><div class="proj-tri"></div></div></div></div>
-      <div class="proj-info"><div class="proj-title">ShorelineDoThatShit</div><div class="proj-meta">Shoreline Mafia &middot; Atlantic Records &middot; JoogSZN Credits</div><div class="proj-credits">"Musty" 2x Plat (editor) &middot; "Spaceship" (co-prod w/ RonRon)</div></div>
-    </div>
+</article>
+    <article class="hl-card" id="credits">
+  <div class="eyebrow">Production Credits</div>
+  <h2 class="sec-title">Credits</h2>
+  <div class="reel-row r1" style="margin-top:6px"><div class="reel-track" id="reelA"></div></div>
+  <div class="reel-row r2" style="margin-top:10px"><div class="reel-track" id="reelB"></div></div>
+  <div class="reel-row r1" style="margin-top:10px;margin-bottom:40px"><div class="reel-track" id="reelC"></div></div>
+  <div class="kr-sub">Key Records</div>
+  <div id="kr-pin" class="kr-pin"><div id="kr-track" class="kr-track"><div class="kr-card"><div class="kr-num">01</div><div class="kr-title">Vintage &amp; Adventurous</div><div class="kr-feat">Conradfrmdaaves &middot; Produced by JoogSzn &middot; Underground Classic</div><span class="t-pill pill-gold">Breakout</span></div><div class="kr-card"><div class="kr-num">02</div><div class="kr-title">Musty</div><div class="kr-feat">Shoreline Mafia &middot; RIAA 2x Platinum &middot; ShorelineDoThatShit &middot; Atlantic Records</div><span class="t-pill pill-gold">2x Platinum</span></div><div class="kr-card"><div class="kr-num">03</div><div class="kr-title">Spaceship</div><div class="kr-feat">Shoreline Mafia &middot; Co-prod w/ RonRon &middot; ShorelineDoThatShit &middot; Atlantic</div><span class="t-pill pill-gold">RIAA Gold</span></div><div class="kr-card"><div class="kr-num">04</div><div class="kr-title">Tricc on Just Anybody</div><div class="kr-feat">03 Greedo &middot; Co-produced by JoogSzn &amp; BeatBoy &middot; First Night Out</div><span class="t-pill pill-purple">Classic</span></div><div class="kr-card"><div class="kr-num">05</div><div class="kr-title">Ion Rap Beef (Remix)</div><div class="kr-feat">Drakeo The Ruler &middot; 03 Greedo &middot; Earl Sweatshirt &middot; Produced by JoogSzn</div><span class="t-pill pill-purple">Classic</span></div><div class="kr-card"><div class="kr-num">06</div><div class="kr-title">Tell You the Truth</div><div class="kr-feat">Drakeo The Ruler &middot; JoogSzn &middot; Thank You For Using GTL</div><span class="t-pill pill-dim">GTL</span></div><div class="kr-card"><div class="kr-num">07</div><div class="kr-title">Shopping For Dior</div><div class="kr-feat">Baby Smoove &middot; Fenix Flexin &middot; Talibando &middot; Produced by JoogSzn &middot; Where's Joog?</div><span class="t-pill pill-dim">Hit</span></div><div class="kr-card"><div class="kr-num">08</div><div class="kr-title">She's From Stockton</div><div class="kr-feat">Big Sad 1900 &middot; 03 Greedo &middot; Co-produced by JoogSzn</div><span class="t-pill pill-dim">Collab</span></div><div class="kr-card"><div class="kr-num">09</div><div class="kr-title">The Homie</div><div class="kr-feat">Wiz Khalifa &middot; Quadwoofer &amp; JoogSZN &middot; See Ya &middot; 2023</div><span class="t-pill pill-purple">Collab</span></div><div class="kr-card"><div class="kr-num">10</div><div class="kr-title">Fuck It</div><div class="kr-feat">MoneySign $uede &middot; Rucci &middot; Produced by JoogSzn &middot; Where's Joog?</div><span class="t-pill pill-purple">Single</span></div></div></div>
+<div style="background:var(--purple-dim);padding:32px 40px;display:flex;align-items:center;gap:24px;border-top:1px solid rgba(139,92,246,0.3);border-bottom:1px solid rgba(139,92,246,0.3)">
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:60px;color:rgba(167,139,250,0.3);line-height:1;flex-shrink:0">"</div>
+  <div>
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:700;color:var(--paper);line-height:1.4;text-transform:uppercase;letter-spacing:0.5px">Got an 8.5 on Pitchfork. Outdid Future, Bad Bunny &mdash; it was up there with Run the Jewels.</div>
+    <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--purple-bright);margin-top:10px;letter-spacing:1px">&mdash; JoogSZN, on Thank You For Using GTL &middot; NPR All Things Considered</div>
   </div>
-</section>
-<section class="section" style="background:var(--ink)">
-  <div class="eyebrow">Catalog</div>
-  <div class="sec-title">Key Records</div>
-  <div class="track-list">
-    <div class="track" data-itunes="Vintage Adventurous Conradfrmdaaves"><div class="t-num">01</div><div><div class="t-title">Vintage &amp; Adventurous</div><div class="t-feat">Conradfrmdaaves &middot; Produced by JoogSzn &middot; Underground Classic</div></div><div class="t-pill pill-gold">Breakout</div></div>
-    <div class="track" data-itunes="Musty Shoreline Mafia"><div class="t-num">02</div><div><div class="t-title">Musty</div><div class="t-feat">Shoreline Mafia &middot; RIAA 2x Platinum &middot; ShorelineDoThatShit &middot; Atlantic Records</div></div><div class="t-pill pill-gold">2x Platinum</div></div>
-    <div class="track" data-itunes="Spaceship Shoreline Mafia"><div class="t-num">03</div><div><div class="t-title">Spaceship</div><div class="t-feat">Shoreline Mafia &middot; Co-prod w/ RonRon &middot; ShorelineDoThatShit &middot; Atlantic</div></div><div class="t-pill pill-gold">RIAA Gold</div></div>
-    <div class="track" data-itunes="Tricc on Just Anybody 03 Greedo"><div class="t-num">04</div><div><div class="t-title">Tricc on Just Anybody</div><div class="t-feat">03 Greedo &middot; Co-produced by JoogSzn &amp; BeatBoy &middot; First Night Out</div></div><div class="t-pill pill-purple">Classic</div></div>
-    <div class="track" data-itunes="Ion Rap Beef Remix Drakeo Ruler"><div class="t-num">05</div><div><div class="t-title">Ion Rap Beef (Remix)</div><div class="t-feat">Drakeo The Ruler &middot; 03 Greedo &middot; Earl Sweatshirt &middot; Produced by JoogSzn</div></div><div class="t-pill pill-purple">Classic</div></div>
-    <div class="track" data-itunes="Tell You the Truth Drakeo Ruler"><div class="t-num">06</div><div><div class="t-title">Tell You the Truth</div><div class="t-feat">Drakeo The Ruler &middot; JoogSzn &middot; Thank You For Using GTL</div></div><div class="t-pill pill-dim">GTL</div></div>
-    <div class="track" data-itunes="Shopping For Dior Baby Smoove"><div class="t-num">07</div><div><div class="t-title">Shopping For Dior</div><div class="t-feat">Baby Smoove &middot; Fenix Flexin &middot; Talibando &middot; Produced by JoogSzn &middot; Where's Joog?</div></div><div class="t-pill pill-dim">Hit</div></div>
-    <div class="track" data-itunes="Shes From Stockton Big Sad 1900"><div class="t-num">08</div><div><div class="t-title">She's From Stockton</div><div class="t-feat">Big Sad 1900 &middot; 03 Greedo &middot; Co-produced by JoogSzn</div></div><div class="t-pill pill-dim">Collab</div></div>
-    <div class="track" data-itunes="The Homie Wiz Khalifa Quadwoofer"><div class="t-num">09</div><div><div class="t-title">The Homie</div><div class="t-feat">Wiz Khalifa &middot; Quadwoofer &amp; JoogSZN &middot; See Ya &middot; 2023</div></div><div class="t-pill pill-purple">Collab</div></div>
-    <div class="track" data-itunes="Fuck It MoneySign $uede"><div class="t-num">10</div><div><div class="t-title">Fuck It</div><div class="t-feat">MoneySign $uede &middot; Rucci &middot; Produced by JoogSzn &middot; Where's Joog?</div></div><div class="t-pill pill-purple">Single</div></div>
-  </div>
-</section>
-<section id="press" class="section" style="background:var(--ink2)">
+</div>
+</article>
+    <article class="hl-card" id="press">
   <div class="eyebrow">Recognition</div>
-  <div class="sec-title">Press &amp; Features</div>
+  <h2 class="sec-title">Press &amp; Features</h2>
   <div class="press-grid">
     <div class="press-card" onclick="window.open('https://www.washingtonpost.com/lifestyle/style/the-most-urgent-rap-album-of-2020-drakeo-the-ruler-just-phoned-it-in-from-jail/2020/06/09/730a5c38-a5b1-11ea-b473-04905b1af82b_story.html','_blank')"><div class="press-outlet">Washington Post &middot; June 2020</div><div class="press-head">"The Most Urgent Rap Album of the Year"</div><div class="press-snippet">WaPo called GTL the most urgent rap album of 2020 &mdash; covering JoogSzn's unprecedented jail-phone recording method.</div><div class="press-url">washingtonpost.com &#8599;</div></div>
     <div class="press-card" onclick="window.open('https://www.npr.org/2020/08/28/906807077/prison-telecom-business-indicted-by-rap-album-recorded-in-jail','_blank')"><div class="press-outlet">NPR / All Things Considered &middot; Aug 2020</div><div class="press-head">Prison Telecom Indicted By a Rap Album Recorded in Jail</div><div class="press-snippet">NPR placed GTL on Top 25 Albums of H1 2020. Aired the Joog + Drakeo story nationally to millions of listeners.</div><div class="press-url">npr.org &#8599;</div></div>
-    <div class="press-card" onclick="window.open('https://pitchfork.com','_blank')"><div class="press-outlet">Pitchfork &middot; 2020</div><div class="press-head">8.5 &mdash; "Likely the Greatest Rap Album Ever Recorded from Jail"</div><div class="press-snippet">Scored 8.5, ranked #32 on 50 Best Albums of 2020. Joog: "Got an 8.5 on Pitchfork. Outdid Future, Bad Bunny."</div><div class="press-url">pitchfork.com &#8599;</div></div>
+    
     <div class="press-card" onclick="window.open('https://www.okayplayer.com/behind-the-beat-joogszn-on-why-drakeo-the-ruler-is-one-of-the-la-greats/664565','_blank')"><div class="press-outlet">Okayplayer &middot; 2022&ndash;2024</div><div class="press-head">Behind the Beat: JoogSZN on Drakeo as One of the LA Greats</div><div class="press-snippet">Profiled as a fellow architect of Traffic Music who altered the sonic template of West Coast rap.</div><div class="press-url">okayplayer.com &#8599;</div></div>
     <div class="press-card" onclick="window.open('https://www.thefader.com/2022/06/03/joogszn-debut-album-wheres-joog','_blank')"><div class="press-outlet">The FADER &middot; June 2022</div><div class="press-head">JoogSzn Drops Debut Album, Where's Joog?</div><div class="press-snippet">FADER profiled the transition from go-to producer to solo artist &mdash; on his own terms, on his own label.</div><div class="press-url">thefader.com &#8599;</div></div>
     <div class="press-card" onclick="window.open('https://knock-la.com/joogszn-interview-wheres-joog/','_blank')"><div class="press-outlet">Knock LA &middot; April 2024</div><div class="press-head">One of LA's Most Influential Music Producers</div><div class="press-snippet">Deep profile &mdash; Crenshaw roots, HitMob founding, GTL recording sessions, and why cops still harass one of LA's most important producers.</div><div class="press-url">knock-la.com &#8599;</div></div>
@@ -665,12 +811,69 @@ body.player-shown{padding-bottom:84px}
     <div class="press-card" onclick="window.open('https://spectrumculture.com/2020/06/16/drakeo-the-ruler-thank-you-for-using-gtl-review/','_blank')"><div class="press-outlet">Spectrum Culture &middot; June 2020</div><div class="press-head">A Testament to the Irrepressible Power of Art</div><div class="press-snippet">JoogSZN's stripped-down beats called the perfect pedestal for Drakeo's scratchy jail-phone takes. Unimpeachable.</div><div class="press-url">spectrumculture.com &#8599;</div></div>
     <div class="press-card" onclick="window.open('https://flypaper.soundfly.com/discover/joogszn-on-recording-drakeo-the-ruler-over-the-phone-from-jail/','_blank')"><div class="press-outlet">Flypaper / Soundfly &middot; 2020</div><div class="press-head">Recording Drakeo The Ruler Over the Phone from Jail</div><div class="press-snippet">The full story &mdash; 36 hours of jail phone sessions, weeks of mixing, Joog's vision to turn injustice into rap history.</div><div class="press-url">flypaper.soundfly.com &#8599;</div></div>
   </div>
+</article>
+  </div></div>
+  <div class="hl-controls"><div class="hl-dots" id="hlDots"></div><button class="hl-play" id="hlPlay" aria-label="Toggle autoplay">&#9654;</button></div>
+</section>
+<script>
+(function(){
+  var track=document.getElementById('hlTrack'); if(!track) return;
+  var cards=[].slice.call(track.querySelectorAll('.hl-card'));
+  var dotsWrap=document.getElementById('hlDots'), playBtn=document.getElementById('hlPlay');
+  var cur=0, playing=false, timer=null;
+  cards.forEach(function(c,i){var d=document.createElement('button');d.className='hl-dot'+(i?'':' active');d.setAttribute('aria-label','Highlight '+(i+1));d.addEventListener('click',function(){stop();go(i);});dotsWrap.appendChild(d);});
+  var dots=[].slice.call(dotsWrap.children);
+  function base(){return cards[0].offsetLeft;}
+  function go(i){cur=(i+cards.length)%cards.length;track.scrollLeft=cards[cur].offsetLeft-base();sync();}
+  var vp=track.parentElement;
+  function setH(){vp.style.height=cards[cur].offsetHeight+'px';}
+  function sync(){dots.forEach(function(d,i){d.classList.toggle('active',i===cur);});setH();}
+  var t;track.addEventListener('scroll',function(){clearTimeout(t);t=setTimeout(function(){var mid=track.scrollLeft+track.clientWidth/2,b=0,bd=1e9;cards.forEach(function(c,i){var cm=c.offsetLeft-base()+c.clientWidth/2,dd=Math.abs(cm-mid);if(dd<bd){bd=dd;b=i;}});cur=b;sync();},90);});
+  function start(){playing=true;playBtn.innerHTML='&#10073;&#10073;';timer=setInterval(function(){go(cur+1);},6000);}
+  function stop(){playing=false;playBtn.innerHTML='&#9654;';clearInterval(timer);}
+  playBtn.addEventListener('click',function(){playing?stop():start();});
+  setH();setTimeout(setH,450);window.addEventListener('resize',setH);
+  stop();
+})();
+</script>
+<section id="beats" class="section" style="background:var(--ink2)">
+  <div class="eyebrow">For Artists &middot; Beat Store</div>
+  <h2 class="sec-title">Get on a Beat</h2>
+  <div style="font-family:\'Barlow Condensed\',sans-serif;font-size:16px;color:var(--warm);max-width:640px;line-height:1.7;text-transform:uppercase;letter-spacing:1px;margin-bottom:36px">Beats leased &amp; sold direct &mdash; MP3 to exclusive. Custom sessions available. Email or DM.</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px;margin-bottom:32px">
+    <div style="background:var(--ink3);padding:28px;border:1px solid rgba(139,92,246,0.15)">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;margin-bottom:8px">MP3 Lease</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--paper);line-height:1">$49</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--concrete);margin-top:10px;line-height:1.7;text-transform:uppercase;letter-spacing:1px">MP3 File &middot; Tagged &middot; Up to 50K Streams &middot; Non-Exclusive</div>
+    </div>
+    <div style="background:var(--ink3);padding:28px;border:2px solid rgba(139,92,246,0.5)">
+      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--purple-bright);background:rgba(139,92,246,0.15);padding:3px 8px;display:inline-block;margin-bottom:8px;text-transform:uppercase">Most Popular</div>
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;margin-bottom:8px">WAV Lease</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--purple-bright);line-height:1">$99</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--concrete);margin-top:10px;line-height:1.7;text-transform:uppercase;letter-spacing:1px">WAV + MP3 &middot; Untagged &middot; Up to 150K Streams &middot; Non-Exclusive</div>
+    </div>
+    <div style="background:var(--ink3);padding:28px;border:1px solid rgba(139,92,246,0.15)">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;margin-bottom:8px">Tracked Out</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--paper);line-height:1">$199</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--concrete);margin-top:10px;line-height:1.7;text-transform:uppercase;letter-spacing:1px">All Stems + WAV &middot; Mixing-Ready &middot; Unlimited Streams &middot; Non-Exclusive</div>
+    </div>
+    <div style="background:var(--ink3);padding:28px;border:1px solid rgba(201,168,76,0.25)">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;margin-bottom:8px">Exclusive</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--gold);line-height:1">$500+</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--concrete);margin-top:10px;line-height:1.7;text-transform:uppercase;letter-spacing:1px">All Files + Stems &middot; Full Ownership &middot; Off Market Forever &middot; DM to Negotiate</div>
+    </div>
+  </div>
+  <div id="liveStore" class="live-store" hidden></div>
+  <div class="bs-fallback" style="text-align:center">
+    <button class="btn-main" style="font-size:13px;padding:16px 48px" onclick="window.open('https://www.beatstars.com/joogszn','_blank')">Browse Full Beat Store on BeatStars &#8599;</button> <button class="btn-sec" style="font-size:13px;padding:16px 48px" onclick="window.open(&#039;mailto:biz4joog@gmail.com&#039;)">Email for Custom Work</button>
+  </div>
 </section>
 
-<section id="playlists" class="reveal-up">
+<section id="playlists" class="section reveal-up">
   <div class="eyebrow">Listen Now</div>
-  <div class="sec-title">Streaming Playlists</div>
+  <h2 class="sec-title">Streaming Playlists</h2>
   <div style="font-family:'Barlow Condensed',sans-serif;font-size:15px;color:var(--warm);max-width:640px;line-height:1.7;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px">Tap in. Full streams across Spotify and Apple Music &mdash; the producers playlist, his discography, the algorithm pick.</div>
+
   <div class="pl-grid">
     <div class="pl-card" data-tilt>
       <div class="pl-head">
@@ -702,116 +905,66 @@ body.player-shown{padding-bottom:84px}
 </div>
 </section>
 
-<div class="audio-modal" id="audioModal">
-  <div class="audio-modal-card">
-    <button class="audio-modal-close" id="audioModalClose" aria-label="Close player">&times;</button>
-    <div id="audioModalBody"></div>
-  </div>
-</div>
-<section id="credits" class="section" style="background:var(--ink)">
-  <div class="eyebrow">Production Credits</div>
-  <div class="sec-title">Artists &amp; Projects</div>
-  <div class="credits-wall">
-    <div class="chip">Drakeo The Ruler<span class="chip-note"> &middot; Prod/Eng</span></div>
-    <div class="chip">Shoreline Mafia<span class="chip-note"> &middot; Co-Prod / RIAA 2x Plat</span></div>
-    <div class="chip">03 Greedo<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Conradfrmdaaves<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">E-40<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Mozzy<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Earl Sweatshirt<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Gunna<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">OHGEESY<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Ralfy The Plug<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Baby Smoove<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Fenix Flexin<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Problem<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">KYLE<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">G Perico<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Big Sad 1900<span class="chip-note"> &middot; Co-Prod</span></div>
-    <div class="chip">1TakeJay<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">MoneySign $uede<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Larry June<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Rucci<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Wiz Khalifa<span class="chip-note"> &middot; The Homie (See Ya)</span></div>
-    <div class="chip">Blueface<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Too $hort<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">Rio Da Yung OG<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">BandGang Lonnie Bands<span class="chip-note"> &middot; Prod</span></div>
-    <div class="chip">AceTheFace<span class="chip-note"> &middot; HitMob</span></div>
-    <div class="chip">RonRonTheProducer<span class="chip-note"> &middot; HitMob</span></div>
-  </div>
-</section>
-
-<section id="beats-cta" style="background:var(--ink);padding:80px 40px">
-  <div style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--purple);margin-bottom:8px">For Artists</div>
-  <div style="font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,6vw,68px);color:var(--paper);letter-spacing:1px;margin-bottom:16px;line-height:1">Get on a Beat</div>
-  <div style="font-family:'Barlow Condensed',sans-serif;font-size:18px;color:var(--warm);max-width:640px;line-height:1.7;text-transform:uppercase;letter-spacing:1px;margin-bottom:48px">The producer behind Drakeo The Ruler, Shoreline Mafia, 03 Greedo, E-40, and Earl Sweatshirt. Beats on the store. Custom sessions available. Email or DM.</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;margin-bottom:40px">
-    <div style="background:var(--ink2);padding:28px 32px;border-top:3px solid var(--purple)">
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--purple-bright);margin-bottom:8px;letter-spacing:1px">Lease a Beat</div>
-      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--concrete);line-height:1.8">MP3 from $49 &middot; WAV from $99 &middot; Tracked Out $199<br>Non-exclusive. Keep your budget, get real production.</div>
-    </div>
-    <div style="background:var(--ink2);padding:28px 32px;border-top:3px solid var(--purple)">
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--purple-bright);margin-bottom:8px;letter-spacing:1px">Go Exclusive</div>
-      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--concrete);line-height:1.8">Starting at $500. Beat comes off the market permanently.<br>DM to negotiate before someone else locks it.</div>
-    </div>
-    <div style="background:var(--ink2);padding:28px 32px;border-top:3px solid var(--purple)">
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--purple-bright);margin-bottom:8px;letter-spacing:1px">Custom Production</div>
-      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--concrete);line-height:1.8">Need something built specifically for your project?<br>Email biz4joog@gmail.com. Studio sessions also available.</div>
-    </div>
-    <div style="background:var(--ink2);padding:28px 32px;border-top:3px solid var(--gold)">
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);margin-bottom:8px;letter-spacing:1px">The Resume</div>
-      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--concrete);line-height:1.8">Pitchfork 8.5. Washington Post. NPR. Atlantic Records.<br>You already know what it is.</div>
-    </div>
-  </div>
-  <div style="display:flex;gap:12px;flex-wrap:wrap">
-    <button class="btn-main" style="font-size:13px;padding:16px 48px" onclick="window.open('https://www.beatstars.com/joogszn','_blank')">Browse Beat Store &#x2197;</button>
-    <button class="btn-sec" style="font-size:13px;padding:16px 48px" onclick="window.open('mailto:biz4joog@gmail.com')">Email for Custom Work</button>
-  </div>
-</section>
-
-<section id="beats" class="section" style="background:var(--ink2)">
-  <div class="eyebrow">Beat Store</div>
-  <div class="sec-title">Beats Available Now</div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2px;margin-bottom:32px">
-    <div style="background:var(--ink3);padding:28px;border:1px solid rgba(139,92,246,0.15)">
-      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;margin-bottom:8px">MP3 Lease</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--paper);line-height:1">$49</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--concrete);margin-top:10px;line-height:1.7;text-transform:uppercase;letter-spacing:1px">MP3 File &middot; Tagged &middot; Up to 50K Streams &middot; Non-Exclusive</div>
-    </div>
-    <div style="background:var(--ink3);padding:28px;border:2px solid rgba(139,92,246,0.5)">
-      <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--purple-bright);background:rgba(139,92,246,0.15);padding:3px 8px;display:inline-block;margin-bottom:8px;text-transform:uppercase">Most Popular</div>
-      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;margin-bottom:8px">WAV Lease</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--purple-bright);line-height:1">$99</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--concrete);margin-top:10px;line-height:1.7;text-transform:uppercase;letter-spacing:1px">WAV + MP3 &middot; Untagged &middot; Up to 150K Streams &middot; Non-Exclusive</div>
-    </div>
-    <div style="background:var(--ink3);padding:28px;border:1px solid rgba(139,92,246,0.15)">
-      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;margin-bottom:8px">Tracked Out</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--paper);line-height:1">$199</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--concrete);margin-top:10px;line-height:1.7;text-transform:uppercase;letter-spacing:1px">All Stems + WAV &middot; Mixing-Ready &middot; Unlimited Streams &middot; Non-Exclusive</div>
-    </div>
-    <div style="background:var(--ink3);padding:28px;border:1px solid rgba(201,168,76,0.25)">
-      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--concrete);text-transform:uppercase;margin-bottom:8px">Exclusive</div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:40px;color:var(--gold);line-height:1">$500+</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;color:var(--concrete);margin-top:10px;line-height:1.7;text-transform:uppercase;letter-spacing:1px">All Files + Stems &middot; Full Ownership &middot; Off Market Forever &middot; DM to Negotiate</div>
-    </div>
-  </div>
-  <div style="text-align:center">
-    <button class="btn-main" style="font-size:13px;padding:16px 48px" onclick="window.open('https://www.beatstars.com/joogszn','_blank')">Browse Full Beat Store on BeatStars &#8599;</button>
-  </div>
-</section>
 <section id="contact" class="section" style="background:var(--ink)">
   <div class="eyebrow">Find Joog</div>
-  <div class="sec-title">Links</div>
+  <h2 class="sec-title">Links</h2>
   <div class="connect-grid">
     <div class="soc" onclick="window.open('https://www.instagram.com/joogszn/','_blank')"><div class="soc-plat">Instagram</div><div class="soc-handle">@JoogSzn</div><div class="soc-note">Verified &middot; All links in bio</div></div>
     <div class="soc" onclick="window.open('https://open.spotify.com/artist/3sQcHDk4dv5aUVBtmXOMVo','_blank')"><div class="soc-plat">Spotify</div><div class="soc-handle">JoogSzn</div><div class="soc-note">121K Monthly Listeners</div></div>
     <div class="soc" onclick="window.open('https://music.apple.com/us/artist/joogszn/1515587525','_blank')"><div class="soc-plat">Apple Music</div><div class="soc-handle">The Producers Playlist</div><div class="soc-note">48 Songs Official</div></div>
     <div class="soc" onclick="window.open('https://www.beatstars.com/joogszn','_blank')"><div class="soc-plat">BeatStars</div><div class="soc-handle">Buy Beats</div><div class="soc-note">Leases &middot; Stems &middot; Exclusives</div></div>
     <div class="soc" onclick="window.open('https://genius.com/artists/Joogszn','_blank')"><div class="soc-plat">Genius</div><div class="soc-handle">Verified Artist</div><div class="soc-note">Full Producer Credits</div></div>
-    <div class="soc" onclick="window.open('mailto:biz4joog@gmail.com')"><div class="soc-plat">Booking / Business</div><div class="soc-handle">biz4joog@gmail.com</div><div class="soc-note">Beats &middot; Features &middot; Press</div></div>
+    <div class="soc" onclick="window.open('mailto:biz4joog@gmail.com')"><div class="soc-plat">Booking / Business</div><div class="soc-handle"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd9f9487c99792929abd9a909c9491d39e9290">[email&#160;protected]</a></div><div class="soc-note">Beats &middot; Features &middot; Press</div></div>
   </div>
 </section>
+
+
+
+
+<div class="audio-modal" id="audioModal">
+  <div class="audio-modal-card">
+    <button class="audio-modal-close" id="audioModalClose" aria-label="Close player">&times;</button>
+    <div id="audioModalBody"></div>
+  </div>
+</div>
+<!-- ===== THE WORK: kinetic name reel ===== -->
+<style>
+.flex-reel{padding:56px 0;overflow:hidden;position:relative;z-index:10;background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 100%);border-top:1px solid var(--chrome-dim);border-bottom:1px solid var(--chrome-dim)}
+.flex-reel .fr-eyebrow{padding:0 40px;margin-bottom:26px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--purple)}
+.reel-row{display:flex;white-space:nowrap;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.reel-track{display:flex;align-items:center;flex-shrink:0;will-change:transform;animation:reelL 44s linear infinite}
+.reel-row.r2 .reel-track{animation:reelR 52s linear infinite}
+@keyframes reelL{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes reelR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.reel-name{font-family:'Bebas Neue',sans-serif;font-size:clamp(38px,7vw,92px);letter-spacing:1.5px;line-height:1;color:var(--paper);padding:0 26px;opacity:0.92}
+.reel-row.r2 .reel-name{color:transparent;-webkit-text-stroke:1px rgba(168,176,189,0.5);opacity:0.75}
+.reel-sep{width:13px;height:13px;border-radius:50%;background:var(--gold);flex-shrink:0;box-shadow:0 0 14px rgba(201,168,76,0.5)}
+.reel-row.r2 .reel-sep{background:var(--purple-bright);box-shadow:0 0 14px rgba(167,139,250,0.5)}
+.flex-reel:hover .reel-track{animation-play-state:paused}
+</style>
+<style>
+.kr-sub{font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin:48px 0 20px}
+/* Key Records = full-width editorial credits list (text-only, no side-scroll) */
+.kr-track{display:flex;flex-direction:column;gap:0}
+.kr-card{display:grid;grid-template-columns:46px 1fr auto;grid-template-areas:"num title pill" "num feat pill";column-gap:24px;row-gap:5px;align-items:center;background:transparent;border-left:none;border-bottom:1px solid rgba(139,92,246,0.14);padding:24px 10px;transition:background .2s}
+.kr-card:first-child{border-top:1px solid rgba(139,92,246,0.14)}
+.kr-card:hover{background:rgba(139,92,246,0.06)}
+.kr-num{grid-area:num;align-self:center;font-family:'DM Mono',monospace;font-size:13px;color:var(--concrete)}
+.kr-title{grid-area:title;font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:0.5px;color:var(--paper);line-height:1.02}
+.kr-feat{grid-area:feat;font-family:'DM Mono',monospace;font-size:11px;color:var(--concrete);line-height:1.6}
+.kr-card .t-pill{grid-area:pill;align-self:center;justify-self:end;white-space:nowrap}
+@media(max-width:640px){.kr-card{grid-template-columns:32px 1fr;grid-template-areas:"num title" "num feat" "num pill";row-gap:8px}.kr-card .t-pill{justify-self:start;margin-top:6px}}
+</style>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  const A=['Drakeo The Ruler','Shoreline Mafia','03 Greedo','Gunna','Wiz Khalifa','Earl Sweatshirt','E-40','Larry June','Too $hort'];
+  const B=['Mozzy','Blueface','OHGEESY','Problem','G Perico','Ralfy The Plug','Baby Smoove','Fenix Flexin','KYLE'];
+  const C=['Conradfrmdaaves','Big Sad 1900','1TakeJay','MoneySign $uede','Rucci','Rio Da Yung OG','BandGang Lonnie Bands','AceTheFace','RonRonTheProducer'];
+  const build=(names)=>{ const one=names.map(n=>`<span class="reel-name">${n}</span><span class="reel-sep"></span>`).join(''); return one+one; };
+  const a=document.getElementById('reelA'), bb=document.getElementById('reelB'), cc=document.getElementById('reelC');
+  if(a) a.innerHTML=build(A); if(bb) bb.innerHTML=build(B); if(cc) cc.innerHTML=build(C);
+})();
+</script>
 <footer>
   <div>
     <div class="ft-brand">JoogSzn</div>
@@ -827,599 +980,59 @@ body.player-shown{padding-bottom:84px}
       <a href="#contact">Contact</a>
     </div>
   </div>
-  <div>
-    <div class="ft-col-head">Contact</div>
-    <div class="ft-links">
-      <a href="mailto:biz4joog@gmail.com">Bookings</a>
-      <a href="mailto:biz4joog@gmail.com">Press Inquiries</a>
-      <a href="https://www.beatstars.com/joogszn" target="_blank">Beat Licensing</a>
-      <a href="mailto:biz4joog@gmail.com">biz4joog@gmail.com</a>
-    </div>
-  </div>
   <div class="ft-bottom">
     <div class="ft-copy">JoogWorld.com &middot; @JoogSzn</div>
     <div class="ft-copy">Traffic Music forever.</div>
   </div>
 </footer>
 
-<script type="importmap">
-{
-  "imports": {
-    "three":             "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
-    "three/addons/":     "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/",
-    "troika-three-text": "https://cdn.jsdelivr.net/npm/troika-three-text@0.49.0/+esm"
-  }
-}
-</script>
-<script type="module">
-import * as THREE from 'three';
-import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
-import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
-import { Text } from 'troika-three-text';
-
-const canvas = document.getElementById('three-canvas');
-const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 760 ? 1.5 : 2));
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 100);
-camera.position.set(0, 0, 14);
-
-scene.add(new THREE.AmbientLight(0xffffff, 0.35));
-const key = new THREE.DirectionalLight(0xfff5dd, 1.4); key.position.set(5, 8, 6); scene.add(key);
-const purpleFill = new THREE.PointLight(0x8b5cf6, 1.8, 36); purpleFill.position.set(-5, -2, 5); scene.add(purpleFill);
-const chromeRim = new THREE.PointLight(0xa8b0bd, 0.9, 28); chromeRim.position.set(6, -3, -3); scene.add(chromeRim);
-const purpleRim = new THREE.PointLight(0xa78bfa, 0.6, 28); purpleRim.position.set(-3, 6, -2); scene.add(purpleRim);
-
-const composition = new THREE.Group();
-composition.position.set(4.5, 1.0, -1);
-scene.add(composition);
-
-// Platinum plaque — recessed gold rect with darker plate
-{
-  const grp = new THREE.Group();
-  const plate = new THREE.Mesh(
-    new THREE.BoxGeometry(2.4, 3.0, 0.12),
-    new THREE.MeshStandardMaterial({color:0x1a1530, roughness:0.5, metalness:0.85})
-  );
-  grp.add(plate);
-  const plateFace = new THREE.Mesh(
-    new THREE.BoxGeometry(2.0, 2.6, 0.04),
-    new THREE.MeshStandardMaterial({color:0xc8cdd4, roughness:0.22, metalness:0.95, emissive:0x222a3a, emissiveIntensity:0.18})
-  );
-  plateFace.position.z = 0.08;
-  grp.add(plateFace);
-  // Center disc on plaque (record)
-  const disc = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.7, 0.7, 0.02, 48),
-    new THREE.MeshStandardMaterial({color:0x0a0a0f, roughness:0.4, metalness:0.7})
-  );
-  disc.rotation.x = Math.PI/2;
-  disc.position.z = 0.11;
-  grp.add(disc);
-  const hole = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.04, 0.04, 0.04, 16),
-    new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.95})
-  );
-  hole.rotation.x = Math.PI/2;
-  hole.position.z = 0.12;
-  grp.add(hole);
-  grp.position.set(0, 0.4, 0);
-  grp.rotation.set(-0.1, -0.18, 0.06);
-  composition.add(grp);
-}
-
-// Floating vinyl record beside the plaque
-{
-  const grp = new THREE.Group();
-  const vinyl = new THREE.Mesh(
-    new THREE.CylinderGeometry(1.4, 1.4, 0.06, 64),
-    new THREE.MeshStandardMaterial({color:0x06060a, roughness:0.3, metalness:0.65})
-  );
-  vinyl.rotation.x = Math.PI/2;
-  grp.add(vinyl);
-  const vlabel = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.5, 0.5, 0.07, 32),
-    new THREE.MeshStandardMaterial({color:0x8b5cf6, roughness:0.3, metalness:0.6, emissive:0x4c1d95, emissiveIntensity:0.4})
-  );
-  vlabel.rotation.x = Math.PI/2;
-  grp.add(vlabel);
-  grp.position.set(-2.4, -1.6, 0.4);
-  grp.rotation.set(0.18, 0, 0.12);
-  composition.add(grp);
-}
-
-// Cassette tape silhouette (boxy, retro feel)
-{
-  const grp = new THREE.Group();
-  const body = new THREE.Mesh(
-    new THREE.BoxGeometry(1.4, 0.9, 0.18),
-    new THREE.MeshStandardMaterial({color:0x4c1d95, roughness:0.4, metalness:0.6})
-  );
-  grp.add(body);
-  const window2 = new THREE.Mesh(
-    new THREE.BoxGeometry(1.1, 0.4, 0.04),
-    new THREE.MeshStandardMaterial({color:0x0a0a0f, roughness:0.2, metalness:0.85})
-  );
-  window2.position.z = 0.1;
-  grp.add(window2);
-  // Two reels
-  for (let i = 0; i < 2; i++) {
-    const reel = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.12, 0.12, 0.06, 16),
-      new THREE.MeshStandardMaterial({color:0xa8b0bd, metalness:0.95, roughness:0.18})
-    );
-    reel.rotation.x = Math.PI/2;
-    reel.position.set(i === 0 ? -0.32 : 0.32, 0, 0.12);
-    grp.add(reel);
-  }
-  grp.position.set(1.6, 1.7, 0.6);
-  grp.rotation.set(-0.2, 0.4, 0.08);
-  composition.add(grp);
-}
-
-// Volumetric fog — gives Z-depth, distant objects fade into purple haze
-scene.fog = new THREE.FogExp2(0x0a0a0f, 0.045);
-
-// FAR BACKDROP — slow-spinning gold record, large, blurred by fog
-const farRecord = new THREE.Group();
-{
-  const r = new THREE.Mesh(
-    new THREE.CylinderGeometry(4.0, 4.0, 0.05, 96),
-    new THREE.MeshStandardMaterial({color:0x1a0e2e, roughness:0.7, metalness:0.4, emissive:0x4c1d95, emissiveIntensity:0.18})
-  );
-  r.rotation.x = Math.PI/2;
-  farRecord.add(r);
-  const lbl = new THREE.Mesh(
-    new THREE.CylinderGeometry(1.2, 1.2, 0.06, 48),
-    new THREE.MeshStandardMaterial({color:0xc9a84c, roughness:0.3, metalness:0.85, emissive:0x3a2a00, emissiveIntensity:0.3})
-  );
-  lbl.rotation.x = Math.PI/2;
-  farRecord.add(lbl);
-  // Concentric grooves
-  for (let i = 0; i < 8; i++) {
-    const groove = new THREE.Mesh(
-      new THREE.RingGeometry(1.4 + i*0.28, 1.42 + i*0.28, 64),
-      new THREE.MeshBasicMaterial({color:0x2a1f3e, transparent:true, opacity:0.6, side:THREE.DoubleSide})
-    );
-    groove.rotation.x = -Math.PI/2;
-    groove.position.y = 0.026;
-    farRecord.add(groove);
-  }
-}
-farRecord.position.set(2, 0.5, -8);  // FAR back
-farRecord.rotation.set(0.3, 0, 0.15);
-scene.add(farRecord);
-
-// MID — floating microphone, left side
-const mic = new THREE.Group();
-{
-  const stand = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.04, 0.04, 1.6, 16),
-    new THREE.MeshStandardMaterial({color:0x6b6875, metalness:0.85, roughness:0.3})
-  );
-  mic.add(stand);
-  const head = new THREE.Mesh(
-    new THREE.SphereGeometry(0.28, 24, 16),
-    new THREE.MeshStandardMaterial({color:0x2a2438, metalness:0.7, roughness:0.4, emissive:0x4c1d95, emissiveIntensity:0.2})
-  );
-  head.position.y = 1.0;
-  mic.add(head);
-  const grille = new THREE.Mesh(
-    new THREE.SphereGeometry(0.30, 12, 8),
-    new THREE.MeshStandardMaterial({color:0xc9a84c, metalness:0.9, roughness:0.5, wireframe:true, transparent:true, opacity:0.55})
-  );
-  grille.position.y = 1.0;
-  mic.add(grille);
-}
-mic.position.set(-5.5, -1.2, 1.5);
-mic.rotation.set(0, 0.3, -0.18);
-scene.add(mic);
-
-// FOREGROUND — close-up gold ring drifting near camera (intentional "out-of-focus" feel from fog)
-const foreRing = new THREE.Mesh(
-  new THREE.TorusGeometry(0.6, 0.06, 16, 64),
-  new THREE.MeshStandardMaterial({color:0xd8dde3, metalness:0.98, roughness:0.12, emissive:0x222a3a, emissiveIntensity:0.35})
-);
-foreRing.position.set(-3, 2.4, 5);
-scene.add(foreRing);
-
-// SUBTLE LIGHT BEAMS — purple volumetric rays
-const beam = new THREE.Mesh(
-  new THREE.PlaneGeometry(1.2, 12),
-  new THREE.MeshBasicMaterial({color:0x8b5cf6, transparent:true, opacity:0.07, side:THREE.DoubleSide, blending:THREE.AdditiveBlending})
-);
-beam.position.set(3, 0, -4);
-beam.rotation.z = 0.3;
-scene.add(beam);
-const beam2 = new THREE.Mesh(
-  new THREE.PlaneGeometry(0.8, 10),
-  new THREE.MeshBasicMaterial({color:0xa8b0bd, transparent:true, opacity:0.05, side:THREE.DoubleSide, blending:THREE.AdditiveBlending})
-);
-beam2.position.set(-2, 0, -3);
-beam2.rotation.z = -0.4;
-scene.add(beam2);
-
-// // 3D "TRAFFIC MUSIC" tagline — Bebas Neue, off to lower left
-const titleGroup = new THREE.Group();
-scene.add(titleGroup);
-const BEBAS = 'https://cdn.jsdelivr.net/npm/@fontsource/bebas-neue@5.0.18/files/bebas-neue-latin-400-normal.woff';
-
-function makeText(opts){
-  const t = new Text();
-  t.text = opts.text;
-  t.font = BEBAS;
-  t.fontSize = opts.size;
-  t.letterSpacing = opts.spacing || 0.04;
-  t.anchorX = 'center';
-  t.anchorY = 'middle';
-  t.position.copy(opts.pos);
-  t.material = opts.material;
-  if (opts.outline) {
-    t.outlineWidth = opts.outlineWidth || 0.04;
-    t.outlineColor = opts.outline;
-    t.outlineBlur = 0.04;
-    t.outlineOpacity = 0.9;
-  }
-  return t;
-}
-
-const tagMain = makeText({
-  text: 'TRAFFIC\nMUSIC',
-  size: 1.6, spacing: 0.04,
-  pos: new THREE.Vector3(-4.2, -1.6, 1.5),
-  material: new THREE.MeshStandardMaterial({color:0xf0ecfa, emissive:0xa78bfa, emissiveIntensity:0.4, metalness:0.6, roughness:0.25}),
-  outline: 0xc9a84c, outlineWidth: 0.03,
-});
-titleGroup.add(tagMain);
-
-const tagGhostP = makeText({
-  text: 'TRAFFIC\nMUSIC',
-  size: 1.6, spacing: 0.04,
-  pos: new THREE.Vector3(-4.16, -1.6, 1.4),
-  material: new THREE.MeshBasicMaterial({color:0x8b5cf6, transparent:true, opacity:0.13}),
-});
-titleGroup.add(tagGhostP);
-
-const tagGhostG = makeText({
-  text: 'TRAFFIC\nMUSIC',
-  size: 1.6, spacing: 0.04,
-  pos: new THREE.Vector3(-4.24, -1.6, 1.4),
-  material: new THREE.MeshBasicMaterial({color:0xc9a84c, transparent:true, opacity:0.10}),
-});
-titleGroup.add(tagGhostG);
-
-[tagMain, tagGhostP, tagGhostG].forEach(t => t.sync());
-
-
-// =====================================================================
-// LIQUID DISTORTION PLANE behind hero — cursor warps it via vertex shader
-// =====================================================================
-const liquidGeo = new THREE.PlaneGeometry(28, 16, 64, 36);
-const liquidMat = new THREE.ShaderMaterial({
-  transparent: true,
-  side: THREE.DoubleSide,
-  uniforms: {
-    uTime: { value: 0 },
-    uMouse: { value: new THREE.Vector2(0, 0) },
-    uColorA: { value: new THREE.Color(0x4c1d95) },
-    uColorB: { value: new THREE.Color(0xa8b0bd) },
-  },
-  vertexShader: `
-    uniform float uTime;
-    uniform vec2 uMouse;
-    varying vec2 vUv;
-    varying float vDist;
-    void main(){
-      vUv = uv;
-      vec3 pos = position;
-      float d = distance(uv * 2.0 - 1.0, uMouse);
-      vDist = d;
-      // Cursor pushes a wave in z
-      pos.z += (1.0 - smoothstep(0.0, 0.85, d)) * 1.4;
-      // Ambient gentle wave
-      pos.z += sin(pos.x * 0.5 + uTime * 0.6) * 0.18;
-      pos.z += cos(pos.y * 0.6 + uTime * 0.5) * 0.12;
-      gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-    }
-  `,
-  fragmentShader: `
-    uniform float uTime;
-    uniform vec3 uColorA;
-    uniform vec3 uColorB;
-    varying vec2 vUv;
-    varying float vDist;
-    void main(){
-      // Subtle color blend driven by uv + cursor proximity
-      float bandX = sin(vUv.x * 10.0 - uTime * 0.4) * 0.5 + 0.5;
-      vec3 col = mix(uColorA, uColorB, bandX * 0.6 + (1.0 - vDist) * 0.4);
-      float alpha = (1.0 - vDist) * 0.18;
-      alpha *= smoothstep(1.0, 0.4, vDist);
-      gl_FragColor = vec4(col, alpha);
-    }
-  `,
-});
-const liquidPlane = new THREE.Mesh(liquidGeo, liquidMat);
-liquidPlane.position.set(0, 0, -6);
-scene.add(liquidPlane);
-
-// =====================================================================
-// AUDIO-REACTIVE STYLE BARS — fake-driven for now (sine waves), will
-// hook to <audio> getByteFrequencyData when iTunes previews ship
-// =====================================================================
-const barCount = 64;
-const bars = new THREE.Group();
-const barGeo = new THREE.BoxGeometry(0.18, 1, 0.18);
-const barColors = [0x8b5cf6, 0xa78bfa, 0xa8b0bd];
-for (let i = 0; i < barCount; i++){
-  const m = new THREE.Mesh(
-    barGeo,
-    new THREE.MeshStandardMaterial({
-      color: barColors[i % 3],
-      emissive: barColors[i % 3],
-      emissiveIntensity: 0.7,
-      metalness: 0.6,
-      roughness: 0.3,
-      transparent: true,
-      opacity: 0.65,
-    })
-  );
-  const x = (i - barCount / 2) * 0.32;
-  m.position.set(x, -3.4, -2);
-  m.userData = { phase: i * 0.18, base: -3.4 };
-  bars.add(m);
-}
-scene.add(bars);
-
-// =====================================================================
-// SCROLL-DRIVEN CAMERA FLY-THROUGH — Catmull-Rom path
-// =====================================================================
-const camPath = new THREE.CatmullRomCurve3([
-  new THREE.Vector3(0, 0, 14),       // hero straight-on
-  new THREE.Vector3(2.5, -0.5, 12),  // tilt right as user enters plaques
-  new THREE.Vector3(4, 1, 8),        // close in on plaque cluster
-  new THREE.Vector3(-1, 2, 9),       // swing left for projects
-  new THREE.Vector3(-3, -1, 11),     // dip for press
-  new THREE.Vector3(0, 0, 13),       // recenter for credits
-  new THREE.Vector3(2, -2, 16),      // pull back for beats
-  new THREE.Vector3(0, 0, 14),       // resolve to start framing
-], false, 'catmullrom', 0.5);
-
-let scrollProgress = 0;
-window.addEventListener('scroll', () => {
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  scrollProgress = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
-}, { passive: true });
-
-// Cinematic Cyberpunk shader pass — purple/gold tuned
-const composer = new EffectComposer(renderer);
-composer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth < 760 ? 1.5 : 2));
-composer.setSize(window.innerWidth, window.innerHeight);
-composer.addPass(new RenderPass(scene, camera));
-
-const CinematicShader = {
-  uniforms: {
-    tDiffuse: { value: null },
-    uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
-    uTime: { value: 0 },
-    uPixelSize: { value: 2.5 },
-    uChromaStrength: { value: 0.5 },
-    uDitherStrength: { value: 0.16 },
-    uPosterize: { value: 24.0 },
-    uVignette: { value: 0.32 },
-  },
-  vertexShader: `varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
-  fragmentShader: `
-    uniform sampler2D tDiffuse;uniform vec2 uResolution;uniform float uTime,uPixelSize,uChromaStrength,uDitherStrength,uPosterize,uVignette;varying vec2 vUv;
-    float bayer4(vec2 p){const float m[16]=float[16](0.0,8.0,2.0,10.0,12.0,4.0,14.0,6.0,3.0,11.0,1.0,9.0,15.0,7.0,13.0,5.0);int x=int(mod(p.x,4.0));int y=int(mod(p.y,4.0));return m[y*4+x]/16.0;}
-    void main(){
-      vec2 px=uPixelSize/uResolution;
-      vec2 puv=floor(vUv/px)*px+px*0.5;
-      vec2 dir=puv-0.5;float dist=length(dir);
-      float chroma=uChromaStrength*(0.0008+0.0024*dist);
-      vec3 col;
-      // Purple-tinted chromatic offset (R is purple-shift, B is gold-shift)
-      col.r=texture2D(tDiffuse,puv+dir*chroma*1.6).r;
-      col.g=texture2D(tDiffuse,puv).g;
-      col.b=texture2D(tDiffuse,puv-dir*chroma*1.6).b;
-      col=floor(col*uPosterize)/uPosterize;
-      vec2 pc=floor(vUv*uResolution/uPixelSize);
-      float d=bayer4(pc)-0.5;
-      col+=d*uDitherStrength*0.07;
-      float vig=smoothstep(0.95,0.25,dist);
-      col*=mix(1.0,vig,uVignette);
-      gl_FragColor=vec4(col,1.0);
-    }`
-};
-const cinematicPass = new ShaderPass(CinematicShader);
-composer.addPass(cinematicPass);
-composer.addPass(new OutputPass());
-
-// Mouse-tracking + scroll
-let mouseX=0,mouseY=0,targetX=0,targetY=0,scrollY=0;
-const cursorGlow = document.getElementById('cursor-glow');
-window.addEventListener('mousemove', e => {
-  targetX=(e.clientX/window.innerWidth-0.5)*2;
-  targetY=(e.clientY/window.innerHeight-0.5)*2;
-  if (cursorGlow){ cursorGlow.style.left=e.clientX+'px'; cursorGlow.style.top=e.clientY+'px'; }
-});
-window.addEventListener('touchmove', e => {
-  if (!e.touches[0]) return;
-  targetX=(e.touches[0].clientX/window.innerWidth-0.5)*2;
-  targetY=(e.touches[0].clientY/window.innerHeight-0.5)*2;
-}, {passive:true});
-// Device orientation (phone tilt) — drives parallax on mobile
-function attachGyro(){
-  window.addEventListener('deviceorientation', e => {
-    if (e.gamma == null || e.beta == null) return;
-    // gamma = left-right tilt (-90..90), beta = front-back tilt (-180..180)
-    targetX = Math.max(-1, Math.min(1, e.gamma / 30));
-    targetY = Math.max(-1, Math.min(1, (e.beta - 45) / 45));
-  }, true);
-}
-// iOS 13+ requires explicit user gesture to enable motion sensors
-if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function') {
-  // Will attach on first tap anywhere on page
-  const handler = () => {
-    DeviceOrientationEvent.requestPermission().then(s => {
-      if (s === 'granted') attachGyro();
-    }).catch(()=>{});
-    document.removeEventListener('touchstart', handler);
-    document.removeEventListener('click', handler);
-  };
-  document.addEventListener('touchstart', handler, {once: true});
-  document.addEventListener('click', handler, {once: true});
-} else if (window.DeviceOrientationEvent) {
-  attachGyro();
-}
-
-window.addEventListener('scroll', ()=>{ scrollY=window.scrollY; }, {passive:true});
-window.addEventListener('resize', ()=>{
-  camera.aspect=window.innerWidth/window.innerHeight; camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  composer.setSize(window.innerWidth, window.innerHeight);
-  cinematicPass.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
-});
-
-const clock = new THREE.Clock();
-function animate(){
-  const t = clock.getElapsedTime();
-  mouseX += (targetX-mouseX)*0.04; mouseY += (targetY-mouseY)*0.04;
-
-  // Liquid plane — mouse drives ripple center
-  liquidMat.uniforms.uTime.value = t;
-  liquidMat.uniforms.uMouse.value.set(mouseX * 0.7, -mouseY * 0.5);
-
-  // Audio-reactive bars — sine wave fake until real audio is wired
-  for (let i = 0; i < bars.children.length; i++){
-    const b = bars.children[i];
-    const h = 0.5 + Math.abs(Math.sin(t * 1.6 + b.userData.phase) + Math.sin(t * 2.4 + b.userData.phase * 0.7)) * 1.6;
-    b.scale.y = h;
-    b.position.y = b.userData.base + h * 0.5;
-  }
-
-  // Scroll-driven camera fly-through — only when not at top
-  if (scrollProgress > 0.001){
-    const target = camPath.getPoint(scrollProgress);
-    camera.position.lerp(target, 0.08);
-  } else {
-  // Scroll-driven camera dolly — pulls forward as user scrolls
-  camera.position.z = 14 - scrollY * 0.003;
-
-  // Far record — slow majestic spin
-  farRecord.rotation.y = t * 0.12 + mouseX * 0.05;
-  farRecord.position.y = 0.5 + Math.sin(t*0.35) * 0.2;
-
-  // Mic — gentle sway
-  mic.rotation.z = -0.18 + Math.sin(t*0.5) * 0.06;
-  mic.position.y = -1.2 + Math.sin(t*0.4) * 0.1;
-
-  // Foreground ring — drift + spin
-  foreRing.rotation.x = t * 0.4;
-  foreRing.rotation.y = t * 0.6;
-  foreRing.position.y = 2.4 + Math.sin(t*0.7) * 0.25;
-  foreRing.position.x = -3 + mouseX * 1.2;
-
-  // Beams — pulse opacity
-  beam.material.opacity = 0.05 + 0.04 * (Math.sin(t*0.6) * 0.5 + 0.5);
-  beam2.material.opacity = 0.04 + 0.03 * (Math.sin(t*0.8 + 1) * 0.5 + 0.5);
-
-  composition.rotation.y = mouseX*0.12 + Math.sin(t*0.3)*0.04;
-  composition.rotation.x = -mouseY*0.08 + Math.sin(t*0.4)*0.03;
-  composition.position.y = 1.0 - scrollY*0.0010 + Math.sin(t*0.5)*0.08;
-  if (composition.children[0]) composition.children[0].rotation.y = -0.18 + Math.sin(t*0.5)*0.06;
-  if (composition.children[1]) composition.children[1].rotation.y = t*0.5;
-  if (composition.children[2]) composition.children[2].rotation.y = 0.4 + Math.sin(t*0.7)*0.08;
-  titleGroup.rotation.y = mouseX*0.06; titleGroup.rotation.x = -mouseY*0.04;
-  titleGroup.position.y = -scrollY*0.0006;
-  const c = 0.04+Math.abs(mouseX)*0.05;
-  tagGhostP.position.x = -4.2+c; tagGhostG.position.x = -4.2-c;
-    camera.position.x = mouseX * 0.3;
-    camera.position.y = -mouseY * 0.2;
-    camera.position.z = 14 - window.scrollY * 0.003;
-  }
-  camera.lookAt(0, 0, 0);
-  cinematicPass.uniforms.uTime.value = t;
-  composer.render();
-  requestAnimationFrame(animate);
-}
-animate();
-
-// Particle field — purple + gold
-const pcanvas = document.getElementById('particles');
-const pctx = pcanvas.getContext('2d');
-function sz(){ pcanvas.width=window.innerWidth; pcanvas.height=window.innerHeight; }
-sz(); window.addEventListener('resize', sz);
-const isMobile = window.matchMedia('(max-width: 760px)').matches;
-const ps = Array.from({length: isMobile ? 22 : 28}, () => ({
-  x: Math.random()*window.innerWidth,
-  y: Math.random()*window.innerHeight,
-  vy: -0.12 - Math.random()*0.35,
-  vx: (Math.random()-0.5)*0.12,
-  r: 0.6 + Math.random()*1.5,
-  a: 0.15 + Math.random()*0.45,
-  hue: Math.random()<0.6 ? 'purple' : 'gold'
-}));
-function tick(){
-  pctx.clearRect(0,0,pcanvas.width,pcanvas.height);
-  for (const p of ps){
-    p.x+=p.vx; p.y+=p.vy;
-    if (p.y<-10){ p.y=pcanvas.height+10; p.x=Math.random()*pcanvas.width; }
-    if (p.x<-10) p.x=pcanvas.width+10;
-    if (p.x>pcanvas.width+10) p.x=-10;
-    pctx.beginPath();
-    pctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-    if (p.hue === 'purple'){
-      pctx.fillStyle = `rgba(167,139,250,${p.a})`;
-      pctx.shadowColor = 'rgba(139,92,246,0.7)';
-    } else {
-      pctx.fillStyle = `rgba(201,168,76,${p.a*0.8})`;
-      pctx.shadowColor = 'rgba(201,168,76,0.7)';
-    }
-    pctx.shadowBlur = 8;
-    pctx.fill();
-  }
-  requestAnimationFrame(tick);
-}
-tick();
-
-// 3D tilt on plaques + projects + press cards + socials
+<!-- ===== AUDIO BRIDGE: one analyser the WebGL world reads; beats drive the visuals ===== -->
+<script>
+// Card tilt (plaques / projects / press / socials)
 function bindTilt(sel, rxAmp, ryAmp){
   document.querySelectorAll(sel).forEach(el => {
     el.addEventListener('mousemove', e => {
-      const r = el.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width;
-      const y = (e.clientY - r.top) / r.height;
-      const rx = (y - 0.5) * -rxAmp;
-      const ry = (x - 0.5) * ryAmp;
-      el.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+      const r=el.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+      el.style.transform=`rotateX(${(y-0.5)*-rxAmp}deg) rotateY(${(x-0.5)*ryAmp}deg) translateZ(0)`;
     });
-    el.addEventListener('mouseleave', ()=>{ el.style.transform = ''; });
+    el.addEventListener('mouseleave', ()=>{ el.style.transform=''; });
   });
 }
-bindTilt('.plq', 8, 10);
-bindTilt('.proj', 6, 8);
-bindTilt('.press-card', 6, 8);
-bindTilt('.soc', 5, 7);
+bindTilt('.plq',8,10); bindTilt('.soc',5,7);
 
-// Reveal-on-scroll for major sections
+// Cursor-follow glow (driver was lost with the old 3D module)
+const cg=document.getElementById('cursor-glow');
+if(cg) window.addEventListener('mousemove',e=>{ cg.style.left=e.clientX+'px'; cg.style.top=e.clientY+'px'; }, {passive:true});
+
+// Reveal-on-scroll for major sections (fallback; GSAP layer enhances)
 document.querySelectorAll('.section, .plaques, .hero-stats, footer').forEach(el => el.classList.add('reveal-up'));
 const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
-}, {threshold: 0.1});
+  entries.forEach(e => e.target.classList.toggle('visible', e.isIntersecting));
+}, {threshold:0.12});
 document.querySelectorAll('.reveal-up').forEach(el => io.observe(el));
-
-// Honor reduced motion — disable all 3D + particles
 if (matchMedia('(prefers-reduced-motion: reduce)').matches){
-  canvas.style.display='none';
-  pcanvas.style.display='none';
-  if (cursorGlow) cursorGlow.style.display='none';
   document.querySelectorAll('.reveal-up').forEach(el => el.classList.add('visible'));
 }
+
+// Album-cover wall background — real covers from the discography
+(async function(){
+  const wall=document.getElementById('cover-wall'); if(!wall) return;
+  let covers=[]; try{ covers=await (await fetch('assets/covers.json')).json(); }catch(e){ return; }
+  if(!covers.length) return;
+  const COLS = window.innerWidth<760 ? 3 : 6;
+  for(let c=0;c<COLS;c++){
+    const set=[]; for(let i=c;i<covers.length;i+=COLS) set.push(covers[i]);
+    if(!set.length) set.push(covers[c%covers.length]);
+    const col=document.createElement('div'); col.className='cw-col';
+    const track=document.createElement('div'); track.className='cw-track';
+    track.style.animationDuration=(64+c*9)+'s';
+    if(c%2) track.style.animationDirection='reverse';
+    set.concat(set).forEach(u=>{ const cell=document.createElement('div'); cell.className='cw-cell'; cell.style.backgroundImage=`url("${u}")`; track.appendChild(cell); });
+    col.appendChild(track); wall.appendChild(col);
+  }
+  wall.insertAdjacentHTML('beforeend','<div class="cw-overlay"></div>');
+})();
 </script>
 
 
@@ -1449,7 +1062,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 <div id="itunesPlayer" role="region" aria-label="Audio preview player">
-  <img id="itunesArt" alt="" src=""/>
+  <img id="itunesArt" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E"/>
   <div class="itp-info">
     <div class="itp-title" id="itpTitle">Loading…</div>
     <div class="itp-artist" id="itpArtist">—</div>
@@ -1606,5 +1219,370 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 </script>
 
+<!-- ============= SCROLL MOTION SYSTEM (GSAP + ScrollTrigger + Lenis) ============= -->
+<style>
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+.sec-title,.tm-line{will-change:clip-path,transform}
+.sx-w{display:inline-block;overflow:hidden;vertical-align:top;padding:0.02em 0}
+.sx-c{display:inline-block;will-change:transform}
+.hero-name,.hero-portrait,.hero-glow,.hero-grid{will-change:transform}
+.mag{will-change:transform}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!window.gsap || !window.ScrollTrigger || !window.Lenis) return;
+  gsap.registerPlugin(ScrollTrigger);
+  const mobile = matchMedia('(max-width: 760px)').matches;
+
+  // ── Lenis momentum smooth-scroll, driving ScrollTrigger ──
+  const lenis = new Lenis({ lerp: 0.1, smoothWheel: true, wheelMultiplier: 1.0 });
+  window.__lenis = lenis;
+  lenis.on('scroll', ScrollTrigger.update);
+  (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })(0);
+  // smooth anchor jumps
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{ const t=document.querySelector(a.getAttribute('href'));
+      if(t){ e.preventDefault(); lenis.scrollTo(t,{offset:-64}); } });
+  });
+  if(reduce) return; // smooth scroll stays; skip the heavy motion below
+
+  // ── Hero depth parallax (name / portrait / glow move at different rates) ──
+  const heroScrub = { trigger:'.hero', start:'top top', end:'bottom top', scrub:true };
+  gsap.to('.hero-name',     { yPercent:-16, ease:'none', scrollTrigger:heroScrub });
+  gsap.to('.hero-glow',     { yPercent: 45, ease:'none', scrollTrigger:heroScrub });
+  gsap.to('.hero-grid',     { yPercent: 12, ease:'none', scrollTrigger:heroScrub });
+  if(!mobile) gsap.to('.hero-portrait', { yPercent:26, ease:'none', scrollTrigger:{...heroScrub, start:'top 30%'} });
+
+  // ── Section titles: SplitText per-letter, scroll-scrubbed (motion.page / superlativa style) ──
+  function splitChars(el){
+    const text = el.textContent;
+    el.innerHTML = '';
+    const chars = [];
+    text.split(/(\s+)/).forEach(tok=>{
+      if(/^\s*$/.test(tok)){ el.appendChild(document.createTextNode(' ')); return; }
+      const w = document.createElement('span'); w.className='sx-w';
+      for(const c of tok){ const s=document.createElement('span'); s.className='sx-c'; s.textContent=c; w.appendChild(s); chars.push(s); }
+      el.appendChild(w);
+    });
+    return chars;
+  }
+  const splitReveal = (el, opts)=>{
+    if(el.children.length){ // has inline markup (e.g. gradient spans) — clip-wipe fallback
+      gsap.fromTo(el, { clipPath:'inset(0 0 100% 0)', yPercent:8 },
+        { clipPath:'inset(0 0 0% 0)', yPercent:0, ease:'expo.out', duration:1.1,
+          scrollTrigger:{ trigger:el, start:'top 88%' } });
+      return;
+    }
+    const chars = splitChars(el);
+    gsap.from(chars, { yPercent:120, opacity:0, rotateZ:6, transformOrigin:'0% 100%',
+      stagger: opts.stagger, ease:'power3.out',
+      scrollTrigger:{ trigger:el, start:opts.start, end:opts.end, scrub:0.5 } });
+  };
+  gsap.utils.toArray('.sec-title').forEach(el=> splitReveal(el, {stagger:0.03, start:'top 86%', end:'top 48%'}));
+  // tm-line uses gradient-clipped text — splitting into spans breaks the clip, so reveal it whole
+  gsap.utils.toArray('.tm-line').forEach(el=>{
+    gsap.from(el, { yPercent:60, opacity:0, ease:'power3.out', duration:1,
+      scrollTrigger:{ trigger:el, start:'top 85%', toggleActions:'play none none none' } });
+  });
+
+  // ── Discography scrollytelling (Apple "Performance" layout): the album cover is
+  //    pinned on the left (CSS sticky) and crossfades as each album's copy hits center. ──
+  (function(){
+    const covers = document.querySelectorAll('.disc-cov');
+    if(!covers.length) return;
+    const setActive = i => covers.forEach(c => c.classList.toggle('active', c.dataset.i === String(i)));
+    document.querySelectorAll('.disc-copy').forEach(copy=>{
+      ScrollTrigger.create({ trigger: copy, start:'top 60%', end:'bottom 60%',
+        onToggle: self => { if(self.isActive) setActive(copy.dataset.i); } });
+    });
+  })();
+
+
+  // ── Magnetic buttons ──
+  if(!mobile){
+    document.querySelectorAll('.btn-main, .btn-sec').forEach(btn=>{
+      btn.classList.add('mag');
+      btn.addEventListener('mousemove',e=>{ const r=btn.getBoundingClientRect();
+        gsap.to(btn,{ x:(e.clientX-r.left-r.width/2)*0.3, y:(e.clientY-r.top-r.height/2)*0.45, duration:0.4, ease:'power2.out' }); });
+      btn.addEventListener('mouseleave',()=>gsap.to(btn,{ x:0, y:0, duration:0.6, ease:'elastic.out(1,0.4)' }));
+    });
+  }
+
+  ScrollTrigger.refresh();
+  // Recompute trigger positions after images/iframes load and shift layout
+  // (stale positions were leaving reveals stuck at opacity:0 — the "huge gap")
+  window.addEventListener('load', ()=>ScrollTrigger.refresh());
+  setTimeout(()=>ScrollTrigger.refresh(), 1400);
+  document.querySelectorAll('img').forEach(im=>{ if(!im.complete) im.addEventListener('load', ()=>ScrollTrigger.refresh(), {once:true}); });
+})();
+</script>
+
+<!-- ============= OWN STORE (joogworld-store backend) ============= -->
+<style>
+.live-store{margin-top:8px}
+.ls-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px}
+.ls-card{background:var(--ink2);border:1px solid rgba(139,92,246,0.12);overflow:hidden;position:relative;opacity:0;transform:translateY(28px);transition:transform .18s ease-out,border-color .3s,box-shadow .3s,opacity .7s cubic-bezier(.2,.8,.2,1);will-change:transform;transform-style:preserve-3d}
+.ls-card.in{opacity:1;transform:translateY(0)}
+.ls-card:hover{border-color:rgba(139,92,246,0.4);box-shadow:0 30px 60px rgba(139,92,246,0.18)}
+.ls-cover{position:relative;aspect-ratio:1;background:linear-gradient(135deg,var(--ink3),var(--purple-dim));overflow:hidden;cursor:pointer}
+.ls-cover img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.05) saturate(.98);transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.ls-card:hover .ls-cover img{transform:scale(1.05)}
+.ls-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,10,15,0.28);opacity:0;transition:opacity .2s}
+.ls-cover:hover .ls-play,.ls-card.playing .ls-play{opacity:1}
+.ls-play span{width:56px;height:56px;border-radius:50%;border:2px solid var(--purple-bright);display:flex;align-items:center;justify-content:center;background:rgba(10,10,15,0.5);backdrop-filter:blur(6px);color:var(--purple-bright);font-size:18px}
+.ls-card.playing .ls-cover::after{content:"";position:absolute;inset:0;border:2px solid var(--purple-bright);animation:lsPulse 1.4s ease-out infinite;pointer-events:none}
+@keyframes lsPulse{0%{box-shadow:inset 0 0 0 0 rgba(167,139,250,.5);opacity:1}100%{box-shadow:inset 0 0 60px 8px rgba(167,139,250,0);opacity:.6}}
+.ls-body{padding:18px 20px}
+.ls-title{font-family:'Barlow Condensed',sans-serif;font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--paper)}
+.ls-meta{font-family:'DM Mono',monospace;font-size:10px;color:var(--concrete);letter-spacing:1px;margin:5px 0 14px;text-transform:uppercase}
+.ls-tiers{display:flex;flex-direction:column;gap:6px}
+.ls-tier{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;background:var(--ink3);border:1px solid rgba(139,92,246,0.12);cursor:pointer;transition:all .15s;position:relative;overflow:hidden}
+.ls-tier:hover{border-color:var(--purple-bright);background:rgba(139,92,246,0.08)}
+.ls-tier::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.14) 50%,transparent 70%);transform:translateX(-100%);transition:transform .6s ease;pointer-events:none}
+.ls-tier:hover::before{transform:translateX(100%)}
+.ls-tier-name{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--warm)}
+.ls-tier-name.excl{color:var(--gold)}
+.ls-tier-price{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--paper);line-height:1}
+.ls-note{font-family:'DM Mono',monospace;font-size:11px;color:var(--concrete);text-align:center;padding:48px 20px;letter-spacing:1px;text-transform:uppercase}
+</style>
+<script>
+(function(){
+  // ── FLAG: keep OFF until beats are loaded + Stripe is connected. ──
+  // Flip to true and redeploy when the store is live; the BeatStars fallback
+  // buttons hide automatically and real beats render from the Supabase catalog.
+  const STORE_LIVE = false;
+
+  const SB_URL = 'https://dggduqkpcowbstkidhlf.supabase.co';
+  const SB_KEY = 'sb_publishable_xoj9olLImC2rhFmCSBE45w_iv42XVCi'; // public — RLS-protected
+  const TIER_ORDER = ['mp3','wav','trackout','unlimited','exclusive'];
+  const TIER_LABEL = {mp3:'MP3 Lease',wav:'WAV Lease',trackout:'Trackout',unlimited:'Unlimited',exclusive:'Exclusive'};
+  const pub = (bucket,path)=>`${SB_URL}/storage/v1/object/public/${bucket}/${path}`;
+
+  const store = document.getElementById('liveStore');
+  if(!STORE_LIVE || !store) return;                 // fallback stays; nothing to do
+
+  document.querySelectorAll('.bs-fallback').forEach(el=>el.style.display='none');
+  store.hidden = false;
+
+  let audio = null, playingCard = null;
+  function togglePreview(card, url){
+    if(playingCard===card){ audio.pause(); card.classList.remove('playing'); playingCard=null; return; }
+    if(audio) audio.pause();
+    if(playingCard) playingCard.classList.remove('playing');
+    audio = new Audio(url); audio.crossOrigin='anonymous';
+    if(window.__joogSig) window.__joogSig.pause();
+    try{ window.__joogAudio && window.__joogAudio.connect(audio); }catch(e){}
+    audio.play().catch(()=>{});
+    card.classList.add('playing'); playingCard=card;
+    audio.onended = ()=>card.classList.remove('playing');
+  }
+
+  async function checkout(productId, btn){
+    btn.disabled = true; const prev = btn.querySelector('.ls-tier-price').textContent;
+    btn.querySelector('.ls-tier-price').textContent = '…';
+    try{
+      const r = await fetch(`${SB_URL}/functions/v1/create-checkout`,{
+        method:'POST', headers:{'Content-Type':'application/json','apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`},
+        body: JSON.stringify({productIds:[productId]})
+      });
+      const d = await r.json();
+      if(d.url){ window.location.href = d.url; return; }
+      throw new Error(d.error||'checkout failed');
+    }catch(e){ alert('Sorry — checkout is unavailable right now.'); btn.disabled=false; btn.querySelector('.ls-tier-price').textContent=prev; }
+  }
+
+  async function load(){
+    let rows=[];
+    try{
+      const r = await fetch(`${SB_URL}/rest/v1/catalog?select=*`,{headers:{'apikey':SB_KEY,'Authorization':`Bearer ${SB_KEY}`}});
+      rows = await r.json();
+    }catch(e){ store.innerHTML='<div class="ls-note">Store is warming up — check back shortly.</div>'; return; }
+    if(!Array.isArray(rows) || rows.length===0){ store.innerHTML='<div class="ls-note">New beats dropping soon.</div>'; return; }
+
+    const beats = {};
+    for(const row of rows){ (beats[row.beat_id] ??= {info:row, products:[]}).products.push(row); }
+    const grid = document.createElement('div'); grid.className='ls-grid';
+
+    for(const {info,products} of Object.values(beats)){
+      products.sort((a,b)=>TIER_ORDER.indexOf(a.tier)-TIER_ORDER.indexOf(b.tier));
+      const card = document.createElement('div'); card.className='ls-card';
+      const cover = info.cover_path ? `<img src="${pub('covers-public',info.cover_path)}" alt="${info.title}" loading="lazy">` : '';
+      const meta = [info.niche, info.bpm&&`${info.bpm} BPM`, info.musical_key].filter(Boolean).join('  ·  ');
+      const tiers = products.map(p=>`<div class="ls-tier" data-pid="${p.product_id}"><span class="ls-tier-name ${p.tier==='exclusive'?'excl':''}">${TIER_LABEL[p.tier]||p.tier}</span><span class="ls-tier-price">$${(p.price_cents/100).toFixed(0)}</span></div>`).join('');
+      card.innerHTML = `<div class="ls-cover">${cover}<div class="ls-play"><span>▶</span></div></div><div class="ls-body"><div class="ls-title">${info.title}</div><div class="ls-meta">${meta}</div><div class="ls-tiers">${tiers}</div></div>`;
+      if(info.preview_path){ card.querySelector('.ls-cover').addEventListener('click',()=>togglePreview(card, pub('previews-public',info.preview_path))); }
+      card.querySelectorAll('.ls-tier').forEach(t=>t.addEventListener('click',()=>checkout(t.dataset.pid, t)));
+      grid.appendChild(card);
+    }
+    store.innerHTML=''; store.appendChild(grid);
+
+    const io = new IntersectionObserver((es)=>es.forEach((e,i)=>{ if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('in'), (i%6)*70); io.unobserve(e.target);} }),{threshold:0.12});
+    grid.querySelectorAll('.ls-card').forEach(c=>io.observe(c));
+  }
+  load();
+})();
+</script>
+
+
+<script>
+/* Accessibility: make onclick cards + track rows keyboard-operable */
+(function(){
+  document.querySelectorAll('[onclick], .track[data-itunes]').forEach(function(el){
+    var t = el.tagName;
+    if (t === 'BUTTON' || t === 'A' || t === 'INPUT' || t === 'SELECT' || t === 'TEXTAREA') return;
+    if (!el.hasAttribute('tabindex')) el.tabIndex = 0;
+    if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+    el.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); }
+    });
+  });
+})();
+</script>
+<style id="scroll-cue">
+.scx{position:relative}
+.scx::before,.scx::after{content:"";position:absolute;top:0;bottom:0;width:60px;pointer-events:none;z-index:3;opacity:0;transition:opacity .28s ease}
+.scx::before{left:0;background:linear-gradient(90deg,var(--edge,#0a0a0f),transparent)}
+.scx::after{right:0;background:linear-gradient(270deg,var(--edge,#0a0a0f),transparent)}
+.scx.can-left::before{opacity:1}
+.scx.can-right::after{opacity:1}
+.scx-hint{position:absolute;right:6px;top:50%;z-index:4;width:34px;height:34px;border-radius:50%;border:1px solid var(--chrome-dim);background:rgba(10,10,15,0.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:var(--paper);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .3s ease;animation:scxNudge 1.7s ease-in-out infinite}
+.scx-hint:hover{border-color:var(--purple-bright);color:var(--purple-bright)}
+.scx:not(.can-right) .scx-hint{opacity:0;pointer-events:none}
+@keyframes scxNudge{0%,100%{transform:translateY(-50%) translateX(0)}50%{transform:translateY(-50%) translateX(5px)}}
+@media(prefers-reduced-motion:reduce){.scx-hint{animation:none}}
+</style>
+<script>
+/* Horizontal-scroll affordance for the stat + plaque rows: edge fade + auto-nudge + chevron */
+(function(){
+  function enhance(el, edge){
+    if (!el || el.scrollWidth <= el.clientWidth + 4) return; // nothing hidden — skip
+    var w = document.createElement('div');
+    w.className = 'scx';
+    w.style.setProperty('--edge', edge);
+    el.parentNode.insertBefore(w, el);
+    w.appendChild(el);
+    var hint = document.createElement('button');
+    hint.className = 'scx-hint';
+    hint.type = 'button';
+    hint.setAttribute('aria-label', 'Scroll for more');
+    hint.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>';
+    w.appendChild(hint);
+    function upd(){
+      w.classList.toggle('can-left', el.scrollLeft > 6);
+      w.classList.toggle('can-right', el.scrollLeft < el.scrollWidth - el.clientWidth - 6);
+    }
+    el.addEventListener('scroll', upd, {passive:true});
+    window.addEventListener('resize', upd, {passive:true});
+    hint.addEventListener('click', function(){ el.scrollBy({left: Math.round(el.clientWidth * 0.7), behavior:'smooth'}); });
+    upd();
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if (e.isIntersecting){
+            el.scrollTo({left: 38, behavior:'smooth'});
+            setTimeout(function(){ el.scrollTo({left: 0, behavior:'smooth'}); }, 650);
+            io.disconnect();
+          }
+        });
+      }, {threshold: 0.6});
+      io.observe(w);
+    }
+  }
+  window.addEventListener('load', function(){
+    document.querySelectorAll('.hero-stats').forEach(function(el){ enhance(el, '#0a0a0f'); });
+    document.querySelectorAll('.plaques').forEach(function(el){ enhance(el, '#0f0f18'); });
+  });
+})();
+</script>
+<script>
+/* Apple-style scroll motion layer (built on the GSAP/ScrollTrigger already loaded) */
+window.addEventListener('load', function(){
+  if (!window.gsap || !window.ScrollTrigger) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 1) Headings zoom OUT into place (start enlarged, settle to size + fade in)
+  gsap.utils.toArray('.sec-title, .hl-title').forEach(function(el){
+    gsap.set(el, { transformOrigin: 'left center' });
+    gsap.from(el, {
+      scale: 1.18, opacity: 0, y: 8, duration: 0.9, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 86%', once: true }
+    });
+  });
+
+  // 2) Cards rise + slight zoom, staggered per row, as each grid enters
+  ['.press-grid .press-card', '.proj-grid .proj', '.connect-grid .soc'].forEach(function(sel){
+    var items = gsap.utils.toArray(sel);
+    if (!items.length) return;
+    gsap.from(items, {
+      opacity: 0, y: 32, scale: 0.95, duration: 0.7, ease: 'power2.out', stagger: 0.07,
+      scrollTrigger: { trigger: items[0].parentNode, start: 'top 82%', once: true }
+    });
+  });
+
+  // 3) Beat pricing tiles pop in together
+  var beatTiles = gsap.utils.toArray('#beats > div[style*="grid"] > div');
+  if (beatTiles.length){
+    gsap.from(beatTiles, {
+      opacity: 0, y: 26, scale: 0.94, duration: 0.6, ease: 'back.out(1.4)', stagger: 0.08,
+      scrollTrigger: { trigger: beatTiles[0].parentNode, start: 'top 84%', once: true }
+    });
+  }
+
+  ScrollTrigger.refresh();
+});
+</script>
+<script>
+/* Premium motion pass — richer Apple-style reveals per section (GSAP) */
+window.addEventListener('load', function(){
+  if (!window.gsap || !window.ScrollTrigger) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  gsap.registerPlugin(ScrollTrigger);
+  var E = 'power3.out';
+  var rise = function(sel, o){ var items = gsap.utils.toArray(sel); if(!items.length) return;
+    o = o || {}; gsap.from(items, {opacity:0, y:o.y||26, scale:o.scale!=null?o.scale:1, duration:o.d||0.65,
+      ease:o.ease||E, stagger:o.stagger||0.06,
+      scrollTrigger:{trigger:o.trigger||items[0].parentNode, start:o.start||'top 84%', once:true}}); };
+
+  // Hero portrait — entrance + scroll zoom-out drift
+  var portrait = document.querySelector('.hero-portrait');
+  if (portrait){
+    portrait.style.animation = 'none';
+    gsap.fromTo(portrait, {opacity:0, scale:1.08, y:28}, {opacity:1, scale:1, y:0, duration:1.1, ease:E, delay:0.15});
+    gsap.to(portrait, {yPercent:-12, scale:0.94, ease:'none',
+      scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:0.6}});
+  }
+
+  // Hero stat items — stagger
+  rise('.hero-stats .hs', {y:16, scale:1, stagger:0.06, trigger:'.hero-stats', start:'top 92%'});
+  // Plaques — stagger
+  rise('.plaques .plq', {y:20, scale:0.96, stagger:0.06, trigger:'.plaques', start:'top 88%'});
+  // Story paragraphs + tags
+  rise('.bio-p', {y:22, d:0.7, stagger:0.1, trigger:'.bio-left', start:'top 82%'});
+  rise('.bio-tag', {y:12, scale:0.9, d:0.5, ease:'back.out(1.5)', stagger:0.04, trigger:'.bio-tags', start:'top 90%'});
+  // Key Records rows
+  rise('.kr-card', {y:24, d:0.55, stagger:0.05, trigger:'.kr-track', start:'top 82%'});
+  // Playlist cards
+  rise('.pl-card', {y:30, scale:0.96, d:0.7, stagger:0.1, trigger:'.pl-grid', start:'top 82%'});
+
+  // Traffic Music line — left-to-right mask wipe (premium)
+  var tm = document.querySelector('.tm-line');
+  if (tm){
+    gsap.from(tm, {clipPath:'inset(0 100% 0 0)', webkitClipPath:'inset(0 100% 0 0)', opacity:0.25, duration:1.1, ease:'power4.out',
+      scrollTrigger:{trigger:tm, start:'top 84%', once:true}});
+  }
+  var tb = document.querySelector('.tm-body');
+  if (tb) gsap.from(tb, {opacity:0, y:18, duration:0.7, ease:E, scrollTrigger:{trigger:tb, start:'top 88%', once:true}});
+
+  ScrollTrigger.refresh();
+});
+</script>
 </body>
 </html>
